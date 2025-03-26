@@ -6,11 +6,22 @@
     <title>Ocio en Turismo con Niños</title>
     <link rel="stylesheet" href="txikis.css">
 </head>
+
 <body>
     <header>
-        <h1>TXIKI OCIO</h1>
-        
+        <h1>Ocio en turismo con niños</h1>
+        <div id="filtro">
+            <label for="ciudad">Elige una ciudad:</label>
+            <select id="ciudad">
+                <option value="" disabled selected>Selecciona una ciudad</option>
+                <option value="Madrid">Madrid</option>
+                <option value="Barcelona">Barcelona</option>
+            </select>
+        </div>
     </header>
+    
+    <section id="actividades" class="grid"></section>
+    
     
     <main>
         <nav>

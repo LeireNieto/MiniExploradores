@@ -27,11 +27,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function mostrarActividades() {
         const ciudadSeleccionada = ciudadSelect.value;
-        actividadesContainer.innerHTML = "";
+        actividadesContainer.innerHTML = ""; // Limpia el contenedor
 
         const filtradas = actividades.filter(a => a.ciudad === ciudadSeleccionada);
+        
         if (filtradas.length === 0) {
             actividadesContainer.innerHTML = "<p>No hay actividades disponibles para esta ciudad.</p>";
+            return;
         }
 
         filtradas.forEach(a => {
@@ -51,8 +53,4 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     ciudadSelect.addEventListener("change", mostrarActividades);
-
-    // Ejecutar la función al cargar la página con la primera ciudad disponible
-    ciudadSelect.selectedIndex = 1; // Selecciona la primera ciudad automáticamente
-    mostrarActividades();
 });
