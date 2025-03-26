@@ -30,6 +30,10 @@ document.addEventListener("DOMContentLoaded", () => {
         actividadesContainer.innerHTML = "";
 
         const filtradas = actividades.filter(a => a.ciudad === ciudadSeleccionada);
+        if (filtradas.length === 0) {
+            actividadesContainer.innerHTML = "<p>No hay actividades disponibles para esta ciudad.</p>";
+        }
+
         filtradas.forEach(a => {
             const card = document.createElement("div");
             card.classList.add("card");
@@ -47,4 +51,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     ciudadSelect.addEventListener("change", mostrarActividades);
+
+    // Ejecutar la función al cargar la página con la primera ciudad disponible
+    ciudadSelect.selectedIndex = 1; // Selecciona la primera ciudad automáticamente
+    mostrarActividades();
 });
