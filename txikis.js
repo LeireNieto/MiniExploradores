@@ -1,33 +1,20 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const actividades = [
-        {
-            ciudad: "Madrid",
-            nombre: "Parque Warner",
-            imagen: "warner.jpg",
-            descripcion: "Parque temático con atracciones para todas las edades.",
-            edad: "Todas las edades",
-            precio: "Desde 30€",
-            ubicacion: "San Martín de la Vega",
-            enlace: "https://www.parquewarner.com/"
-        },
-        {
-            ciudad: "Barcelona",
-            nombre: "Zoo de Barcelona",
-            imagen: "zoo.jpg",
-            descripcion: "Descubre animales de todo el mundo en un entorno natural.",
-            edad: "Todas las edades",
-            precio: "Desde 21€",
-            ubicacion: "Parc de la Ciutadella",
-            enlace: "https://www.zoobarcelona.cat/"
-        }
-    ];
-
     const ciudadSelect = document.getElementById("ciudad");
     const actividadesContainer = document.getElementById("actividades");
+    let actividades = [];
+
+    // Cargar datos desde el JSON
+    fetch("actividades.json")
+        .then(response => response.json())
+        .then(data => {
+            actividades = data;
+            ciudadSelect.addEventListener("change", mostrarActividades);
+        })
+        .catch(error => console.error("Error cargando el JSON:", error));
 
     function mostrarActividades() {
         const ciudadSeleccionada = ciudadSelect.value;
-        actividadesContainer.innerHTML = ""; // Limpia el contenedor
+        actividadesContainer.innerHTML = "";
 
         const filtradas = actividades.filter(a => a.ciudad === ciudadSeleccionada);
         
@@ -51,6 +38,4 @@ document.addEventListener("DOMContentLoaded", () => {
             actividadesContainer.appendChild(card);
         });
     }
-
-    ciudadSelect.addEventListener("change", mostrarActividades);
 });
