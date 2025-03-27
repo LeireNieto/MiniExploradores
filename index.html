@@ -4,48 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ocio en Turismo con Niños</title>
-    <link rel="stylesheet" href="txikis.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
     <header>
-        <h1>TXIKI OCIO</h1>
-      
+        <h1>Ocio en turismo con niños</h1>
+        <div id="filtro">
+            <label for="ciudad">Elige una ciudad:</label>
+            <select id="ciudad">
+                <option value="" disabled selected>Selecciona una ciudad</option>
+                <option value="Madrid">Madrid</option>
+                <option value="Barcelona">Barcelona</option>
+            </select>
+        </div>
     </header>
     
     <section id="actividades" class="grid"></section>
     
     
     <main>
-        <nav>
-            <div id="filtro">
-                <label for="ciudad">Elige una ciudad:</label>
-                <select id="ciudad">
-                    <option value="" disabled selected>Selecciona una ciudad</option>
-                    <option value="Madrid">Madrid</option>
-                    <option value="Barcelona">Barcelona</option>
-                </select>
-            </div>
-            <div id="filtro">
-                <label for="tipo">Elige un tipo de actividad:</label>
-                <select id="tipo">
-                    <option value="" disabled selected>Selecciona un tipo de actividad</option>
-                    <option value="Parque">Parque</option>
-                    <option value="Museo">Museo</option>
-                    <option value="Teatro">Teatro</option>
-                    <option value="Cine">Cine</option>
-                    <option value="Deporte">Deporte</option>
-                </select>
-            </div>
-            <button onclick="loadActivities()">Buscar</button>
-        </nav>
-        <section id="actividades">
+        <section id="activities">
             <h2>Actividades</h2>
             <div id="activityList" class="grid"></div>
         </section>
-        <section id="comentarios">
-            <h2>Comentarios</h2>    
-           
+        <section id="comments">
+            <h2>Comentarios</h2>
             <textarea id="commentInput" placeholder="Escribe tu comentario..."></textarea>
             <button onclick="addComment()">Enviar</button>
             <div id="commentList"></div>
@@ -56,6 +39,6 @@
         </section>
     </main>
     
-    <script src="txikis.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

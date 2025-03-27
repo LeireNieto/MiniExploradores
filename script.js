@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const actividadesContainer = document.getElementById("actividades");
     let actividades = [];
 
-    // Cargar datos desde el JSON
+    // Cargar datos desde el archivo JSON
     fetch("actividades.json")
         .then(response => response.json())
         .then(data => {
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const card = document.createElement("div");
             card.classList.add("card");
             card.innerHTML = `
-                <img src="${a.imagen}" alt="${a.nombre}">
+                <img src="imagenes/${a.imagen}" alt="${a.nombre}">
                 <h3>${a.nombre}</h3>
                 <p>${a.descripcion}</p>
                 <p><strong>Edad recomendada:</strong> ${a.edad}</p>

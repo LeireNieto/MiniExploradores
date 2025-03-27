@@ -1,22 +1,22 @@
 [
     {
         "ciudad": "Madrid",
-        "nombre": "Parque Warner",
-        "imagen": "warner.jpg",
-        "descripcion": "Parque temático con atracciones para todas las edades.",
+        "nombre": "Parque del Retiro",
+        "imagen": "retiro.jpg",
+        "descripcion": "Un hermoso parque con actividades para toda la familia.",
         "edad": "Todas las edades",
-        "precio": "Desde 30€",
-        "ubicacion": "San Martín de la Vega",
-        "enlace": "https://www.parquewarner.com/"
+        "precio": "Gratis",
+        "ubicacion": "Plaza de la Independencia, Madrid",
+        "enlace": "https://www.esmadrid.com/informacion-turistica/parque-del-retiro"
     },
     {
         "ciudad": "Barcelona",
         "nombre": "Zoo de Barcelona",
-        "imagen": "zoo.jpg",
-        "descripcion": "Descubre animales de todo el mundo en un entorno natural.",
+        "imagen": "zoo-barcelona.jpg",
+        "descripcion": "Uno de los zoos más antiguos de Europa con una gran variedad de animales.",
         "edad": "Todas las edades",
-        "precio": "Desde 21€",
-        "ubicacion": "Parc de la Ciutadella",
-        "enlace": "https://www.zoobarcelona.cat/"
+        "precio": "20€ por persona",
+        "ubicacion": "Parc de la Ciutadella, Barcelona",
+        "enlace": "https://www.zoobarcelona.cat/es"
     }
 ]
