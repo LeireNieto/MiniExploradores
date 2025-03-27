@@ -1,13 +1,13 @@
 [
     {
-        "ciudad": "Madrid",
-        "nombre": "Parque del Retiro",
-        "imagen": "retiro.jpg",
-        "descripcion": "Un hermoso parque con actividades para toda la familia.",
+        "ciudad": "Bilbao",
+        "nombre": "Itsasmuseoa",
+        "imagen": "itsasmuseoa.jpg",
+        "descripcion": "Museo del mar con actividades para toda la familia.",
         "edad": "Todas las edades",
-        "precio": "Gratis",
-        "ubicacion": "Plaza de la Independencia, Madrid",
-        "enlace": "https://www.esmadrid.com/informacion-turistica/parque-del-retiro"
+        "precio": "Gratis menosres de 6 años",
+        "ubicacion": "Muelle Ramón de la Sota, 1 Bilbao",
+        "enlace": "https://itsasmuseum.eus/actividades-infantiles-y-familias/"
     },
     {
         "ciudad": "Barcelona",
