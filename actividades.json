@@ -10,13 +10,34 @@
         "enlace": "https://itsasmuseum.eus/actividades-infantiles-y-familias/"
     },
     {
-        "ciudad": "Barcelona",
-        "nombre": "Zoo de Barcelona",
-        "imagen": "zoo-barcelona.jpg",
-        "descripcion": "Uno de los zoos más antiguos de Europa con una gran variedad de animales.",
+        "ciudad": "Bilbao",
+        "nombre": "Parque Doña Casilda",
+        "imagen": "donacasilda.jpg",
+        "descripcion": "Un parque con áreas de juegos y un estanque con patos.",
         "edad": "Todas las edades",
-        "precio": "20€ por persona",
-        "ubicacion": "Parc de la Ciutadella, Barcelona",
-        "enlace": "https://www.zoobarcelona.cat/es"
+        "precio": "Gratis",
+        "ubicacion": "Bilbao, España",
+        "enlace": "https://www.bilbao.eus"
+    },
+    {
+        "ciudad": "Donostia/S.Sebastián",
+        "nombre": "Aquarium",
+        "imagen": "aquarium.jpg",
+        "descripcion": "Un acuario con una gran variedad de especies marinas.",
+        "edad": "Todas las edades",
+        "precio": "15€ por persona",
+        "ubicacion": "Plaza de Carlos Blasco Imaz, 1, Donostia",
+        "enlace": "https://aquariumss.com/"
+    },
+    {
+        "ciudad": "Donostia/S.Sebastián",          
+        "nombre": "Parque de Atracciones Monte Igueldo",
+        "imagen": "monte-igueldo.jpg",
+        "descripcion": "Un parque de atracciones con vistas a la ciudad.",
+        "edad": "Todas las edades",
+        "precio": "Gratis menosres de 6 años",
+        "ubicacion": "Paseo del Faro, 15, Donostia",
+        "enlace": "https://www.monteigueldo.es/"
     }
+    
 ]

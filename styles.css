@@ -41,12 +41,35 @@ header {
     border-radius: 10px;
 }
 
-.comments, #mapa {
-    margin: 20px;
-    padding: 15px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+#comentarios {
+ 
+        display: none; /* Ocultar los comentarios al principio */
+        margin: 20px;
+        padding: 15px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px;
+    background-color: #0288D1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0277BD;
 }
 
 @media (max-width: 768px) {
