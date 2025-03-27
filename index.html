@@ -8,27 +8,26 @@
 </head>
 <body>
     <header>
-        <h1>Turismo con niños</h1>
-             
-        <div id="filtro">
+        
+        <div class="logo-container">
+            <img src="imagenes/logo.webp" alt="Logo">
+        </div>  
+
+        <div class="header-content">
+           <h1>PequeOcio</h1>                     
+           <div id="filtro">
             <label for="ciudad">Elige una ciudad:</label>
             <select id="ciudad">
                 <option value="" disabled selected>Selecciona una ciudad</option>
                 <option value="Bilbao">Bilbao</option>
                 <option value="Donosti/S.Sebastián">Donosti/San Sebastián</option>
             </select>
+            </div>
         </div>
     </header>
     
     <section id="actividades" class="grid"></section>
     
-    <section id="comentarios">
-        <h2>Comentarios Generales</h2>
-        <textarea id="commentInput" placeholder="Escribe tu comentario..."></textarea>
-        <button onclick="addComment()">Enviar</button>
-        <div id="commentList"></div>
-    </section>
-
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
