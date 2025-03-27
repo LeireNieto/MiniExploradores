@@ -6,11 +6,17 @@ body {
 }
 
 header {
-    background-color: #0288D1;
+    background: url('imagenes/header.jpg') no-repeat center center;
+    background-size: cover;
     color: white;
     padding: 15px;
     text-align: center;
+    height: 150px; /* Ajusta la altura según sea necesario */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
 
 #filtro {
     margin: 20px;
