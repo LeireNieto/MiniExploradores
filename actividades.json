@@ -2,7 +2,7 @@
     {
         "ciudad": "Bilbao",
         "nombre": "Itsasmuseoa",
-        "imagen": "itsasmuseoa.jpg",
+        "imagen": "Bilbao/itsasmuseoa.jpg",
         "descripcion": "Museo del mar con actividades para toda la familia.",
         "edad": "Todas las edades",
         "precio": "Gratis menosres de 6 años",
@@ -12,7 +12,7 @@
     {
         "ciudad": "Bilbao",
         "nombre": "Parque Doña Casilda",
-        "imagen": "donacasilda.jpg",
+        "imagen": "Bilbao/donacasilda.jpg",
         "descripcion": "Un parque con áreas de juegos y un estanque con patos.",
         "edad": "Todas las edades",
         "precio": "Gratis",
@@ -20,9 +20,20 @@
         "enlace": "https://www.bilbao.eus"
     },
     {
-        "ciudad": "Donostia/S.Sebastián",
+        "ciudad": "Bilbao",
+        "nombre": "Bosque de Oma",
+        "imagen": "Bilbao/oma.jpeg",
+        "descripcion": "Un bosque con árboles pintados por Agustín Ibarrola.",
+        "edad": "Todas las edades",
+        "precio": "Gratis",
+        "ubicacion": "Kortezubi, España",
+        "enlace": "https://www.bosquedeoma.com/"
+    },
+  
+    {
+        "ciudad": "Donosti/S.Sebastián",
         "nombre": "Aquarium",
-        "imagen": "aquarium.jpg",
+        "imagen": "Donosti/aquarium.jpeg",
         "descripcion": "Un acuario con una gran variedad de especies marinas.",
         "edad": "Todas las edades",
         "precio": "15€ por persona",
@@ -30,14 +41,14 @@
         "enlace": "https://aquariumss.com/"
     },
     {
-        "ciudad": "Donostia/S.Sebastián",          
+        "ciudad": "Donosti/S.Sebastián",          
         "nombre": "Parque de Atracciones Monte Igueldo",
-        "imagen": "monte-igueldo.jpg",
+        "imagen": "Donosti/monteigueldo.jpeg",
         "descripcion": "Un parque de atracciones con vistas a la ciudad.",
         "edad": "Todas las edades",
         "precio": "Gratis menosres de 6 años",
         "ubicacion": "Paseo del Faro, 15, Donostia",
         "enlace": "https://www.monteigueldo.es/"
     }
-    
+      
 ]
