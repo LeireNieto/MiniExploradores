@@ -21,7 +21,7 @@ header {
 }
 
 header img {
-    height: 130px;
+    height: 115px;
     object-fit: contain;
 }
 
@@ -34,10 +34,11 @@ header img {
 }
 
 h1 {
-    margin: 5px 0;
-    font-size: 55px;
+    margin: 7px 0;
+    margin-right: 105px;
+    font-size: 59px;
     color: #1e5e17;
-    text-align: center;
+    
     font-family: Georgia, 'Times New Roman', Times, serif;
     animation: colorFan 3s infinite;
 }
@@ -54,6 +55,7 @@ h1 {
 #ciudad {
     border-radius: 5px;
     margin-top: 15px;
+    margin-right: 105px;
 }
 
 label {
@@ -124,7 +126,7 @@ label {
 
 /* Parte trasera */
 .card-back {
-    background: #0077b6;
+    background: #64bcae;
     color: white;
     transform: rotateY(180deg);
     padding: 15px;

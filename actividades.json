@@ -16,7 +16,7 @@
         "descripcion": "Un parque con áreas de juegos y un estanque con patos.",
         "edad": "Todas las edades",
         "precio": "Gratis",
-        "ubicacion": "Bilbao, España",
+        "ubicacion": "Bilbao (Bizkaia)",
         "enlace": "https://www.bilbao.eus"
     },
     {
@@ -26,10 +26,29 @@
         "descripcion": "Un bosque con árboles pintados por Agustín Ibarrola.",
         "edad": "Todas las edades",
         "precio": "Gratis",
-        "ubicacion": "Kortezubi, España",
+        "ubicacion": "Kortezubi (Bizkaia)",
         "enlace": "https://www.bosquedeoma.com/"
     },
-  
+    {
+        "ciudad": "Bilbao",
+        "nombre": "Museo Guggenheim",
+        "imagen": "Bilbao/guggenheim.jpg",
+        "descripcion": "Un museo de arte contemporáneo con actividades para niños.",
+        "edad": "Todas las edades",
+        "precio": "Gratis menores de 12 años",
+        "ubicacion": "Av. Abandoibarra Etorbidea, 2, Bilbao",
+        "enlace": "https://www.guggenheim-bilbao.eus/"
+    },
+    {
+        "ciudad": "Bilbao",
+        "nombre": "Karpin",
+        "imagen": "Bilbao/karpin.jpg",
+        "descripcion": "Centro de acogida y recuperación de fauna silvestre.",
+        "edad": "Todas las edades",
+        "precio": "Gratis menores de 3 años",
+        "ubicacion": " Paseo Mikeletegi, 43 Karrantza (Bizkaia)",
+        "enlace": "https://bbkkarpinfauna.eus/"
+    },
     {
         "ciudad": "Donosti/S.Sebastián",
         "nombre": "Aquarium",
@@ -46,9 +65,19 @@
         "imagen": "Donosti/monteigueldo.jpeg",
         "descripcion": "Un parque de atracciones con vistas a la ciudad.",
         "edad": "Todas las edades",
-        "precio": "Gratis menosres de 6 años",
+        "precio": "Gratis menores de 6 años",
         "ubicacion": "Paseo del Faro, 15, Donostia",
         "enlace": "https://www.monteigueldo.es/"
+    },
+    {
+        "ciudad": "Donosti/S.Sebastián",          
+        "nombre": "Eureka - Museo de la Ciencia",
+        "imagen": "Donosti/eureka.jpg",
+        "descripcion": "Un museo interactivo de ciencia y tecnología.",
+        "edad": "Todas las edades",
+        "precio": "Gratis menores de 3 años",
+        "ubicacion": " Paseo Mikeletegi, 43, Donostia",
+        "enlace": "https://www.eureka.eus/"
     }
       
 ]
