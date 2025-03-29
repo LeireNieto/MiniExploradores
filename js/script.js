@@ -26,15 +26,25 @@ document.addEventListener("DOMContentLoaded", () => {
         filtradas.forEach(a => {
             const card = document.createElement("div");
             card.classList.add("card");
+
             card.innerHTML = `
-                <img src="imagenes/${a.imagen}" alt="${a.nombre}">
-                <h3>${a.nombre}</h3>
-                <p>${a.descripcion}</p>
-                <p><strong>Edad recomendada:</strong> ${a.edad}</p>
-                <p><strong>Precio:</strong> ${a.precio}</p>
-                <p><strong>Ubicación:</strong> ${a.ubicacion}</p>
-                <a href="${a.enlace}" target="_blank">Más información</a>
+                <div class="card-inner">
+                    <!-- Parte frontal -->
+                    <div class="card-front">
+                        <img src="imagenes/${a.imagen}" alt="${a.nombre}">
+                        <h3>${a.nombre}</h3>
+                    </div>
+                    <!-- Parte trasera -->
+                    <div class="card-back">
+                        <p>${a.descripcion}</p>
+                        <p><strong>Edad recomendada:</strong> ${a.edad}</p>
+                        <p><strong>Precio:</strong> ${a.precio}</p>
+                        <p><strong>Ubicación:</strong> ${a.ubicacion}</p>
+                        <a href="${a.enlace}" target="_blank">Más información</a>
+                    </div>
+                </div>
             `;
+
             actividadesContainer.appendChild(card);
         });
     }
