@@ -32,16 +32,14 @@ header img {
     justify-content: center;
     flex: 1;
 }
-
-h1 {
-    margin: 7px 0;
-    margin-right: 105px;
-    font-size: 59px;
-    color: #1e5e17;
     
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    animation: colorFan 3s infinite;
-}
+h1 {
+        margin: 7px 0;
+        font-size: 59px;
+        color: #1e5e17;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        animation: colorFan 3s infinite;
+    }
 
 @keyframes colorFan {
     0% { color: #1e5e17; }
@@ -60,6 +58,13 @@ h1 {
 
 label {
     margin-top: 15px;
+}
+
+#clima {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 30px;
 }
 
 /* CONTENEDOR DE TARJETAS */

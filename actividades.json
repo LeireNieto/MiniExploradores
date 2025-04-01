@@ -50,7 +50,7 @@
         "enlace": "https://bbkkarpinfauna.eus/"
     },
     {
-        "ciudad": "Donosti/S.Sebastián",
+        "ciudad": "San Sebastián",
         "nombre": "Aquarium",
         "imagen": "Donosti/aquarium.jpeg",
         "descripcion": "Un acuario con una gran variedad de especies marinas.",
@@ -60,7 +60,7 @@
         "enlace": "https://aquariumss.com/"
     },
     {
-        "ciudad": "Donosti/S.Sebastián",          
+        "ciudad": "San Sebastián",          
         "nombre": "Parque de Atracciones Monte Igueldo",
         "imagen": "Donosti/monteigueldo.jpeg",
         "descripcion": "Un parque de atracciones con vistas a la ciudad.",
@@ -70,7 +70,7 @@
         "enlace": "https://www.monteigueldo.es/"
     },
     {
-        "ciudad": "Donosti/S.Sebastián",          
+        "ciudad": "San Sebastián",          
         "nombre": "Eureka - Museo de la Ciencia",
         "imagen": "Donosti/eureka.jpg",
         "descripcion": "Un museo interactivo de ciencia y tecnología.",

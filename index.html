@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ocio en Turismo con Niños</title>
     <link rel="stylesheet" href="styles.css">
+  
 </head>
 
 <body>
@@ -21,8 +22,14 @@
             <select id="ciudad">
                 <option value="" disabled selected>Selecciona una ciudad</option>
                 <option value="Bilbao">Bilbao</option>
-                <option value="Donosti/S.Sebastián">Donosti/S.Sebastián</option>
+                <option value="San Sebastián">Donosti/S.Sebastián</option>
             </select>
+            <div id="clima">
+                <h2>Clima en <span id="nombreCiudad">-</span></h2>
+                <p><strong>Condición:</strong> <span id="descripcion">-</span></p>
+                <p><strong>Temperatura:</strong> <span id="temperatura">-</span></p>
+                <img id="iconoClima" src="" alt="Icono del clima" />
+            </div>
             </div>
         </div>
     </header>
