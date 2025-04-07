@@ -5,9 +5,11 @@
         "imagen": "Bilbao/itsasmuseoa.jpg",
         "descripcion": "Museo del mar con actividades para toda la familia.",
         "edad": "Todas las edades",
-        "precio": "Gratis menosres de 6 años",
-        "ubicacion": "Muelle Ramón de la Sota, 1 Bilbao",
-        "enlace": "https://itsasmuseum.eus/actividades-infantiles-y-familias/"
+        "precio": "Gratis menores de 6 años",
+        "ubicacion": "Muelle Ramón de la Sota, 1, Bilbao",
+        "enlace": "https://itsasmuseum.eus/actividades-infantiles-y-familias/",
+        "lat": 43.2687,
+        "lng": -2.9399
     },
     {
         "ciudad": "Bilbao",
@@ -16,8 +18,10 @@
         "descripcion": "Un parque con áreas de juegos y un estanque con patos.",
         "edad": "Todas las edades",
         "precio": "Gratis",
-        "ubicacion": "Bilbao (Bizkaia)",
-        "enlace": "https://www.bilbao.eus"
+        "ubicacion": "Bilbao, España",
+        "enlace": "https://www.bilbao.eus",
+        "lat": 43.2631,
+        "lng": -2.9416
     },
     {
         "ciudad": "Bilbao",
@@ -26,58 +30,33 @@
         "descripcion": "Un bosque con árboles pintados por Agustín Ibarrola.",
         "edad": "Todas las edades",
         "precio": "Gratis",
-        "ubicacion": "Kortezubi (Bizkaia)",
-        "enlace": "https://www.bosquedeoma.com/"
+        "ubicacion": "Kortezubi, España",
+        "enlace": "https://www.bosquedeoma.com/",
+        "lat": 43.3891,
+        "lng": -2.6153
     },
     {
-        "ciudad": "Bilbao",
-        "nombre": "Museo Guggenheim",
-        "imagen": "Bilbao/guggenheim.jpg",
-        "descripcion": "Un museo de arte contemporáneo con actividades para niños.",
-        "edad": "Todas las edades",
-        "precio": "Gratis menores de 12 años",
-        "ubicacion": "Av. Abandoibarra Etorbidea, 2, Bilbao",
-        "enlace": "https://www.guggenheim-bilbao.eus/"
-    },
-    {
-        "ciudad": "Bilbao",
-        "nombre": "Karpin",
-        "imagen": "Bilbao/karpin.jpg",
-        "descripcion": "Centro de acogida y recuperación de fauna silvestre.",
-        "edad": "Todas las edades",
-        "precio": "Gratis menores de 3 años",
-        "ubicacion": " Paseo Mikeletegi, 43 Karrantza (Bizkaia)",
-        "enlace": "https://bbkkarpinfauna.eus/"
-    },
-    {
-        "ciudad": "San Sebastián",
+        "ciudad": "Donosti/S.Sebastián",
         "nombre": "Aquarium",
         "imagen": "Donosti/aquarium.jpeg",
         "descripcion": "Un acuario con una gran variedad de especies marinas.",
         "edad": "Todas las edades",
         "precio": "15€ por persona",
         "ubicacion": "Plaza de Carlos Blasco Imaz, 1, Donostia",
-        "enlace": "https://aquariumss.com/"
+        "enlace": "https://aquariumss.com/",
+        "lat": 43.3223,
+        "lng": -1.9855
     },
     {
-        "ciudad": "San Sebastián",          
+        "ciudad": "Donosti/S.Sebastián",
         "nombre": "Parque de Atracciones Monte Igueldo",
         "imagen": "Donosti/monteigueldo.jpeg",
         "descripcion": "Un parque de atracciones con vistas a la ciudad.",
         "edad": "Todas las edades",
         "precio": "Gratis menores de 6 años",
         "ubicacion": "Paseo del Faro, 15, Donostia",
-        "enlace": "https://www.monteigueldo.es/"
-    },
-    {
-        "ciudad": "San Sebastián",          
-        "nombre": "Eureka - Museo de la Ciencia",
-        "imagen": "Donosti/eureka.jpg",
-        "descripcion": "Un museo interactivo de ciencia y tecnología.",
-        "edad": "Todas las edades",
-        "precio": "Gratis menores de 3 años",
-        "ubicacion": " Paseo Mikeletegi, 43, Donostia",
-        "enlace": "https://www.eureka.eus/"
+        "enlace": "https://www.monteigueldo.es/",
+        "lat": 43.3165,
+        "lng": -2.0172
     }
-      
 ]

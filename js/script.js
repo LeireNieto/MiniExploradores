@@ -1,55 +1,55 @@
 document.addEventListener("DOMContentLoaded", () => {
     const ciudadSelect = document.getElementById("ciudad");
     const actividadesContainer = document.getElementById("actividades");
+    const apiKey = '128c0695af7352f6da50d38443d5b508'; // tu clave de OpenWeather
+
     let actividades = [];
+    let mapa = L.map('mapa').setView([43.2630, -2.9350], 12);
+    let marcadores = [];
 
-    const apiKey = '128c0695af7352f6da50d38443d5b508'; // Reemplázala con tu clave real
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(mapa);
 
-    // Cargar datos desde el archivo JSON
+    // 1. Cargar actividades
     fetch("actividades.json")
-        .then(response => response.json())
+        .then(res => res.json())
         .then(data => {
             actividades = data;
-            ciudadSelect.addEventListener("change", manejarCambioCiudad);
-            // Cargar clima y actividades de la ciudad seleccionada por defecto al inicio
-            if (ciudadSelect.value) {
-                manejarCambioCiudad();
-            }
-        })
-        .catch(error => console.error("Error cargando el JSON:", error));
+            ciudadSelect.addEventListener("change", () => {
+                const ciudad = ciudadSelect.value;
+                mostrarActividades(ciudad);
+                obtenerClima(ciudad);
+            });
+        });
 
-    // Función para manejar el cambio de ciudad
-    function manejarCambioCiudad() {
-        const ciudadSeleccionada = ciudadSelect.value;
-        if (ciudadSeleccionada) {
-            obtenerClima(ciudadSeleccionada);
-            mostrarActividades(ciudadSeleccionada);
-        }
-    }
-
-    // Función para mostrar las actividades de la ciudad seleccionada
+    // 2. Mostrar actividades + marcadores
     function mostrarActividades(ciudad) {
         actividadesContainer.innerHTML = "";
+        marcadores.forEach(m => mapa.removeLayer(m));
+        marcadores = [];
 
         const filtradas = actividades.filter(a => a.ciudad === ciudad);
-        
+
         if (filtradas.length === 0) {
             actividadesContainer.innerHTML = "<p>No hay actividades disponibles para esta ciudad.</p>";
             return;
         }
 
+        // Centrar mapa en la primera actividad si tiene coordenadas
+        if (filtradas[0].lat && filtradas[0].lng) {
+            mapa.setView([filtradas[0].lat, filtradas[0].lng], 13);
+        }
+
         filtradas.forEach(a => {
             const card = document.createElement("div");
             card.classList.add("card");
-
             card.innerHTML = `
                 <div class="card-inner">
-                    <!-- Parte frontal -->
                     <div class="card-front">
                         <img src="imagenes/${a.imagen}" alt="${a.nombre}">
                         <h3>${a.nombre}</h3>
                     </div>
-                    <!-- Parte trasera -->
                     <div class="card-back">
                         <p>${a.descripcion}</p>
                         <p><strong>Edad recomendada:</strong> ${a.edad}</p>
@@ -59,42 +59,37 @@ document.addEventListener("DOMContentLoaded", () => {
                     </div>
                 </div>
             `;
-
             actividadesContainer.appendChild(card);
+
+            // Marcador en el mapa
+            if (a.lat && a.lng) {
+                const marcador = L.marker([a.lat, a.lng])
+                    .addTo(mapa)
+                    .bindPopup(`<strong>${a.nombre}</strong><br>${a.ubicacion}`);
+                marcadores.push(marcador);
+            }
         });
     }
 
-    // Función para obtener el clima de la ciudad seleccionada
+    // 3. Clima
     async function obtenerClima(ciudad) {
         try {
-            console.log(`Obteniendo clima para: ${ciudad}...`);
-
-            const ciudadCodificada = encodeURIComponent(ciudad);
-            const url = `https://api.openweathermap.org/data/2.5/weather?q=${ciudadCodificada}&appid=${apiKey}&units=metric&lang=es`;
-
+            //const url = `https://api.openweathermap.org/data/2.5/forecast?q=${encodeURIComponent(ciudad)}&appid={apiKey}&units=metric&lang=es`;
+            const url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(ciudad)}&appid=${apiKey}&units=metric&lang=es`;
             const respuesta = await fetch(url);
-            
-            if (!respuesta.ok) {
-                throw new Error(`Error HTTP: ${respuesta.status}`);
-            }
-
             const datos = await respuesta.json();
 
-            // Actualizar el clima en el HTML
-            document.getElementById('nombreCiudad').textContent = ciudad;
+            console.log(datos)
+
+            const opcionCiudad = ciudadSelect.querySelector(`option[value="${ciudad}"]`);
+
+            document.getElementById('nombreCiudad').textContent = opcionCiudad.textContent;
             document.getElementById('descripcion').textContent = datos.weather[0].description;
             document.getElementById('temperatura').textContent = datos.main.temp + "°C";
 
-            // Mostrar el icono del clima
             const icono = datos.weather[0].icon;
-            const urlIcono = `http://openweathermap.org/img/wn/${icono}.png`;
-            document.getElementById('iconoClima').src = urlIcono;
+            document.getElementById('iconoClima').src = `http://openweathermap.org/img/wn/${icono}.png`;
             document.getElementById('iconoClima').alt = datos.weather[0].description;
-
-            // Aquí utilizamos el icono de FontAwesome para representar el clima
-        const iconoClima = datos.weather[0].main.toLowerCase();  // Obtener el nombre del clima (ej: 'clear', 'rain')
-        document.getElementById('iconoClima').className = `fas fa-cloud-${iconoClima}`;  // Usar FontAwesome para los iconos
-            console.log("✅ Clima actualizado correctamente.");
         } catch (error) {
             console.error('❌ Error al obtener el clima:', error);
         }
