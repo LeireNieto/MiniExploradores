@@ -58,5 +58,30 @@
         "enlace": "https://www.monteigueldo.es/",
         "lat": 43.3165,
         "lng": -2.0172
-    }
+    },
+      {
+        "ciudad": "San Sebastián",
+        "nombre": "Playa de la Concha",
+        "imagen": "Donosti/concha.jpeg",
+        "descripcion": "Una playa con aguas tranquilas y arena fina.",
+        "edad": "Todas las edades",
+        "precio": "Gratis",
+        "ubicacion": "Donostia, España",
+        "enlace": "https://www.donostiaeuskaltegiak.eus/",
+        "lat": 43.3183,
+        "lng": -1.9812
+    },
+    {
+        "ciudad": "Santander",
+        "nombre": "palacio de la Magdalena",
+        "imagen": "Santander/magdalena.jpg",        
+        "descripcion": "Un palacio con jardines y vistas al mar.",
+        "edad": "Todas las edades",
+        "precio": "Gratis",
+        "ubicacion": "Avenida de la Reina Victoria, s/n, Santander",
+        "enlace": "https://www.santander.es/",
+        "lat": 43.4653,
+        "lng": -3.7822
+            }
+    
 ]
