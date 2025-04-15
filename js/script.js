@@ -20,12 +20,18 @@ verMapaBtn.addEventListener("click", () => {
     const visible = contenedorMapa.style.display === "block";
     contenedorMapa.style.display = visible ? "none" : "block";
 
-    if (!visible) {
+    // Cambiar texto e icono del botón
+    if (visible) {
+        verMapaBtn.innerHTML = '<i class="fas fa-map-marker-alt"></i> Ver ubicaciones en el mapa';
+    } else {
+        verMapaBtn.innerHTML = '<i class="fas fa-times-circle"></i> Ocultar mapa';
+        
         setTimeout(() => {
-            mapa.invalidateSize(); // Soluciona errores de visualización al hacer visible el mapa
+            mapa.invalidateSize(); // Soluciona errores de visualización
         }, 200);
     }
 });
+
 
     // 1. Cargar actividades
     fetch("actividades.json")
@@ -110,4 +116,21 @@ verMapaBtn.addEventListener("click", () => {
             console.error('❌ Error al obtener el clima:', error);
         }
     }
+
+    // Mostrar u ocultar el clima al hacer clic en el botón
+const verClimaBtn = document.getElementById("verClimaBtn");
+const climaContainer = document.getElementById("clima");
+
+verClimaBtn.addEventListener("click", () => {
+    const visible = climaContainer.style.display === "block";
+    climaContainer.style.display = visible ? "none" : "block";
+
+    // Cambiar texto e icono del botón
+    if (visible) {
+        verClimaBtn.innerHTML = '<i class="fas fa-cloud-sun"></i> Ver clima';
+    } else {
+        verClimaBtn.innerHTML = '<i class="fas fa-times-circle"></i> Ocultar clima';
+    }
+});
+
 });

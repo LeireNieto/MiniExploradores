@@ -1,54 +1,65 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ocio en Turismo con Niños</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
 </head>
 
 <body>
     <header>
-        
-        <button id="verMapaBtn">Ver ubicaciones en el mapa</button>
-        
+
+        <button id="verMapaBtn">
+            <i class="fas fa-map-marker-alt"></i> Ver ubicaciones en el mapa
+        </button>
+
+
+        <button id="verClimaBtn">
+            <i class="fas fa-cloud-sun"></i> Ver clima
+        </button>
+
         <div class="logo-container">
             <img src="imagenes/logo.webp" alt="Logo">
-        </div>  
+        </div>
 
         <div class="header-content">
-           <h1>PequeOcio</h1>                     
-           <div id="filtro">
-            <label for="ciudad">Elige una ciudad:</label>
-            <select id="ciudad">
-                <option value="" disabled selected>Selecciona una ciudad</option>
-                <option value="Bilbao">Bilbao</option>
-                <option value="San Sebastián">Donosti</option>
-                <option value="Santander">Santander</option>
-            </select>
-            <div id="clima">
-                <h2>Clima en <span id="nombreCiudad">-</span></h2>
-                <p><strong>Condición:</strong> <span id="descripcion">-</span></p>
-                <p><strong>Temperatura:</strong> <span id="temperatura">-</span></p>
-                <img id="iconoClima" src="" alt="Icono del clima" />
-            </div>
+            <h1>PequeOcio</h1>
+            <div id="filtro">
+                <label for="ciudad">Elige una ciudad:</label>
+                <select id="ciudad">
+                    <option value="" disabled selected>Selecciona una ciudad</option>
+                    <option value="Bilbao">Bilbao</option>
+                    <option value="San Sebastián">Donosti</option>
+                    <option value="Santander">Santander</option>
+                </select>
+                <div id="clima">
+                    <h2>Clima en <span id="nombreCiudad">-</span></h2>
+                    <p><strong>Condición:</strong> <span id="descripcion">-</span></p>
+                    <p><strong>Temperatura:</strong> <span id="temperatura">-</span></p>
+                    <img id="iconoClima" src="" alt="Icono del clima" />
+                </div>
 
-            <div id="contenedorMapa" style="display: none;">
-                <h2>Ubicación en el mapa</h2>
-                <div id="mapa" style="height: 400px; margin: 20px;"></div>
-            </div>
-            
+                <div id="contenedorMapa" style="display: none;">
+                    <h2>Ubicación en el mapa</h2>
+                    <div id="mapa" style="height: 400px; margin: 20px;"></div>
+                </div>
+
             </div>
         </div>
     </header>
-    
+
     <section id="actividades" class="grid"></section>
     <h2>Ubicación en el mapa</h2>
     <div id="mapa" style="height: 400px; margin: 20px;"></div>
-    
+
     <script src="js/script.js"></script>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </body>
+
 </html>
