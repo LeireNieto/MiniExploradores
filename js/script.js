@@ -11,27 +11,25 @@ document.addEventListener("DOMContentLoaded", () => {
         attribution: '&copy; OpenStreetMap contributors'
     }).addTo(mapa);
 
+    // Mostrar u ocultar el mapa al hacer clic en el botón
+    const verMapaBtn = document.getElementById("verMapaBtn");
+    const contenedorMapa = document.getElementById("contenedorMapa");
 
-// Mostrar u ocultar el mapa al hacer clic en el botón
-const verMapaBtn = document.getElementById("verMapaBtn");
-const contenedorMapa = document.getElementById("contenedorMapa");
+    verMapaBtn.addEventListener("click", () => {
+        const visible = contenedorMapa.style.display === "block";
+        contenedorMapa.style.display = visible ? "none" : "block"; // Mostrar u ocultar el mapa
 
-verMapaBtn.addEventListener("click", () => {
-    const visible = contenedorMapa.style.display === "block";
-    contenedorMapa.style.display = visible ? "none" : "block";
-
-    // Cambiar texto e icono del botón
-    if (visible) {
-        verMapaBtn.innerHTML = '<i class="fas fa-map-marker-alt"></i> Ver ubicaciones en el mapa';
-    } else {
-        verMapaBtn.innerHTML = '<i class="fas fa-times-circle"></i> Ocultar mapa';
-        
-        setTimeout(() => {
-            mapa.invalidateSize(); // Soluciona errores de visualización
-        }, 200);
-    }
-});
-
+        // Cambiar texto e icono del botón
+        if (visible) {
+            verMapaBtn.innerHTML = '<i class="fas fa-map-marker-alt"></i> Ver ubicaciones en el mapa';
+        } else {
+            verMapaBtn.innerHTML = '<i class="fas fa-times-circle"></i> Ocultar mapa';
+            
+            setTimeout(() => {
+                mapa.invalidateSize(); // Soluciona errores de visualización
+            }, 200);
+        }
+    });
 
     // 1. Cargar actividades
     fetch("actividades.json")
@@ -83,6 +81,9 @@ verMapaBtn.addEventListener("click", () => {
             `;
             actividadesContainer.appendChild(card);
 
+            // Mostrar el botón de ver mapa cuando haya actividades
+            verMapaBtn.style.display = 'inline-block'; // Muestra el botón de mapa si hay actividades
+
             // Marcador en el mapa
             if (a.lat && a.lng) {
                 const marcador = L.marker([a.lat, a.lng])
@@ -96,12 +97,9 @@ verMapaBtn.addEventListener("click", () => {
     // 3. Clima
     async function obtenerClima(ciudad) {
         try {
-            //const url = `https://api.openweathermap.org/data/2.5/forecast?q=${encodeURIComponent(ciudad)}&appid={apiKey}&units=metric&lang=es`;
             const url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(ciudad)}&appid=${apiKey}&units=metric&lang=es`;
             const respuesta = await fetch(url);
             const datos = await respuesta.json();
-
-            console.log(datos)
 
             const opcionCiudad = ciudadSelect.querySelector(`option[value="${ciudad}"]`);
 
@@ -116,21 +114,4 @@ verMapaBtn.addEventListener("click", () => {
             console.error('❌ Error al obtener el clima:', error);
         }
     }
-
-    // Mostrar u ocultar el clima al hacer clic en el botón
-const verClimaBtn = document.getElementById("verClimaBtn");
-const climaContainer = document.getElementById("clima");
-
-verClimaBtn.addEventListener("click", () => {
-    const visible = climaContainer.style.display === "block";
-    climaContainer.style.display = visible ? "none" : "block";
-
-    // Cambiar texto e icono del botón
-    if (visible) {
-        verClimaBtn.innerHTML = '<i class="fas fa-cloud-sun"></i> Ver clima';
-    } else {
-        verClimaBtn.innerHTML = '<i class="fas fa-times-circle"></i> Ocultar clima';
-    }
-});
-
 });

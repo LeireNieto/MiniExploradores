@@ -15,11 +15,6 @@
 <body>
     <header>
 
-        <button id="verMapaBtn">
-            <i class="fas fa-map-marker-alt"></i> Ver ubicaciones en el mapa
-        </button>
-
-
         <button id="verClimaBtn">
             <i class="fas fa-cloud-sun"></i> Ver clima
         </button>
@@ -45,18 +40,28 @@
                     <img id="iconoClima" src="" alt="Icono del clima" />
                 </div>
 
-                <div id="contenedorMapa" style="display: none;">
-                    <h2>Ubicación en el mapa</h2>
-                    <div id="mapa" style="height: 400px; margin: 20px;"></div>
-                </div>
+
+
 
             </div>
         </div>
     </header>
 
     <section id="actividades" class="grid"></section>
-    <h2>Ubicación en el mapa</h2>
-    <div id="mapa" style="height: 400px; margin: 20px;"></div>
+    
+      <!-- Botón para ver el mapa (está debajo de las actividades) -->
+    <button id="verMapaBtn">
+        <i class="fas fa-map-marker-alt"></i> Ver ubicaciones en el mapa
+    </button>
+ 
+     <!-- Contenedor del mapa debajo de las actividades -->
+    <div id="contenedorMapa" style="display: none;">
+        <!-- <h2>Ubicación en el mapa</h2> -->
+        <div id="mapa" style="height: 400px; margin: 20px;"></div>
+    </div>
+
+        <!-- Mapa de ubicaciones (inicialmente oculto) -->
+    <div id="mapa" style="height: 400px; margin: 20px; display: none;"></div>
 
     <script src="js/script.js"></script>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
