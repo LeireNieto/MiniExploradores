@@ -11,7 +11,9 @@
 
 <body>
     <header>
-       
+        
+        <button id="verMapaBtn">Ver ubicaciones en el mapa</button>
+        
         <div class="logo-container">
             <img src="imagenes/logo.webp" alt="Logo">
         </div>  
@@ -32,6 +34,12 @@
                 <p><strong>Temperatura:</strong> <span id="temperatura">-</span></p>
                 <img id="iconoClima" src="" alt="Icono del clima" />
             </div>
+
+            <div id="contenedorMapa" style="display: none;">
+                <h2>Ubicación en el mapa</h2>
+                <div id="mapa" style="height: 400px; margin: 20px;"></div>
+            </div>
+            
             </div>
         </div>
     </header>

@@ -62,7 +62,7 @@
     {
         "ciudad": "San Sebastián",
         "nombre": "Playa de la Concha",
-        "imagen": "Donosti/concha.jpeg",
+        "imagen": "Donosti/laconcha.jpg",
         "descripcion": "Una playa con aguas tranquilas y arena fina.",
         "edad": "Todas las edades",
         "precio": "Gratis",
@@ -71,6 +71,19 @@
         "lat": 43.3183,
         "lng": -1.9812
     },
+    {
+        "ciudad": "San Sebastián",
+        "nombre": "Museo de la Ciencia Eureka!",
+        "imagen": "Donosti/eureka.jpg",
+        "descripcion": "Un museo interactivo de ciencia y tecnología.",
+        "edad": "Todas las edades",
+        "precio": "10€ por persona",
+        "ubicacion": "Paseo de Mikeletegi, 43, Donostia",
+        "enlace": "https://www.eureka.eus/",
+        "lat": 43.3192,
+        "lng": -1.9732
+    },
+       
     {
         "ciudad": "Santander",
         "nombre": "palacio de la Magdalena",

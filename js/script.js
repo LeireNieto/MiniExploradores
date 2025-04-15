@@ -11,6 +11,22 @@ document.addEventListener("DOMContentLoaded", () => {
         attribution: '&copy; OpenStreetMap contributors'
     }).addTo(mapa);
 
+
+// Mostrar u ocultar el mapa al hacer clic en el botón
+const verMapaBtn = document.getElementById("verMapaBtn");
+const contenedorMapa = document.getElementById("contenedorMapa");
+
+verMapaBtn.addEventListener("click", () => {
+    const visible = contenedorMapa.style.display === "block";
+    contenedorMapa.style.display = visible ? "none" : "block";
+
+    if (!visible) {
+        setTimeout(() => {
+            mapa.invalidateSize(); // Soluciona errores de visualización al hacer visible el mapa
+        }, 200);
+    }
+});
+
     // 1. Cargar actividades
     fetch("actividades.json")
         .then(res => res.json())
