@@ -35,13 +35,7 @@
                     <option value="Santander">Santander</option>
                 </select>
 
-                <div id="clima">
-                    <h2>Clima en <span id="nombreCiudad">-</span></h2>
-                    <p><strong>Condición:</strong> <span id="descripcion">-</span></p>
-                    <p><strong>Temperatura:</strong> <span id="temperatura">-</span></p>
-                    <img id="iconoClima" src="" alt="Icono del clima" />
-                </div>
-
+             
  <!-- Botón para ver el mapa (está debajo de las actividades) -->
  <button id="verMapaBtn">
     <i class="fas fa-map-marker-alt"></i> Ver ubicaciones en el mapa
@@ -54,6 +48,13 @@
 
     <section id="actividades" class="grid"></section>
     
+    <!-- Clima debajo de actividades -->
+    <div id="clima" style="display: none;">
+        <h2>Clima en <span id="nombreCiudad">-</span></h2>
+        <p><strong>Condición:</strong> <span id="descripcion">-</span></p>
+        <p><strong>Temperatura:</strong> <span id="temperatura">-</span></p>
+        <img id="iconoClima" src="" alt="Icono del clima" />
+    </div>
      
  
      <!-- Contenedor del mapa debajo de las actividades -->
