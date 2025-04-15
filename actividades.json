@@ -59,7 +59,7 @@
         "lat": 43.3165,
         "lng": -2.0172
     },
-      {
+    {
         "ciudad": "San Sebastián",
         "nombre": "Playa de la Concha",
         "imagen": "Donosti/concha.jpeg",
@@ -82,6 +82,30 @@
         "enlace": "https://www.santander.es/",
         "lat": 43.4653,
         "lng": -3.7822
-            }
+    },
+    {
+        "ciudad": "Santander",
+        "nombre": "Parque de la Naturaleza de Cabárceno",
+        "imagen": "Santander/cabarceno.webp",
+        "descripcion": "Un parque con animales en semilibertad.",
+        "edad": "Todas las edades",
+        "precio": "30€ por persona",
+        "ubicacion": "Cabárceno, España",
+        "enlace": "https://www.parquedecabarceno.com/",
+        "lat": 43.3667,
+        "lng": -3.8833
+    },
+    {
+        "ciudad": "Santander",
+        "nombre": "Playa del Sardinero",
+        "imagen": "Santander/sardinero.jpg",
+        "descripcion": "Una playa con aguas tranquilas y arena fina.",
+        "edad": "Todas las edades",
+        "precio": "Gratis",
+        "ubicacion": "Santander, España",
+        "enlace": "",
+        "lat": 43.4653,
+        "lng": -3.7834
+    }
     
 ]
