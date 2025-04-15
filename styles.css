@@ -205,3 +205,8 @@ button:hover {
 #verMapaBtn:hover {
     background-color: #285b7c;
 }
+
+/* CLIMA*/
+#clima {
+    display: none;
+}

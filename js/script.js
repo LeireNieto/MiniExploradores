@@ -1,7 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
     const ciudadSelect = document.getElementById("ciudad");
     const actividadesContainer = document.getElementById("actividades");
-    const apiKey = '128c0695af7352f6da50d38443d5b508'; // tu clave de OpenWeather
+    const climaContainer = document.getElementById("clima");
+    const verClimaBtn = document.getElementById("verClimaBtn");
+    const verMapaBtn = document.getElementById("verMapaBtn");
+    const contenedorMapa = document.getElementById("contenedorMapa");
+    const apiKey = '128c0695af7352f6da50d38443d5b508';
 
     let actividades = [];
     let mapa = L.map('mapa').setView([43.2630, -2.9350], 12);
@@ -11,39 +15,56 @@ document.addEventListener("DOMContentLoaded", () => {
         attribution: '&copy; OpenStreetMap contributors'
     }).addTo(mapa);
 
-    // Mostrar u ocultar el mapa al hacer clic en el botón
-    const verMapaBtn = document.getElementById("verMapaBtn");
-    const contenedorMapa = document.getElementById("contenedorMapa");
+    // Ocultar clima al inicio
+    climaContainer.style.display = "none";
 
+    // Mostrar u ocultar el clima al hacer clic
+    verClimaBtn.addEventListener("click", () => {
+        const visible = climaContainer.style.display === "block";
+        climaContainer.style.display = visible ? "none" : "block";
+
+        verClimaBtn.innerHTML = visible
+            ? '<i class="fas fa-cloud-sun"></i> Ver clima'
+            : '<i class="fas fa-times-circle"></i> Ocultar clima';
+
+        if (!visible && ciudadSelect.value) {
+            obtenerClima(ciudadSelect.value);
+        }
+    });
+
+    // Mostrar u ocultar el mapa
     verMapaBtn.addEventListener("click", () => {
         const visible = contenedorMapa.style.display === "block";
-        contenedorMapa.style.display = visible ? "none" : "block"; // Mostrar u ocultar el mapa
+        contenedorMapa.style.display = visible ? "none" : "block";
 
-        // Cambiar texto e icono del botón
-        if (visible) {
-            verMapaBtn.innerHTML = '<i class="fas fa-map-marker-alt"></i> Ver ubicaciones en el mapa';
-        } else {
-            verMapaBtn.innerHTML = '<i class="fas fa-times-circle"></i> Ocultar mapa';
-            
+        verMapaBtn.innerHTML = visible
+            ? '<i class="fas fa-map-marker-alt"></i> Ver ubicaciones en el mapa'
+            : '<i class="fas fa-times-circle"></i> Ocultar mapa';
+
+        if (!visible) {
             setTimeout(() => {
-                mapa.invalidateSize(); // Soluciona errores de visualización
+                mapa.invalidateSize(); // arregla visualización
             }, 200);
         }
     });
 
-    // 1. Cargar actividades
+    // Cargar actividades
     fetch("actividades.json")
         .then(res => res.json())
         .then(data => {
             actividades = data;
+
             ciudadSelect.addEventListener("change", () => {
                 const ciudad = ciudadSelect.value;
                 mostrarActividades(ciudad);
-                obtenerClima(ciudad);
+
+                if (climaContainer.style.display === "block") {
+                    obtenerClima(ciudad);
+                }
             });
         });
 
-    // 2. Mostrar actividades + marcadores
+    // Mostrar actividades
     function mostrarActividades(ciudad) {
         actividadesContainer.innerHTML = "";
         marcadores.forEach(m => mapa.removeLayer(m));
@@ -56,7 +77,6 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        // Centrar mapa en la primera actividad si tiene coordenadas
         if (filtradas[0].lat && filtradas[0].lng) {
             mapa.setView([filtradas[0].lat, filtradas[0].lng], 13);
         }
@@ -81,10 +101,6 @@ document.addEventListener("DOMContentLoaded", () => {
             `;
             actividadesContainer.appendChild(card);
 
-            // Mostrar el botón de ver mapa cuando haya actividades
-            verMapaBtn.style.display = 'inline-block'; // Muestra el botón de mapa si hay actividades
-
-            // Marcador en el mapa
             if (a.lat && a.lng) {
                 const marcador = L.marker([a.lat, a.lng])
                     .addTo(mapa)
@@ -94,7 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // 3. Clima
+    // Obtener clima
     async function obtenerClima(ciudad) {
         try {
             const url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(ciudad)}&appid=${apiKey}&units=metric&lang=es`;
@@ -102,11 +118,9 @@ document.addEventListener("DOMContentLoaded", () => {
             const datos = await respuesta.json();
 
             const opcionCiudad = ciudadSelect.querySelector(`option[value="${ciudad}"]`);
-
             document.getElementById('nombreCiudad').textContent = opcionCiudad.textContent;
             document.getElementById('descripcion').textContent = datos.weather[0].description;
             document.getElementById('temperatura').textContent = datos.main.temp + "°C";
-
             const icono = datos.weather[0].icon;
             document.getElementById('iconoClima').src = `http://openweathermap.org/img/wn/${icono}.png`;
             document.getElementById('iconoClima').alt = datos.weather[0].description;
