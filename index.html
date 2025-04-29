@@ -35,14 +35,11 @@
                     <option value="Santander">Santander</option>
                 </select>
 
-                <div id="clima">
-                    <h2>Clima en <span id="nombreCiudad">-</span></h2>
-                    <p><strong>Condición:</strong> <span id="descripcion">-</span></p>
-                    <p><strong>Temperatura:</strong> <span id="temperatura">-</span></p>
-                    <img id="iconoClima" src="" alt="Icono del clima" />
-                </div>
-
-
+             
+ <!-- Botón para ver el mapa (está debajo de las actividades) -->
+ <button id="verMapaBtn">
+    <i class="fas fa-map-marker-alt"></i> Ver ubicaciones en el mapa
+</button>
 
 
             </div>
@@ -50,13 +47,17 @@
     </header>
 
     <section id="actividades" class="grid"></section>
-
-    <!-- Botón para ver el mapa (está debajo de las actividades) -->
-    <button id="verMapaBtn">
-        <i class="fas fa-map-marker-alt"></i> Ver ubicaciones en el mapa
-    </button>
-
-    <!-- Contenedor del mapa debajo de las actividades -->
+    
+    <!-- Clima debajo de actividades -->
+    <div id="clima" style="display: none;">
+        <h2>Clima en <span id="nombreCiudad">-</span></h2>
+        <p><strong>Condición:</strong> <span id="descripcion">-</span></p>
+        <p><strong>Temperatura:</strong> <span id="temperatura">-</span></p>
+        <img id="iconoClima" src="" alt="Icono del clima" />
+    </div>
+     
+ 
+     <!-- Contenedor del mapa debajo de las actividades -->
     <div id="contenedorMapa" style="display: none;">
         <!-- <h2>Ubicación en el mapa</h2> -->
         <div id="mapa" style="height: 400px; margin: 20px;"></div>
