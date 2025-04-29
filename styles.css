@@ -198,6 +198,28 @@ label {
     background-color: #285b7c;
 }
 
+#clima {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 10px;
+    scroll-snap-type: x mandatory;
+}
+
+.dia-clima {
+    flex: 0 0 auto;
+    background-color: #e0f2ff;
+    border-radius: 10px;
+    padding: 10px;
+    width: 150px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    scroll-snap-align: start;
+    margin: 0 10px;
+    display: inline-block;
+}
+
+
 #verMapaBtn {
     margin-top: -35px;
     padding: 5px 15px;

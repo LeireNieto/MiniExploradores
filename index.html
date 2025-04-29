@@ -29,7 +29,7 @@
             <div id="filtro">
                 <label for="ciudad">Elige una ciudad:</label>
                 <select id="ciudad">
-                    <option value="" disabled selected>Selecciona una ciudad</option>
+                    <option value="">Selecciona una ciudad</option>
                     <option value="Bilbao">Bilbao</option>
                     <option value="San Sebastián">Donosti</option>
                     <option value="Santander">Santander</option>
@@ -55,6 +55,12 @@
         <p><strong>Temperatura:</strong> <span id="temperatura">-</span></p>
         <img id="iconoClima" src="" alt="Icono del clima" />
     </div>
+    <!-- Clima de 5 días -->
+<div id="clima5dias" style="display: none;">
+    <h3>Pronóstico para 5 días</h3>
+    <div id="diasPronostico" class="grid" style="gap: 10px;"></div>
+</div>
+
      
  
      <!-- Contenedor del mapa debajo de las actividades -->

@@ -15,10 +15,8 @@ document.addEventListener("DOMContentLoaded", () => {
         attribution: '&copy; OpenStreetMap contributors'
     }).addTo(mapa);
 
-    // Ocultar clima al inicio
     climaContainer.style.display = "none";
 
-    // Mostrar u ocultar el clima al hacer clic
     verClimaBtn.addEventListener("click", () => {
         const visible = climaContainer.style.display === "block";
         climaContainer.style.display = visible ? "none" : "block";
@@ -32,7 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Mostrar u ocultar el mapa
     verMapaBtn.addEventListener("click", () => {
         const visible = contenedorMapa.style.display === "block";
         contenedorMapa.style.display = visible ? "none" : "block";
@@ -43,12 +40,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (!visible) {
             setTimeout(() => {
-                mapa.invalidateSize(); // arregla visualización
+                mapa.invalidateSize();
             }, 200);
         }
     });
 
-    // Cargar actividades
     fetch("actividades.json")
         .then(res => res.json())
         .then(data => {
@@ -64,7 +60,6 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
 
-    // Mostrar actividades
     function mostrarActividades(ciudad) {
         actividadesContainer.innerHTML = "";
         marcadores.forEach(m => mapa.removeLayer(m));
@@ -95,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <p><strong>Edad recomendada:</strong> ${a.edad}</p>
                         <p><strong>Precio:</strong> ${a.precio}</p>
                         <p><strong>Ubicación:</strong> ${a.ubicacion}</p>
-                        <a href="${a.enlace}" target="_blank">Más información</a>
+                        ${a.enlace ? `<a href="${a.enlace}" target="_blank">Más información</a>` : ""}
                     </div>
                 </div>
             `;
@@ -110,22 +105,50 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Obtener clima
     async function obtenerClima(ciudad) {
         try {
-            const url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(ciudad)}&appid=${apiKey}&units=metric&lang=es`;
+            const url = `https://api.openweathermap.org/data/2.5/forecast?q=${encodeURIComponent(ciudad)}&appid=${apiKey}&units=metric&lang=es`;
             const respuesta = await fetch(url);
             const datos = await respuesta.json();
 
-            const opcionCiudad = ciudadSelect.querySelector(`option[value="${ciudad}"]`);
-            document.getElementById('nombreCiudad').textContent = opcionCiudad.textContent;
-            document.getElementById('descripcion').textContent = datos.weather[0].description;
-            document.getElementById('temperatura').textContent = datos.main.temp + "°C";
-            const icono = datos.weather[0].icon;
-            document.getElementById('iconoClima').src = `http://openweathermap.org/img/wn/${icono}.png`;
-            document.getElementById('iconoClima').alt = datos.weather[0].description;
+            const nombreCiudad = ciudadSelect.querySelector(`option[value="${ciudad}"]`).textContent;
+            document.getElementById('nombreCiudad').textContent = nombreCiudad;
+
+            // Limpiar contenido anterior
+            climaContainer.innerHTML = `<h2>Clima en ${nombreCiudad}</h2>`;
+
+            // Mostrar 1 pronóstico por día (cada 24h, aprox. cada 8 entradas)
+            const diasMostrados = [];
+            for (let i = 0; i < datos.list.length; i++) {
+                const entrada = datos.list[i];
+                const fecha = new Date(entrada.dt_txt);
+                const dia = fecha.toLocaleDateString("es-ES", { weekday: 'long', day: 'numeric', month: 'short' });
+
+                // Evita duplicados por día
+                if (!diasMostrados.includes(dia)) {
+                    diasMostrados.push(dia);
+
+                    const descripcion = entrada.weather[0].description;
+                    const temp = entrada.main.temp;
+                    const icono = entrada.weather[0].icon;
+                    const iconoURL = `https://openweathermap.org/img/wn/${icono}.png`;
+
+                    const itemHTML = `
+                        <div class="dia-clima">
+                            <h3>${dia}</h3>
+                            <img src="${iconoURL}" alt="${descripcion}">
+                            <p><strong>${descripcion}</strong></p>
+                            <p>Temperatura: ${temp.toFixed(1)}°C</p>
+                        </div>
+                    `;
+                    climaContainer.innerHTML += itemHTML;
+
+                    if (diasMostrados.length >= 5) break;
+                }
+            }
         } catch (error) {
-            console.error('❌ Error al obtener el clima:', error);
+            console.error("❌ Error al obtener el clima:", error);
+            climaContainer.innerHTML += `<p>No se pudo cargar el clima. Intenta más tarde.</p>`;
         }
     }
 });
