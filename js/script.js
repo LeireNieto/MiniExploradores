@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById('nombreCiudad').textContent = nombreCiudad;
 
             // Limpiar contenido anterior
-            climaContainer.innerHTML = `<h2>Clima en ${nombreCiudad}</h2>`;
+            climaContainer.innerHTML = `<h2>Pronóstico de tiempo en ${nombreCiudad} 5 días</h2>`;
 
             // Mostrar 1 pronóstico por día (cada 24h, aprox. cada 8 entradas)
             const diasMostrados = [];
