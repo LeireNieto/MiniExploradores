@@ -1,4 +1,13 @@
 /* ESTILO GENERAL */
+
+@keyframes colorFan {
+    0% { color: #1e5e17; }
+    25% { color: #236b2e; }
+    50% { color: #2b8a4a; }
+    75% { color: #3fae6a; }
+    100% { color: #1e5e17; }
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -20,6 +29,18 @@ header {
     align-items: center;
 }
 
+@media (max-width: 768px) {
+    .logo-container {
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 0.8rem; /* Reduce el tamaño del texto si aplica */
+    }
+
+    .logo-container img {
+        height: 75px; /* Reduce el tamaño del logo */
+    }
+}
+
 header img {
     height: 115px;
     object-fit: contain;
@@ -34,20 +55,19 @@ header img {
 }
     
 h1 {
-        margin: 7px 0;
-        font-size: 59px;
-        color: #1e5e17;
-        font-family: Georgia, 'Times New Roman', Times, serif;
-        animation: colorFan 3s infinite;
-    }
-
-@keyframes colorFan {
-    0% { color: #1e5e17; }
-    25% { color: #236b2e; }
-    50% { color: #2b8a4a; }
-    75% { color: #3fae6a; }
-    100% { color: #1e5e17; }
+    margin: 7px 0;
+    font-size: 59px;
+    color: #1e5e17;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    animation: colorFan 3s infinite;
 }
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 40px; /* Reduce el tamaño de la letra en pantallas pequeñas */
+    }
+}
+
 
 /* FILTRO */
 #ciudad {
@@ -56,8 +76,20 @@ h1 {
     margin-right: 105px;
 }
 
+@media (max-width: 768px) {
+    #ciudad {
+        margin-right: 20px; /* Reduce el margen derecho en pantallas pequeñas */
+        font-size: 0.7rem; /* Reduce el tamaño de la fuente si aplica */
+    }
+}
 label {
     margin-top: 15px;
+}
+
+@media (max-width: 768px) {
+    label {
+        font-size: 0.8rem; /* Reduce el tamaño de la fuente en pantallas pequeñas */
+    }
 }
 
 #clima {
@@ -198,25 +230,6 @@ label {
     box-shadow: 0 0 8px rgba(0,0,0,0.1);
 }
 
-
-/* BOTONES */
-#verClimaBtn {
-    margin-top: -35px;
-    padding: 5px 15px;
-    background-color: #3a7ca5;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 1rem;
-    position: absolute;
-    right: 20px;
-}
-
-#verClimaBtn:hover {
-    background-color: #285b7c;
-}
-
 #clima {
     display: flex;
     overflow-x: auto;
@@ -238,6 +251,24 @@ label {
     display: inline-block;
 }
 
+/* BOTONES */
+#verClimaBtn {
+    margin-top: -35px;
+    padding: 5px 15px;
+    background-color: #3a7ca5;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    position: absolute;
+    right: 20px;
+}
+
+#verClimaBtn:hover {
+    background-color: #285b7c;
+}
+
 
 #verMapaBtn {
     margin-top: -35px;
@@ -252,16 +283,12 @@ label {
     right: 20px;
 }
 
+
 #verMapaBtn:hover {
     background-color: #285b7c;
 }
 
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-    .grid {
-        grid-template-columns: 1fr;
-    }
-}
+
 
 
