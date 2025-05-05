@@ -290,5 +290,26 @@ label {
 
 
 
+/* Botones fuera del header en responsive */
 
-
+@media (max-width: 768px) {
+    #verMapaBtn {
+        display: block;
+        margin: 20px auto;
+        width: 90%;
+        text-align: center;
+    }
+    #verMapaBtn:hover {
+        background-color: #285b7c;
+    }
+ 
+    #verClimaBtn {
+        display: block;
+        margin: 20px auto;
+        width: 90%;
+        text-align: center;
+    }
+    #verClimaBtn:hover {
+        background-color: #285b7c;
+    }
+   
