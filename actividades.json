@@ -36,6 +36,42 @@
         "lng": -2.6153
     },
     {
+        "ciudad": "Bilbao",
+        "nombre": "Museo Guggenheim",
+        "imagen": "Bilbao/guggenheim.jpg",
+        "descripcion": "Un museo de arte contemporáneo con exposiciones interactivas.",
+        "edad": "Todas las edades",
+        "precio": "16€ por persona",
+        "ubicacion": "Av. Abandoibarra Etorb., 2, Bilbao",
+        "enlace": "https://www.guggenheim-bilbao.eus/aprende/en-familia",
+        "lat": 43.2630,
+        "lng": -2.9349
+    },
+    {
+        "ciudad": "Bilbao",
+        "nombre": "Museo Guggenheim",
+        "imagen": "Bilbao/guggenheim.jpg",
+        "descripcion": "Un museo de arte contemporáneo con exposiciones interactivas.",
+        "edad": "Todas las edades",
+        "precio": "16€ por persona",
+        "ubicacion": "Av. Abandoibarra Etorb., 2, Bilbao",
+        "enlace": "https://www.guggenheim-bilbao.eus/aprende/en-familia",
+        "lat": 43.2630,
+        "lng": -2.9349
+    },
+        {
+        "ciudad": "San Sebastián",
+        "nombre": "Monte Urgull",
+        "imagen": "Donosti/monteurgull.jpg",
+        "descripcion": "Una colina con vistas panorámicas y un castillo.",
+        "edad": "Todas las edades",
+        "precio": "Gratis",
+        "ubicacion": "San Sebastián, España",
+        "enlace": "https://www.hirikids.com/descubre-el-monte-urgull-con-ninos/",
+        "lat": 43.3183,
+        "lng": -1.9812
+    },
+    {
         "ciudad": "San Sebastián",
         "nombre": "Aquarium",
         "imagen": "Donosti/aquarium.jpeg",
@@ -93,6 +129,30 @@
         "precio": "Gratis",
         "ubicacion": "Avenida de la Reina Victoria, s/n, Santander",
         "enlace": "https://www.santander.es/",
+        "lat": 43.4653,
+        "lng": -3.7822
+    },
+    {
+        "ciudad": "Santander",
+        "nombre": "Centro Botín",
+        "imagen": "Santander/centrobotin.jpg",
+        "descripcion": "Un centro de arte contemporáneo con actividades para niños.",
+        "edad": "Todas las edades",
+        "precio": "10€ por persona",
+        "ubicacion": "Paseo de Pereda, 40, Santander",
+        "enlace": "https://www.centrobotin.org/proximas-actividades-familias//",
+        "lat": 43.4653,
+        "lng": -3.7822
+    },
+    {
+        "ciudad": "Santander",
+        "nombre": "Museo Marítimo del Cantábrico",
+        "imagen": "Santander/museomaritimodelcantabrico.jpeg",
+        "descripcion": "Un museo con exposiciones sobre la vida marina.",
+        "edad": "Todas las edades",
+        "precio": "6€ por persona",
+        "ubicacion": "Avenida de la Reina Victoria, 4, Santander",
+        "enlace": "https://www.museomaritimocantabrico.com/",
         "lat": 43.4653,
         "lng": -3.7822
     },
