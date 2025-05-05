@@ -47,19 +47,7 @@
         "lat": 43.2630,
         "lng": -2.9349
     },
-    {
-        "ciudad": "Bilbao",
-        "nombre": "Museo Guggenheim",
-        "imagen": "Bilbao/guggenheim.jpg",
-        "descripcion": "Un museo de arte contemporáneo con exposiciones interactivas.",
-        "edad": "Todas las edades",
-        "precio": "16€ por persona",
-        "ubicacion": "Av. Abandoibarra Etorb., 2, Bilbao",
-        "enlace": "https://www.guggenheim-bilbao.eus/aprende/en-familia",
-        "lat": 43.2630,
-        "lng": -2.9349
-    },
-        {
+     {
         "ciudad": "San Sebastián",
         "nombre": "Monte Urgull",
         "imagen": "Donosti/monteurgull.jpg",

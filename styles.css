@@ -96,6 +96,25 @@ label {
     transform: rotateY(180deg);
 }
 
+/* Responsive tarjetas en modo horizontal */
+@media (max-width: 768px) {
+    .grid {
+        display: flex;
+        overflow-x: auto;
+        gap: 20px; /* Incrementa el espacio entre tarjetas */
+        scroll-snap-type: x mandatory;
+        padding: 35px;
+    }
+
+    .card {
+        flex: 0 0 auto;
+        scroll-snap-align: center;
+        width: 200px; /* Reduce el tamaño de las tarjetas */
+        height: 250px; /* Ajusta la altura de las tarjetas */
+        margin: 10px; /* Agrega margen alrededor de las tarjetas */
+    }
+}
+
 /* Parte frontal */
 .card-front, .card-back {
     width: 100%;
