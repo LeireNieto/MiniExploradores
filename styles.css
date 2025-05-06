@@ -1,11 +1,25 @@
 /* ESTILO GENERAL */
 
 @keyframes colorFan {
-    0% { color: #1e5e17; }
-    25% { color: #236b2e; }
-    50% { color: #2b8a4a; }
-    75% { color: #3fae6a; }
-    100% { color: #1e5e17; }
+    0% {
+        color: #1e5e17;
+    }
+
+    25% {
+        color: #236b2e;
+    }
+
+    50% {
+        color: #2b8a4a;
+    }
+
+    75% {
+        color: #3fae6a;
+    }
+
+    100% {
+        color: #1e5e17;
+    }
 }
 
 body {
@@ -70,8 +84,10 @@ h1 {
 
 @media (max-width: 768px) {
     h1 {
-        font-size: 40px; /* Reduce el tamaño de la letra en pantallas pequeñas */
-        text-align: right; /* Align the text to the right */
+        font-size: 40px;
+        /* Reduce el tamaño de la letra en pantallas pequeñas */
+        text-align: right;
+        /* Align the text to the right */
     }
 }
 
@@ -91,9 +107,12 @@ h1 {
 
 @media (max-width: 768px) {
     #ciudad {
-        margin-right: 20px; /* Reduce el margen derecho en pantallas pequeñas */
-        font-size: 0.7rem; /* Reduce el tamaño de la fuente si aplica */
-        text-align: center; /* Centra el texto */
+        margin-right: 20px;
+        /* Reduce el margen derecho en pantallas pequeñas */
+        font-size: 0.7rem;
+        /* Reduce el tamaño de la fuente si aplica */
+        text-align: center;
+        /* Centra el texto */
     }
 }
 
@@ -111,7 +130,8 @@ label {
 
 @media (max-width: 768px) {
     label {
-        font-size: 0.8rem; /* Reduce el tamaño de la fuente en pantallas pequeñas */
+        font-size: 0.8rem;
+        /* Reduce el tamaño de la fuente en pantallas pequeñas */
     }
 }
 
@@ -129,9 +149,11 @@ label {
 .card {
     width: 250px;
     height: 300px;
-    perspective: 1000px; /* Efecto de profundidad */
+    perspective: 1000px;
+    /* Efecto de profundidad */
     position: relative;
-    flex-shrink: 0; /* Asegura que todas las tarjetas mantengan el mismo tamaño */
+    flex-shrink: 0;
+    /* Asegura que todas las tarjetas mantengan el mismo tamaño */
 }
 
 .card-inner {
@@ -151,7 +173,8 @@ label {
     .grid {
         display: flex;
         overflow-x: auto;
-        gap: 20px; /* Incrementa el espacio entre tarjetas */
+        gap: 20px;
+        /* Incrementa el espacio entre tarjetas */
         scroll-snap-type: x mandatory;
         padding: 35px;
     }
@@ -159,15 +182,19 @@ label {
     .card {
         flex: 0 0 auto;
         scroll-snap-align: center;
-        width: 250px; /* Mantiene el tamaño uniforme de las tarjetas */
-        height: 300px; /* Mantiene la altura uniforme de las tarjetas */
-        margin: 10px; /* Agrega margen alrededor de las tarjetas */
+        width: 250px;
+        /* Mantiene el tamaño uniforme de las tarjetas */
+        height: 300px;
+        /* Mantiene la altura uniforme de las tarjetas */
+        margin: 10px;
+        /* Agrega margen alrededor de las tarjetas */
     }
 }
 
 /* Parte frontal */
 
-.card-front, .card-back {
+.card-front,
+.card-back {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -229,39 +256,66 @@ label {
     padding: 15px;
     margin: 20px auto;
     border-radius: 10px;
-    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
     display: flex;
     overflow-x: auto;
     gap: 10px;
     scroll-snap-type: x mandatory;
     justify-content: center;
     align-items: center;
-    width: fit-content; /* Adjust width to fit content */
+    width: fit-content;
+    /* Adjust width to fit content */
 }
 
 .dia-clima {
-    flex: 0 0 150px; /* Ensure all days have the same width */
+    flex: 0 0 150px;
+    /* Ensure all days have the same width */
     background-color: #e0f2ff;
     border-radius: 10px;
     padding: 10px;
     width: 150px;
-    height: 200px; /* Set a fixed height for uniformity */
+    height: 200px;
+    /* Set a fixed height for uniformity */
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     scroll-snap-align: start;
     margin: 0 10px;
     display: inline-block;
 }
 
-h3, strong, p {
+h3,
+strong,
+p {
     margin-bottom: 7px;
     font-size: 15px;
     color: #1e5e17;
 }
 
+/* MAPA */
+#mapa {
+    width: 984px;
+    height: 400px;
+    margin: 51px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    display: block;
+    
+}
+
+
+/* Responsive mapa */
+@media (max-width: 768px) {
+    #mapa {
+        width: 100%;
+        height: 300px;
+        /* Adjust height for smaller screens */
+    }
+}
+
 /* BOTONES */
 
-#verClimaBtn, #verMapaBtn {
+#verClimaBtn,
+#verMapaBtn {
     display: inline-block;
     margin: 10px;
     width: 200px;
@@ -285,8 +339,9 @@ h3, strong, p {
     background-color: #285b7c;
 }
 
-#verMapaBtn:hover,  {
-    background-color: #285b7c;
+#verMapaBtn:hover,
+{
+background-color: #285b7c;
 }
 
 
@@ -299,16 +354,18 @@ h3, strong, p {
         width: 90%;
         text-align: center;
     }
+
     #verMapaBtn:hover {
         background-color: #285b7c;
     }
- 
+
     #verClimaBtn {
         display: block;
         margin: 20px auto;
         width: 90%;
         text-align: center;
     }
+
     #verClimaBtn:hover {
         background-color: #285b7c;
     }
