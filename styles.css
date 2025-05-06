@@ -18,37 +18,25 @@ body {
 /* HEADER */
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 20px 30px;
     background-color: #beebe3;
+    position: relative;
 }
 
 .logo-container {
     display: flex;
     align-items: center;
-}
-
-@media (max-width: 768px) {
-    .logo-container {
-        flex-direction: column;
-        align-items: flex-start;
-        font-size: 0.8rem; /* Reduce el tamaño del texto si aplica */
-    }
-
-    .logo-container img {
-        height: 75px; /* Reduce el tamaño del logo */
-    }
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 header img {
-    height: 75px;
+    height: 85px;
     object-fit: contain;
     margin-bottom: 15px;
     margin-top: 5px;
@@ -57,10 +45,9 @@ header img {
 .header-content {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     flex: 1;
-    margin-left: 20px; /* Add some spacing between the logo and the text */
 }
 
 h1 {
@@ -69,7 +56,16 @@ h1 {
     color: #1e5e17;
     font-family: Georgia, 'Times New Roman', Times, serif;
     animation: colorFan 3s infinite;
-  margin-top: 15px;   
+    margin-top: 15px;
+    text-align: center;
+}
+
+#ciudad {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: left;
 }
 
 @media (max-width: 768px) {
@@ -89,8 +85,8 @@ h1 {
     margin-left: auto;
     display: block;
     text-align: center;
-    font-size: 21px; /* Increase font size */
-    padding: 7px; /* Add padding for a larger appearance */
+    font-size: 17px;
+    padding: 3px;
 }
 
 @media (max-width: 768px) {
