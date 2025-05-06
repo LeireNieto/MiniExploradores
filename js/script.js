@@ -127,10 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 // Evita duplicados por día
                 if (!diasMostrados.includes(dia)) {
                     diasMostrados.push(dia);
-                    // Para lograr que los botones estén debajo de las cards en modo responsive,
-                    // puedes usar CSS para ajustar su posición. Agrega este código CSS a tu archivo de estilos:
-
-                   
+                                      
                     const descripcion = entrada.weather[0].description;
                     const temp = entrada.main.temp;
                     const icono = entrada.weather[0].icon;

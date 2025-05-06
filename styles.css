@@ -50,7 +50,8 @@ header {
 header img {
     height: 75px;
     object-fit: contain;
-    margin-bottom: 55px; /* Espacio entre el logo y el texto */
+    margin-bottom: 15px;
+    margin-top: 5px;
 }
 
 .header-content {
@@ -80,13 +81,16 @@ h1 {
 
 
 /* FILTRO */
+
 #ciudad {
-    border-radius: 7px;
+    border-radius: 9px;
     margin-top: 15px;
     margin-right: auto;
     margin-left: auto;
     display: block;
     text-align: center;
+    font-size: 21px; /* Increase font size */
+    padding: 7px; /* Add padding for a larger appearance */
 }
 
 @media (max-width: 768px) {
@@ -115,12 +119,6 @@ label {
     }
 }
 
-#clima {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    margin-right: 30px;
-}
 
 /* CONTENEDOR DE TARJETAS */
 .grid {
@@ -137,6 +135,7 @@ label {
     height: 300px;
     perspective: 1000px; /* Efecto de profundidad */
     position: relative;
+    flex-shrink: 0; /* Asegura que todas las tarjetas mantengan el mismo tamaño */
 }
 
 .card-inner {
@@ -164,13 +163,14 @@ label {
     .card {
         flex: 0 0 auto;
         scroll-snap-align: center;
-        width: 200px; /* Reduce el tamaño de las tarjetas */
-        height: 250px; /* Ajusta la altura de las tarjetas */
+        width: 250px; /* Mantiene el tamaño uniforme de las tarjetas */
+        height: 300px; /* Mantiene la altura uniforme de las tarjetas */
         margin: 10px; /* Agrega margen alrededor de las tarjetas */
     }
 }
 
 /* Parte frontal */
+
 .card-front, .card-back {
     width: 100%;
     height: 100%;
@@ -231,12 +231,9 @@ label {
 #clima {
     background-color: #f0f8ff;
     padding: 15px;
-    margin: 20px;
+    margin: 131px;
     border-radius: 10px;
     box-shadow: 0 0 8px rgba(0,0,0,0.1);
-}
-
-#clima {
     display: flex;
     overflow-x: auto;
     gap: 10px;
@@ -245,11 +242,12 @@ label {
 }
 
 .dia-clima {
-    flex: 0 0 auto;
+    flex: 0 0 150px; /* Ensure all days have the same width */
     background-color: #e0f2ff;
     border-radius: 10px;
     padding: 10px;
     width: 150px;
+    height: 200px; /* Set a fixed height for uniformity */
     text-align: center;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     scroll-snap-align: start;
@@ -257,11 +255,27 @@ label {
     display: inline-block;
 }
 
+h3, strong, p {
+    margin-bottom: 7px;
+    font-size: 15px;
+    color: #1e5e17;
+}
+
 /* BOTONES */
 
 #verClimaBtn, #verMapaBtn {
     display: inline-block;
     margin: 10px;
+    width: 200px;
+    padding: 10px;
+    background-color: #1e5e17;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    cursor: pointer;
 }
 
 .button-container {

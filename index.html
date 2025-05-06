@@ -15,9 +15,6 @@
 <body>
     <header>
 
-
-    
-
         <div class="logo-container">
             <img src="imagenes/logo.webp" alt="Logo">
         </div>
@@ -25,18 +22,14 @@
         <div class="header-content">
             <h1>PequeOcio</h1>
 
-            <div id="filtro">
-               <!-- <label for="ciudad">Elige una ciudad:</label> -->
-                <select id="ciudad">
-                    <option value="">Selecciona una ciudad</option>
-                    <option value="Bilbao">Bilbao</option>
-                    <option value="San Sebastián">Donosti</option>
-                    <option value="Santander">Santander</option>
-                </select>
+            <!-- <label for="ciudad">Elige una ciudad:</label> -->
+            <select id="ciudad">
+                <option value="">Selecciona una ciudad</option>
+                <option value="Bilbao">Bilbao</option>
+                <option value="San Sebastián">Donosti</option>
+                <option value="Santander">Santander</option>
+            </select>
 
-
-
-            </div>
         </div>
     </header>
 
@@ -49,7 +42,7 @@
     </button>
 
     <section id="actividades" class="grid"></section>
-    
+
     <!-- Clima debajo de actividades -->
     <div id="clima" style="display: none;">
         <h2>Clima en <span id="nombreCiudad">-</span></h2>
@@ -58,14 +51,14 @@
         <img id="iconoClima" src="" alt="Icono del clima" />
     </div>
     <!-- Clima de 5 días -->
-<div id="clima5dias" style="display: none;">
-    <h3>Pronóstico para 5 días</h3>
-    <div id="diasPronostico" class="grid" style="gap: 10px;"></div>
-</div>
+    <div id="clima5dias" style="display: none;">
+        <h3>Pronóstico para 5 días</h3>
+        <div id="diasPronostico" class="grid" style="gap: 10px;"></div>
+    </div>
 
-     
- 
-     <!-- Contenedor del mapa debajo de las actividades -->
+
+
+    <!-- Contenedor del mapa debajo de las actividades -->
     <div id="contenedorMapa" style="display: none;">
         <!-- <h2>Ubicación en el mapa</h2> -->
         <div id="mapa" style="height: 400px; margin: 20px;"></div>
