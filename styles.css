@@ -21,7 +21,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px 30px;
-    background-color: #64bcae;
+    background-color: #beebe3;
 }
 
 .logo-container {
@@ -41,6 +41,12 @@ header {
     }
 }
 
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 header img {
     height: 115px;
     object-fit: contain;
@@ -49,22 +55,25 @@ header img {
 .header-content {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     flex: 1;
+    margin-left: 20px; /* Add some spacing between the logo and the text */
 }
-    
+
 h1 {
     margin: 7px 0;
     font-size: 59px;
     color: #1e5e17;
     font-family: Georgia, 'Times New Roman', Times, serif;
     animation: colorFan 3s infinite;
+    text-align: right; /* Align the text to the right */
 }
 
 @media (max-width: 768px) {
     h1 {
         font-size: 40px; /* Reduce el tamaño de la letra en pantallas pequeñas */
+        text-align: right; /* Align the text to the right */
     }
 }
 
