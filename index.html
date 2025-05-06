@@ -22,7 +22,7 @@
         <div class="header-content">
             <h1>PequeOcio</h1>
 
-            <!-- <label for="ciudad">Elige una ciudad:</label> -->
+            <label for="ciudad" class="sr-only">Selecciona una ciudad</label>
             <select id="ciudad">
                 <option value="">Selecciona una ciudad</option>
                 <option value="Bilbao">Bilbao</option>
@@ -33,11 +33,11 @@
         </div>
     </header>
 
-    <button id="verClimaBtn">
+    <button id="verClimaBtn" aria-expanded="false">
         <i class="fas fa-cloud-sun"></i> Ver clima
     </button>
 
-    <button id="verMapaBtn">
+    <button id="verMapaBtn" aria-expanded="false">
         <i class="fas fa-map-marker-alt"></i> Ver ubicaciones
     </button>
 
@@ -64,8 +64,7 @@
         <div id="mapa"></div>
     </div>
 
-    <!-- Mapa de ubicaciones (inicialmente oculto) -->
-    <div id="mapa"></div>
+    
 
     <script src="js/script.js"></script>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
