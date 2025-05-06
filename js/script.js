@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
         contenedorMapa.style.display = visible ? "none" : "block";
 
         verMapaBtn.innerHTML = visible
-            ? '<i class="fas fa-map-marker-alt"></i> Ver ubicaciones en el mapa'
+            ? '<i class="fas fa-map-marker-alt"></i> Ver ubicaciones'
             : '<i class="fas fa-times-circle"></i> Ocultar mapa';
 
         if (!visible) {
