@@ -264,7 +264,7 @@ label {
 /* CLIMA*/
 
 #clima {
-    background-color: #f0f8ff;
+    background-color: #64bcae;
     padding: 15px;
     margin: 20px auto;
     border-radius: 10px;
@@ -282,7 +282,7 @@ label {
 .dia-clima {
     flex: 0 0 150px;
     /* Ensure all days have the same width */
-    background-color: #e0f2ff;
+    background-color: #4b978a;
     border-radius: 10px;
     padding: 10px;
     width: 150px;
@@ -332,7 +332,7 @@ p {
     margin: 10px;
     width: 200px;
     padding: 10px;
-    background-color: #1e5e17;
+    background-color: #64bcae;
     color: white;
     text-align: center;
     text-decoration: none;
