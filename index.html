@@ -13,25 +13,24 @@
 </head>
 
 <body>
-    <header>
+    <header class="header">
 
-        <div class="logo-container">
-            <img src="imagenes/logo.png" alt="Logo">
-        </div>
-
-        <div class="header-content">
+        <div class="logo-titulo">
+            <img src="imagenes/logo.png" alt="Logo" class="logo">
             <h1>Mini Exploradores</h1>
-
-            <label for="ciudad" class="sr-only">Selecciona una ciudad</label>
-            <select id="ciudad">
-                <option value="">Selecciona una ciudad</option>
-                <option value="Bilbao">Bilbao</option>
-                <option value="San Sebastián">Donosti</option>
-                <option value="Santander">Santander</option>
-            </select>
-
         </div>
     </header>
+
+  <div class="barra-controles">
+    <div class="filtro">
+        <label for="ciudad" class="sr-only">Selecciona una ciudad</label>
+        <select id="ciudad">
+            <option value="">Selecciona una ciudad</option>
+            <option value="Bilbao">Bilbao</option>
+            <option value="San Sebastián">Donosti</option>
+            <option value="Santander">Santander</option>
+        </select>
+    </div>
 
     <button id="verClimaBtn" aria-expanded="false">
         <i class="fas fa-cloud-sun"></i> Ver clima
@@ -40,7 +39,7 @@
     <button id="verMapaBtn" aria-expanded="false">
         <i class="fas fa-map-marker-alt"></i> Ver ubicaciones
     </button>
-
+</div>
     <section id="actividades" class="grid"></section>
 
     <!-- Clima debajo de actividades -->
