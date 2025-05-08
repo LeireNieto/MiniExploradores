@@ -290,6 +290,11 @@ background-color: #285b7c;
     padding: 10px;
 }
 
+/* Add more space between the cards and the header */
+.grid {
+    margin-top: 85px; /* Adjust the value as needed */
+}
+
 .card-front {
     background: white;
 }

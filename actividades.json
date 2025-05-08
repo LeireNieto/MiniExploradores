@@ -107,7 +107,31 @@
         "lat": 43.3192,
         "lng": -1.9732
     },
-       
+    {
+        "ciudad": "Vitoria",
+        "nombre": "Parque de la Florida",
+        "imagen": "Vitoria/parqueFlorida.jpeg",
+        "descripcion": "Un parque con jardines y áreas de juegos.",
+        "edad": "Todas las edades",
+        "precio": "Gratis",
+        "ubicacion": "Vitoria-Gasteiz, España",
+        "enlace": "https://www.vitoria-gasteiz.org/",
+        "lat": 42.8467,
+        "lng": -2.6711
+    },
+     
+    {
+        "ciudad": "Vitoria",
+        "nombre": "Museo de Ciencias Naturales",
+        "imagen": "Vitoria/museocienciasnaturales.jpeg",
+        "descripcion": "Un museo con exposiciones sobre la naturaleza y la ciencia.",
+        "edad": "Todas las edades",
+        "precio": "5€ por persona",
+        "ubicacion": "Calle de la Paz, 5, Vitoria-Gasteiz",
+        "enlace": "https://www.museodecienciasnaturales.com/",
+        "lat": 42.8467,
+        "lng": -2.6711
+    },
     {
         "ciudad": "Santander",
         "nombre": "Palacio de la Magdalena",
