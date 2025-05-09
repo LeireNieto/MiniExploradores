@@ -14,13 +14,13 @@
 
 <body>
     <header class="header">
-
         <div class="logo-titulo">
             <img src="imagenes/logo.png" alt="Logo" class="logo">
             <h1>Mini Exploradores</h1>
         </div>
     </header>
 
+  <div class="fondo-logo">  
   <div class="barra-controles">
     <div class="filtro">
         <label for="ciudad" class="sr-only">Selecciona una ciudad</label>
@@ -33,6 +33,7 @@
         </select>
     </div>
 
+    <div class="botones">
     <button id="verClimaBtn" aria-expanded="false">
         <i class="fas fa-cloud-sun"></i> Ver clima
     </button>
@@ -40,32 +41,29 @@
     <button id="verMapaBtn" aria-expanded="false">
         <i class="fas fa-map-marker-alt"></i> Ver ubicaciones
     </button>
+    </div>
 </div>
     <section id="actividades" class="grid"></section>
 
     <!-- Clima debajo de actividades -->
-    <div id="clima" style="display: none;">
+    <div id="clima">
         <h2>Clima en <span id="nombreCiudad">-</span></h2>
         <p><strong>Condición:</strong> <span id="descripcion">-</span></p>
         <p><strong>Temperatura:</strong> <span id="temperatura">-</span></p>
         <img id="iconoClima" src="" alt="Icono del clima" />
     </div>
     <!-- Clima de 5 días -->
-    <div id="clima5dias" style="display: none;">
-        <h3>Pronóstico para 5 días</h3>
-        <div id="diasPronostico" class="grid" style="gap: 10px;"></div>
+    <div id="clima5dias">
+               <div id="diasPronostico"></div>
     </div>
 
-
-
     <!-- Contenedor del mapa debajo de las actividades -->
-    <div id="contenedorMapa" style="display: none;">
+    <div id="contenedorMapa">
         <!-- <h2>Ubicación en el mapa</h2> -->
         <div id="mapa"></div>
     </div>
 
     
-
     <script src="js/script.js"></script>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </body>
