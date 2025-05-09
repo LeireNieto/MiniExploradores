@@ -189,6 +189,42 @@ label {
     }
 }
 
+.contenedor-actividades {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px;
+  }
+  
+  #actividades.actividades-scroll {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 40px;
+    padding: 20px 0;
+    flex-wrap: nowrap;
+    max-width: 90vw;
+  }
+  
+   
+  .flecha {
+    background: rgba(0, 0, 0, 0.1);
+    border: none;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+  }
+  
+  .flecha:hover {
+    background: rgba(0, 0, 0, 0.2);
+  }
+  
+  
+
 /* BOTONES */
 
 #verClimaBtn,
@@ -261,11 +297,10 @@ background-color: #285b7c;
 .card {
     width: 250px;
     height: 300px;
-    perspective: 1000px;
-    /* Efecto de profundidad */
+    perspective: 1000px; /* Efecto de profundidad */
     position: relative;
-    flex-shrink: 0;
-    /* Asegura que todas las tarjetas mantengan el mismo tamaño */
+    flex-shrink: 0; /* Asegura que todas las tarjetas mantengan el mismo tamaño */
+    margin: 0 15px; /* Margen horizontal uniforme entre las tarjetas */
 }
 
 .card-inner {

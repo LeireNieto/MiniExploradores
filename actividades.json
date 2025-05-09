@@ -108,6 +108,30 @@
         "lng": -1.9732
     },
     {
+        "ciudad": "San Sebastián",
+        "nombre": "Parque de la Ciudadela",
+        "imagen": "Donosti/ciudadela.jpg",  
+        "descripcion": "Un parque con áreas de juegos y un foso.",
+        "edad": "Todas las edades",
+        "precio": "Gratis",
+        "ubicacion": "San Sebastián, España",
+        "enlace": "https://www.donostiaeuskaltegiak.eus/",
+        "lat": 43.3183,
+        "lng": -1.9812
+    },
+    {
+        "ciudad": "San Sebastián",
+        "nombre": "Parque Aiete",
+        "imagen": "Donosti/parqueaiete.jpg",
+        "descripcion": "Un parque con jardines y un palacio.",
+        "edad": "Todas las edades",
+        "precio": "Gratis",
+        "ubicacion": "San Sebastián, España",
+        "enlace": "https://www.donostiaeuskaltegiak.eus/",
+        "lat": 43.3192,
+        "lng": -1.9732
+    },
+    {
         "ciudad": "Vitoria",
         "nombre": "Parque de la Florida",
         "imagen": "Vitoria/parqueFlorida.jpeg",

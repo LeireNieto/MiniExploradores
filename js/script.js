@@ -151,4 +151,18 @@ document.addEventListener("DOMContentLoaded", () => {
             climaContainer.innerHTML += `<p>No se pudo cargar el clima. Intenta más tarde.</p>`;
         }
     }
-});
+
+        // Desplazamiento horizontal con flechas
+        const scrollContainer = document.getElementById("actividades");
+        const flechaIzquierda = document.getElementById("flechaIzquierda");
+        const flechaDerecha = document.getElementById("flechaDerecha");
+        
+        flechaIzquierda.addEventListener("click", () => {
+            scrollContainer.scrollBy({ left: -300, behavior: "smooth" });
+        });
+        
+        flechaDerecha.addEventListener("click", () => {
+            scrollContainer.scrollBy({ left: 300, behavior: "smooth" });
+        });
+        
+ });
