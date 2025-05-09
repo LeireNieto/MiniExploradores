@@ -209,7 +209,7 @@ label {
   
    
   .flecha {
-    background: rgba(0, 0, 0, 0.1);
+    background: #64bcae;
     border: none;
     font-size: 24px;
     padding: 10px;
@@ -295,7 +295,11 @@ background-color: #285b7c;
 
 /* TARJETAS */
 .card {
-    width: 250px;
+    flex: 0 0 calc((1000px - 3 * 30px) / 4); /* 4 tarjetas con 3 espacios de 30px */
+    min-width: calc((1000px - 3 * 30px) / 4);
+    scroll-snap-align: start;
+    box-sizing: border-box;
+    width: 300px;
     height: 300px;
     perspective: 1000px; /* Efecto de profundidad */
     position: relative;
@@ -358,7 +362,7 @@ background-color: #285b7c;
 
 /* Add more space between the cards and the header */
 .grid {
-    margin-top: 85px; /* Adjust the value as needed */
+    margin-top: 90px; /* Adjust the value as needed */
 }
 
 .card-front {
