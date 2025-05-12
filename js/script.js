@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const ciudad = ciudadSelect.value;
                 mostrarActividades(ciudad);
 
-                if (climaContainer.style.display === "block") {
+                if (climaContainer.style.display === "block" && ciudad) {
                     obtenerClima(ciudad);
                 }
             });
@@ -112,22 +112,19 @@ document.addEventListener("DOMContentLoaded", () => {
             const datos = await respuesta.json();
 
             const nombreCiudad = ciudadSelect.querySelector(`option[value="${ciudad}"]`).textContent;
-            document.getElementById('nombreCiudad').textContent = nombreCiudad;
-
+            
             // Limpiar contenido anterior
-            climaContainer.innerHTML = `<h2>Pronóstico de tiempo en ${nombreCiudad} 5 días</h2>`;
+            climaContainer.innerHTML = `<h2>Pronóstico de tiempo en ${nombreCiudad} (5 días)</h2>`;
 
-            // Mostrar 1 pronóstico por día (cada 24h, aprox. cada 8 entradas)
             const diasMostrados = [];
             for (let i = 0; i < datos.list.length; i++) {
                 const entrada = datos.list[i];
                 const fecha = new Date(entrada.dt_txt);
                 const dia = fecha.toLocaleDateString("es-ES", { weekday: 'long', day: 'numeric', month: 'short' });
 
-                // Evita duplicados por día
                 if (!diasMostrados.includes(dia)) {
                     diasMostrados.push(dia);
-                                      
+
                     const descripcion = entrada.weather[0].description;
                     const temp = entrada.main.temp;
                     const icono = entrada.weather[0].icon;
@@ -152,17 +149,16 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-        // Desplazamiento horizontal con flechas
-        const scrollContainer = document.getElementById("actividades");
-        const flechaIzquierda = document.getElementById("flechaIzquierda");
-        const flechaDerecha = document.getElementById("flechaDerecha");
-        
-        flechaIzquierda.addEventListener("click", () => {
-            scrollContainer.scrollBy({ left: -300, behavior: "smooth" });
-        });
-        
-        flechaDerecha.addEventListener("click", () => {
-            scrollContainer.scrollBy({ left: 300, behavior: "smooth" });
-        });
-        
- });
+    // Scroll horizontal
+    const scrollContainer = document.getElementById("actividades");
+    const flechaIzquierda = document.getElementById("flechaIzquierda");
+    const flechaDerecha = document.getElementById("flechaDerecha");
+
+    flechaIzquierda.addEventListener("click", () => {
+        scrollContainer.scrollBy({ left: -300, behavior: "smooth" });
+    });
+
+    flechaDerecha.addEventListener("click", () => {
+        scrollContainer.scrollBy({ left: 300, behavior: "smooth" });
+    });
+});

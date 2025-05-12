@@ -109,15 +109,15 @@
     },
     {
         "ciudad": "San Sebastián",
-        "nombre": "Parque de la Ciudadela",
-        "imagen": "Donosti/ciudadela.jpg",  
-        "descripcion": "Un parque con áreas de juegos y un foso.",
+        "nombre": "Albaola Itsas Kultur Faktoria",
+        "imagen": "Donosti/albaola.jpeg",
+        "descripcion": "Un centro cultural dedicado a la construcción de barcos.",
         "edad": "Todas las edades",
-        "precio": "Gratis",
-        "ubicacion": "San Sebastián, España",
-        "enlace": "https://www.donostiaeuskaltegiak.eus/",
-        "lat": 43.3183,
-        "lng": -1.9812
+        "precio": "10€ por persona",
+        "ubicacion": "Ondartxo, 1, Pasaia", 
+        "enlace": "https://www.albaola.com/",
+        "lat": 43.3192,
+        "lng": -1.9732     
     },
     {
         "ciudad": "San Sebastián",
