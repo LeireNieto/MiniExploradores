@@ -13,8 +13,6 @@
     <link rel="stylesheet" href="mapa.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-
 </head>
 
 <body>
@@ -49,18 +47,12 @@
             </div>
         </div>
 
-        <!-- Scroll horizontal de actividades -->
         <div class="contenedor-actividades">
             <button class="flecha" id="flechaIzquierda">&#8592;</button>
-          
-           <!---<section id="actividades" class="actividades-scroll"></section>-->
-          
+            <section id="actividades" class="actividades-scroll"></section>
             <button class="flecha" id="flechaDerecha">&#8594;</button>
-          </div>
-          
-        <section id="actividades" class="actividades-scroll"></section>
-
-    </div>
+        </div>
+        </div>
 
     <!-- Clima debajo de actividades -->
     <div id="clima">
@@ -69,6 +61,7 @@
         <p><strong>Temperatura:</strong> <span id="temperatura">-</span></p>
         <img id="iconoClima" src="" alt="Icono del clima" />
     </div>
+
     <!-- Clima de 5 días -->
     <div id="clima5dias">
         <div id="diasPronostico"></div>
@@ -81,7 +74,7 @@
     </div>
 
     <script type="module" src="js/script.js"></script>
-   <!-- <script src="js/script.js"></script>-->
+    <!-- <script src="js/script.js"></script>-->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </body>
 

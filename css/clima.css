@@ -1,19 +1,23 @@
 /* CLIMA*/
 
 #clima {
+    display: none; /* Initially hidden */
     background-color: #E0F2F1;
     padding: 15px;
     margin: 75px auto;
     border-radius: 10px;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-    display: flex;
+    flex: 1;
     overflow-x: auto;
     gap: 10px;
     scroll-snap-type: x mandatory;
     justify-content: center;
     align-items: center;
     width: fit-content;
-    /* Adjust width to fit content */
+}
+
+#clima.active {
+    display: flex; /* Show when active */
 }
 
 .dia-clima {
