@@ -21,4 +21,19 @@ document.addEventListener("DOMContentLoaded", () => {
             obtenerClima(ciudad);
         }
     });
+
+    // Mostrar botón al hacer scroll
+window.addEventListener('scroll', () => {
+    const btn = document.getElementById('btnArriba');
+    if (window.scrollY > 300) {
+      btn.style.display = 'block';
+    } else {
+      btn.style.display = 'none';
+    }
+  });
+  
+  document.getElementById('btnArriba').addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+  
 });

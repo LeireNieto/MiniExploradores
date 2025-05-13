@@ -50,6 +50,7 @@ body {
     position: relative;
     z-index: 1; /* Asegura que el contenido esté por encima del fondo */
     padding-top: 50px;
+    overflow: hidden; /* Evita que el contenido se desborde */
   }
 
   /* Asegura que el contenido esté encima del fondo */
