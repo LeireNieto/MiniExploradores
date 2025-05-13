@@ -1,0 +1,96 @@
+/* BOTONES */
+
+#verClimaBtn,
+#verMapaBtn {
+    display: inline-block;
+    margin-left: 50px;
+    width: 200px;
+    padding: 10px;
+    background-color: #64bcae;
+    color: #1e5e17;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#verClimaBtn:hover {
+    background-color: #285b7c;
+}
+
+#verMapaBtn:hover,
+{
+background-color: #285b7c;
+}
+
+
+/* FILTRO */
+
+#ciudad {
+    border-radius: 9px;
+    margin-top: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    text-align: center;
+    font-size: 17px;
+    padding: 3px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+#filtro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 17px auto;
+    text-align: center;
+    width: 200px;
+}
+
+label {
+    margin-top: 15px;
+}
+
+
+
+/* BARRA CONTROLES*/
+
+.barra-controles {
+    position: fixed;
+    top: 155px;
+    /* Altura desde arriba, ajústala si tienes un header */
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    /* Elementos en fila */
+    background-color: #ffffffee;
+    padding: 10px 15px;
+    border-radius: 0 10px 10px 0;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    align-items: center;
+}
+
+.filtro {
+    padding: 5px 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    width: 160px;
+}

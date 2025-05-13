@@ -1,0 +1,47 @@
+/* CLIMA*/
+
+#clima {
+    background-color: #E0F2F1;
+    padding: 15px;
+    margin: 75px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    scroll-snap-type: x mandatory;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    /* Adjust width to fit content */
+}
+
+.dia-clima {
+    flex: 0 0 150px;
+    /* Ensure all days have the same width */
+    background-color: #64bcae;
+    border-radius: 10px;
+    padding: 10px;
+    width: 150px;
+    height: 200px;
+    /* Set a fixed height for uniformity */
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    scroll-snap-align: start;
+    margin: 0 10px;
+    display: inline-block;
+}
+
+h2 {
+    font-size: 20px;
+    color: #1e5e17;
+    margin-bottom: 10px;
+}
+
+h3,
+strong,
+p {
+    margin-bottom: 7px;
+    font-size: 15px;
+    color: #1e5e17;
+}

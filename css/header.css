@@ -1,0 +1,35 @@
+/* HEADER */
+header.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente */
+    height: 150px;
+    background-color: #beebe3;
+    text-align: center;
+}
+
+.logo-titulo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+
+.logo {
+    width: 115px;
+    height: auto;
+}
+
+h1 {
+    margin: 0;
+    font-size: 45px;
+    color: #1e5e17;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    animation: colorFan 3s infinite;
+    margin-top: 15px;
+    text-align: center;
+}
