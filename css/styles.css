@@ -29,6 +29,7 @@ html, body {
         min-height: 100%; /* Permite que la página se estire por completo */
         overflow: auto; /* Permite el desplazamiento si el contenido es más grande que la pantalla */
         padding-top: 60px; /* Ajusta según el tamaño del encabezado fijo */
+        background-color:#beebe3;; /* Cambia el color de fondo según tus preferencias */
     }
     
   }

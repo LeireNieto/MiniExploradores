@@ -1,16 +1,19 @@
 /* HEADER */
 header.header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    /* Centra horizontalmente */
-    align-items: center;
-    /* Centra verticalmente */
-    height: 123px;
-    background-color: #beebe3;
-    text-align: center;
-    margin-bottom: -49px;
-    padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 123px;
+  background-color: #beebe3;
+  text-align: center;
+  margin: 0; /* Elimina cualquier margen */
+  padding: 10px;
+  position: fixed; /* Fija el header en la parte superior */
+  top: 0; /* Asegura que esté en la parte superior */
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
 }
 
 .logo-titulo {
@@ -46,11 +49,11 @@ h1 {
   .fondo-logo::before {
     content: "";
     position: absolute;
-    top: 5;
+    top: 5px;
     left: 0;
     right: 0;
     height: 700px; /* Ajusta la altura del fondo si quieres más/menos área visible */
-    background-image: url('imagenes/logo.png');
+    background-image: url('../imagenes/logo.png'); /* Adjust path if necessary */
     background-repeat: no-repeat;
     background-position: center top;
     background-size: 700px auto;
