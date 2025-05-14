@@ -29,6 +29,33 @@
 background-color: #285b7c;
 }
 
+/* Botones fuera del header en responsive */
+
+@media (max-width: 768px) {
+    #verMapaBtn {
+        display: block;
+        margin: 20px auto;
+        width: 90%;
+        text-align: center;
+    }
+
+    #verMapaBtn:hover {
+        background-color: #285b7c;
+    }
+
+    #verClimaBtn {
+        display: block;
+        margin: 20px auto;
+        width: 90%;
+        text-align: center;
+    }
+
+    #verClimaBtn:hover {
+        background-color: #285b7c;
+    }
+}
+
+
 #btnArriba {
     position: fixed;
     bottom: 30px;
@@ -94,7 +121,6 @@ label {
 
 .barra-controles {
     position: fixed;
-    top: 180px; /* Incrementa el valor para más espacio */
     left: 0;
     display: flex;
     flex-direction: row; /* Elementos en fila */
@@ -104,6 +130,6 @@ label {
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
     align-items: center;
-    margin-bottom: 55px;
+    margin-bottom: 59px;
 }
 

@@ -7,7 +7,26 @@
     margin-top: 100px;
   }
    
-   
+
+.contenedor-actividades {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px;
+    margin-bottom: 100px;
+  }
+  
+  #actividades.actividades-scroll {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 40px;
+    padding: 20px 0;
+    flex-wrap: nowrap;
+    max-width: 90vw;
+  }
+     
   .flecha {
     background: #64bcae;
     border: none;
@@ -29,7 +48,7 @@
 
 /* CONTENEDOR DE TARJETAS */
 .grid {
-    margin-top: 250px; /* Aumenta este valor según lo que necesites */
+    margin-top: 350px; /* Aumenta este valor según lo que necesites */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
