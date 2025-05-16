@@ -1,19 +1,16 @@
 /* HEADER */
-header.header {
+.header {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: center; /* Centra todo horizontalmente */
   align-items: center;
+  position: fixed;
+  top: 0; left: 0; right: 0;
   height: 123px;
-  background-color: #beebe3;
-  text-align: center;
-  margin: 0; /* Elimina cualquier margen */
-  padding: 10px;
-  position: fixed; /* Fija el header en la parte superior */
-  top: 0; /* Asegura que esté en la parte superior */
-  left: 0;
-  right: 0;
-  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+  background-color: #64bcae;
+  padding: 10px 30px;
+  margin: 0;
+  z-index: 1000;
+  gap: 20px; /* espacio entre centro y derecha */
 }
 
 .logo-titulo {
@@ -66,5 +63,33 @@ h1 {
   .fondo-logo > * {
     position: relative;
     z-index: 1;
+  }
+  .contact-links {
+    position: absolute;
+    right: 30px; /* Ajusta según el espacio deseado desde el borde derecho */
+    top: 50%; /* Centra verticalmente dentro del header */
+    transform: translateY(-50%); /* Ajusta el centrado vertical */
+    font-size: 1.5rem; /* tamaño iconos */
+  }
+  
+  .contact-links a {
+    color: #333; /* color base para iconos */
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    text-decoration: none;
+  }
+  
+  .contact-links a.email-link i {
+    color: #333; /* o el color que prefieras para el email */
+  }
+  
+  .contact-links a.instagram-link i {
+    /* color oficial Instagram (simplificado) */
+    color: #E1306C;
+  }
+  
+  /* Opcional: efecto hover */
+  .contact-links a:hover i {
+    opacity: 0.7;
   }
   
