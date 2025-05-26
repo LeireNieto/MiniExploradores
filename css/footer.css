@@ -1,11 +1,16 @@
 
 .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
     background-color: #64bcae;
     color: white;
     text-align: center;
-    padding: 20px;
-    font-size: 16px;
-   }
+    padding: 10px;
+    z-index: 999;
+  }
+  
 
 .footer a {
     color: white;
