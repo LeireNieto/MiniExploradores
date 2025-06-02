@@ -62,12 +62,16 @@ export function mostrarActividades(ciudad) {
 
     filtradas.forEach(a => {
         const card = document.createElement("div");
-        card.classList.add("card");
+        card.classList.add("card", "actividad-card");
+
+
         card.innerHTML = `
             <div class="card-inner">
                 <div class="card-front">
                     <img src="imagenes/${a.imagen}" alt="${a.nombre}">
                     <h3>${a.nombre}</h3>
+                    <button class="flip-btn">+</button>
+                <button class="fav-btn">♥</button>
                 </div>
                 <div class="card-back">
                     <p>${a.descripcion}</p>
@@ -78,6 +82,14 @@ export function mostrarActividades(ciudad) {
                 </div>
             </div>
         `;
+
+         // 🔄 Activar giro al hacer clic en el botón +
+    const flipBtn = card.querySelector(".flip-btn");
+    flipBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        card.classList.toggle("flip");
+    });
+
         contenedor.appendChild(card);
 
         if (a.lat && a.lng) {
