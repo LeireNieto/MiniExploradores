@@ -46,7 +46,7 @@ h1 {
   .fondo-logo::before {
     content: "";
     position: absolute;
-    top: 5px;
+    top: 90px; /* Baja el fondo para que el logo se vea mejor */
     left: 0;
     right: 0;
     height: 700px; /* Ajusta la altura del fondo si quieres más/menos área visible */
@@ -59,11 +59,13 @@ h1 {
     pointer-events: none; /* Evita interferencias con clics */
   }
   
+  
   /* Asegura que el contenido esté encima del fondo */
   .fondo-logo > * {
     position: relative;
     z-index: 1;
   }
+  
   .contact-links {
     position: absolute;
     right: 30px; /* Ajusta según el espacio deseado desde el borde derecho */
