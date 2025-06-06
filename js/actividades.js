@@ -71,7 +71,7 @@ export function mostrarActividades(ciudad) {
                     <img src="imagenes/${a.imagen}" alt="${a.nombre}">
                     <h3>${a.nombre}</h3>
                     <button class="flip-btn">+</button>
-                <button class="fav-btn">♥</button>
+                    <button class="fav-btn">♥</button>
                 </div>
                 <div class="card-back">
                     <p>${a.descripcion}</p>
@@ -79,16 +79,23 @@ export function mostrarActividades(ciudad) {
                     <p><strong>Precio:</strong> ${a.precio}</p>
                     <p><strong>Ubicación:</strong> ${a.ubicacion}</p>
                     ${a.enlace ? `<a href="${a.enlace}" target="_blank">Más información</a>` : ""}
+                    <button class="volver-btn">Volver</button>
                 </div>
             </div>
         `;
 
-         // 🔄 Activar giro al hacer clic en el botón +
-    const flipBtn = card.querySelector(".flip-btn");
-    flipBtn.addEventListener("click", (e) => {
-        e.stopPropagation();
-        card.classList.toggle("flip");
-    });
+        // 🔄 Activar giro al hacer clic en el botón +
+        const flipBtn = card.querySelector(".flip-btn");
+        flipBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            card.classList.toggle("flip");
+        });
+        const volverBtn = card.querySelector(".volver-btn");
+        volverBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            card.classList.remove("flip");
+        });
+
 
         contenedor.appendChild(card);
 
