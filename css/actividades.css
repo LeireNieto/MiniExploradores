@@ -134,18 +134,7 @@
   text-decoration: underline;
 }
 
-.favorito {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 24px;
-  color: #beebe3;
-  margin-top: 10px;
-}
 
-.favorito.activo i {
-  color: red;
-}
 
 .flip-btn,
 .fav-btn {
@@ -164,12 +153,25 @@
   background-color: #29b6f6;
   color: white;
 }
-
 .fav-btn {
-  left: 8px;
-  background-color: #ff8a80;
-  color: white;
+  background-color: white;
+  border: 2px solid red;
+  border-radius: 50%;
+  padding: 5px;
+  cursor: pointer;
+  color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 8px; /* Move to the left */
 }
+
+.fav-btn.activo {
+  background-color: white;
+  color: red;
+}
+
 
 .volver-btn {
   margin-top: 10px;

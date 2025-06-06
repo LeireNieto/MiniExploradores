@@ -1,4 +1,3 @@
-// actividades.js
 let actividades = [];
 let mapa;
 let marcadores = [];
@@ -14,6 +13,10 @@ export function inicializarActividades() {
     const contenedorMapa = document.getElementById("contenedorMapa");
     const verMapaBtn = document.getElementById("verMapaBtn");
 
+    // Botón nuevo "Ver favoritos"
+    const verFavoritosBtn = document.getElementById("verFavoritosBtn");
+    let mostrandoFavoritos = false;
+
     verMapaBtn.addEventListener("click", () => {
         const visible = contenedorMapa.style.display === "block";
         contenedorMapa.style.display = visible ? "none" : "block";
@@ -24,6 +27,19 @@ export function inicializarActividades() {
 
         if (!visible) {
             setTimeout(() => mapa.invalidateSize(), 200);
+        }
+    });
+
+    verFavoritosBtn.addEventListener("click", () => {
+        mostrandoFavoritos = !mostrandoFavoritos;
+        const ciudadSeleccionada = document.getElementById("ciudad").value;
+
+        if (mostrandoFavoritos) {
+            verFavoritosBtn.innerHTML = '<i class="fas fa-heart"></i> Mostrar todo';
+            mostrarFavoritos();
+        } else {
+            verFavoritosBtn.innerHTML = '<i class="fas fa-heart"></i> Ver favoritos';
+            mostrarActividades(ciudadSeleccionada);
         }
     });
 
@@ -61,49 +77,117 @@ export function mostrarActividades(ciudad) {
     }
 
     filtradas.forEach(a => {
-        const card = document.createElement("div");
-        card.classList.add("card", "actividad-card");
+        crearCard(a, contenedor);
+    });
+}
 
+function mostrarFavoritos() {
+    const contenedor = document.getElementById("actividades");
+    contenedor.innerHTML = "";
+    marcadores.forEach(m => mapa.removeLayer(m));
+    marcadores = [];
 
-        card.innerHTML = `
-            <div class="card-inner">
-                <div class="card-front">
-                    <img src="imagenes/${a.imagen}" alt="${a.nombre}">
-                    <h3>${a.nombre}</h3>
-                    <button class="flip-btn">+</button>
-                    <button class="fav-btn">♥</button>
-                </div>
-                <div class="card-back">
-                    <p>${a.descripcion}</p>
-                    <p><strong>Edad recomendada:</strong> ${a.edad}</p>
-                    <p><strong>Precio:</strong> ${a.precio}</p>
-                    <p><strong>Ubicación:</strong> ${a.ubicacion}</p>
-                    ${a.enlace ? `<a href="${a.enlace}" target="_blank">Más información</a>` : ""}
-                    <button class="volver-btn">Volver</button>
-                </div>
+    const favoritos = obtenerFavoritos();
+
+    const actividadesFavoritas = actividades.filter(a => favoritos.includes(a.id || a.nombre));
+
+    if (actividadesFavoritas.length === 0) {
+        contenedor.innerHTML = "<p>No tienes actividades favoritas.</p>";
+        return;
+    }
+
+    if (actividadesFavoritas[0].lat && actividadesFavoritas[0].lng) {
+        mapa.setView([actividadesFavoritas[0].lat, actividadesFavoritas[0].lng], 13);
+    }
+
+    actividadesFavoritas.forEach(a => {
+        crearCard(a, contenedor, true);
+    });
+}
+
+function crearCard(a, contenedor, esFavoritoView = false) {
+    const card = document.createElement("div");
+    card.classList.add("card", "actividad-card");
+
+    // Para el corazón: si está favorito, rellena el corazón
+    const favoritos = obtenerFavoritos();
+    const esFavorito = favoritos.includes(a.id || a.nombre);
+
+    card.innerHTML = `
+        <div class="card-inner">
+            <div class="card-front">
+                <img src="imagenes/${a.imagen}" alt="${a.nombre}">
+                <h3>${a.nombre}</h3>
+                <button class="flip-btn">+</button>
+                <button class="fav-btn"><i class="${esFavorito ? 'fas' : 'far'} fa-heart"></i></button>
             </div>
-        `;
+            <div class="card-back">
+                <p>${a.descripcion}</p>
+                <p><strong>Edad recomendada:</strong> ${a.edad}</p>
+                <p><strong>Precio:</strong> ${a.precio}</p>
+                <p><strong>Ubicación:</strong> ${a.ubicacion}</p>
+                ${a.enlace ? `<a href="${a.enlace}" target="_blank">Más información</a>` : ""}
+                <button class="volver-btn">Volver</button>
+            </div>
+        </div>
+    `;
 
-        // 🔄 Activar giro al hacer clic en el botón +
-        const flipBtn = card.querySelector(".flip-btn");
-        flipBtn.addEventListener("click", (e) => {
-            e.stopPropagation();
-            card.classList.toggle("flip");
-        });
-        const volverBtn = card.querySelector(".volver-btn");
-        volverBtn.addEventListener("click", (e) => {
-            e.stopPropagation();
-            card.classList.remove("flip");
-        });
+    const flipBtn = card.querySelector(".flip-btn");
+    flipBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        card.classList.toggle("flip");
+    });
 
+    const volverBtn = card.querySelector(".volver-btn");
+    volverBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        card.classList.remove("flip");
+    });
 
-        contenedor.appendChild(card);
+    const favBtn = card.querySelector(".fav-btn");
+    const icono = favBtn.querySelector("i");
+    const idActividad = a.id || a.nombre;
 
-        if (a.lat && a.lng) {
-            const marcador = L.marker([a.lat, a.lng])
-                .addTo(mapa)
-                .bindPopup(`<strong>${a.nombre}</strong><br>${a.ubicacion}`);
-            marcadores.push(marcador);
+    favBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const favoritos = obtenerFavoritos();
+        const index = favoritos.indexOf(idActividad);
+
+        if (index === -1) {
+            favoritos.push(idActividad);
+            icono.classList.remove("far");
+            icono.classList.add("fas");
+            favBtn.classList.add("activo");
+        } else {
+            favoritos.splice(index, 1);
+            icono.classList.remove("fas");
+            icono.classList.add("far");
+            favBtn.classList.remove("activo");
+        }
+
+        guardarFavoritos(favoritos);
+
+        // Si estamos en la vista de favoritos, al quitar uno se actualiza la lista
+        if (esFavoritoView) {
+            mostrarFavoritos();
         }
     });
+
+    contenedor.appendChild(card);
+
+    if (a.lat && a.lng) {
+        const marcador = L.marker([a.lat, a.lng])
+            .addTo(mapa)
+            .bindPopup(`<strong>${a.nombre}</strong><br>${a.ubicacion}`);
+        marcadores.push(marcador);
+    }
+}
+
+function obtenerFavoritos() {
+    const favs = localStorage.getItem("favoritos");
+    return favs ? JSON.parse(favs) : [];
+}
+
+function guardarFavoritos(favoritos) {
+    localStorage.setItem("favoritos", JSON.stringify(favoritos));
 }

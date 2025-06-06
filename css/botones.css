@@ -29,31 +29,37 @@
 background-color: #285b7c;
 }
 
-/* Botones fuera del header en responsive */
-
-@media (max-width: 768px) {
-    #verMapaBtn {
-        display: block;
-        margin: 20px auto;
-        width: 90%;
-        text-align: center;
-    }
-
-    #verMapaBtn:hover {
-        background-color: #285b7c;
-    }
-
-    #verClimaBtn {
-        display: block;
-        margin: 20px auto;
-        width: 90%;
-        text-align: center;
-    }
-
-    #verClimaBtn:hover {
-        background-color: #285b7c;
-    }
+#verFavoritosBtn {
+    display: inline-block;
+    margin-left: 50px;
+    width: 200px;
+    padding: 10px;
+    background-color: #64bcae;    /* fondo blanco */
+    color: #1e5e17;             /* mismo color texto */
+    border: 2px solid red;      /* borde rojo */
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
 }
+
+#verFavoritosBtn i {
+    color: red; /* corazón rojo */
+    font-size: 18px;
+}
+
+#verFavoritosBtn:hover {
+    background-color: #ffe6e6; /* un rosado muy suave al pasar el ratón */
+    color: #b30000;            /* texto rojo oscuro al hover */
+    border-color: #b30000;
+}
+
 
 
 #btnArriba {
