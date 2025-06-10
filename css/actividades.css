@@ -12,10 +12,12 @@
   display: flex;
   overflow-x: auto;
   scroll-behavior: smooth;
-  gap: 49px;
-  padding: 49px 0;
+  gap: 55px;
+  padding: 49px 20px;
   flex-wrap: nowrap;
   max-width: 90vw;
+  margin-left: 20px; /* Margen izquierdo */
+  margin-right: 20px; /* Margen derecho */
 }
 
 .flecha {
