@@ -122,6 +122,7 @@ function mostrarFavoritos() {
     for (const ciudad in favoritasPorCiudad) {
         const tituloCiudad = document.createElement("h3");
         tituloCiudad.textContent = ciudad;
+        tituloCiudad.classList.add("favoritos-ciudad-titulo");
         contenedor.appendChild(tituloCiudad);
 
         const grupoCiudad = document.createElement("div");
