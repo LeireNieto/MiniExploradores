@@ -1,5 +1,6 @@
 [
     {
+        "id": "bilbao-itsasmuseoa",
         "ciudad": "Bilbao",
         "nombre": "Itsasmuseoa",
         "imagen": "Bilbao/itsasmuseoa.jpg",
@@ -12,6 +13,7 @@
         "lng": -2.9399
     },
     {
+        "id": "bilbao-parquedonacasilda",
         "ciudad": "Bilbao",
         "nombre": "Parque Doña Casilda",
         "imagen": "Bilbao/donacasilda.jpg",
@@ -24,6 +26,7 @@
         "lng": -2.9416
     },
     {
+        "id": "bilbao-bosquedeoma",
         "ciudad": "Bilbao",
         "nombre": "Bosque de Oma",
         "imagen": "Bilbao/oma.jpeg",
@@ -36,6 +39,7 @@
         "lng": -2.6153
     },
     {
+        "id": "bilbao-museoguggenheim",
         "ciudad": "Bilbao",
         "nombre": "Museo Guggenheim",
         "imagen": "Bilbao/guggenheim.jpg",
@@ -47,7 +51,8 @@
         "lat": 43.2630,
         "lng": -2.9349
     },
-     {
+    {
+        "id": "sansebastian-monteurgull",
         "ciudad": "San Sebastián",
         "nombre": "Monte Urgull",
         "imagen": "Donosti/monteurgull.jpg",
@@ -60,6 +65,7 @@
         "lng": -1.9812
     },
     {
+        "id": "sansebastian-aquarium",
         "ciudad": "San Sebastián",
         "nombre": "Aquarium",
         "imagen": "Donosti/aquarium.jpeg",
@@ -72,6 +78,7 @@
         "lng": -1.9855
     },
     {
+        "id": "sansebastian-monteigueldo",
         "ciudad": "San Sebastián",
         "nombre": "Monte Igueldo",
         "imagen": "Donosti/monteigueldo.jpeg",
@@ -84,6 +91,7 @@
         "lng": -2.0172
     },
     {
+        "id": "sansebastian-playadelaconcha",
         "ciudad": "San Sebastián",
         "nombre": "Playa de la Concha",
         "imagen": "Donosti/laconcha.jpg",
@@ -96,6 +104,7 @@
         "lng": -1.9812
     },
     {
+        "id": "sansebastian-museodelacienciaeureka",
         "ciudad": "San Sebastián",
         "nombre": "Museo de la Ciencia Eureka!",
         "imagen": "Donosti/eureka.jpg",
@@ -108,6 +117,7 @@
         "lng": -1.9732
     },
     {
+        "id": "sansebastian-albaolaitsaskulturfaktoria",
         "ciudad": "San Sebastián",
         "nombre": "Albaola Itsas Kultur Faktoria",
         "imagen": "Donosti/albaola.jpeg",
@@ -120,6 +130,7 @@
         "lng": -1.9732     
     },
     {
+        "id": "sansebastian-parqueaiete",
         "ciudad": "San Sebastián",
         "nombre": "Parque Aiete",
         "imagen": "Donosti/parqueaiete.jpeg",
@@ -132,6 +143,7 @@
         "lng": -1.9732
     },
     {
+        "id": "vitoria-parquedelaflorida",
         "ciudad": "Vitoria",
         "nombre": "Parque de la Florida",
         "imagen": "Vitoria/parqueFlorida.jpeg",
@@ -143,8 +155,8 @@
         "lat": 42.8467,
         "lng": -2.6711
     },
-     
     {
+        "id": "vitoria-museodecienciasnaturales",
         "ciudad": "Vitoria",
         "nombre": "Museo de Ciencias Naturales",
         "imagen": "Vitoria/museocienciasnaturales.jpeg",
@@ -157,6 +169,7 @@
         "lng": -2.6711
     },
     {
+        "id": "santander-palaciodelamagdalena",
         "ciudad": "Santander",
         "nombre": "Palacio de la Magdalena",
         "imagen": "Santander/palaciomagdalena.jpg",        
@@ -169,6 +182,7 @@
         "lng": -3.7822
     },
     {
+        "id": "santander-centrobotin",
         "ciudad": "Santander",
         "nombre": "Centro Botín",
         "imagen": "Santander/centrobotin.jpg",
@@ -181,6 +195,7 @@
         "lng": -3.7822
     },
     {
+        "id": "santander-museomaritimodelcantabrico",
         "ciudad": "Santander",
         "nombre": "Museo Marítimo del Cantábrico",
         "imagen": "Santander/museomaritimodelcantabrico.jpeg",
@@ -193,6 +208,7 @@
         "lng": -3.7822
     },
     {
+        "id": "santander-parquedelanaturalezadecabarceno",
         "ciudad": "Santander",
         "nombre": "Parque de la Naturaleza de Cabárceno",
         "imagen": "Santander/cabarceno.webp",
@@ -205,6 +221,7 @@
         "lng": -3.8833
     },
     {
+        "id": "santander-playadelsardinero",
         "ciudad": "Santander",
         "nombre": "Playa del Sardinero",
         "imagen": "Santander/sardinero.jpg",
@@ -217,6 +234,7 @@
         "lng": -3.7834
     },
     {
+        "id": "santander-parquedelasllamas",
         "ciudad": "Santander",
         "nombre": "Parque de las Llamas",
         "imagen": "Santander/parquelasllamas.jpg",
@@ -229,6 +247,7 @@
         "lng": -3.7822
     },
     {
+        "id": "santander-museodeprehistoriayarqueologia",
         "ciudad": "Santander",
         "nombre": "Museo de Prehistoria y Arqueología",
         "imagen": "Santander/museoprehistoriacantabria.jpg",
@@ -241,6 +260,7 @@
         "lng": -3.7822
     },
     {
+        "id": "logrono-parquedelebro",
         "ciudad": "Logroño",
         "nombre": "Parque del Ebro",
         "imagen": "Logroño/parquedelebro.jpeg",
@@ -253,6 +273,7 @@
         "lng": -2.4545
     },
     {
+        "id": "logrono-museodelarioja",
         "ciudad": "Logroño",
         "nombre": "Museo de La Rioja",
         "imagen": "Logroño/museolarioja.jpeg",
@@ -265,6 +286,7 @@
         "lng": -2.4481
     },
     {
+        "id": "logrono-casadelasciencias",
         "ciudad": "Logroño",
         "nombre": "Casa de las Ciencias",
         "imagen": "Logroño/casadelasciencias.jpg",
@@ -277,6 +299,7 @@
         "lng": -2.4567
     },
     {
+        "id": "pamplona-parquedelataconera",
         "ciudad": "Pamplona",
         "nombre": "Parque de la Taconera",
         "imagen": "Pamplona/parquetaconera.jpg",
@@ -289,6 +312,7 @@
         "lng": -1.6475
     },
     {
+        "id": "pamplona-planetariodepamplona",
         "ciudad": "Pamplona",
         "nombre": "Planetario de Pamplona",
         "imagen": "Pamplona/planetario.jpeg",
@@ -301,6 +325,7 @@
         "lng": -1.6519
     },
     {
+        "id": "pamplona-ciudadeladepamplona",
         "ciudad": "Pamplona",
         "nombre": "Ciudadela de Pamplona",
         "imagen": "Pamplona/ciudadela.jpeg",
@@ -312,5 +337,4 @@
         "lat": 42.8128,
         "lng": -1.6480
     }
-    
 ]

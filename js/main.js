@@ -6,10 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const climaContainer = document.getElementById("clima");
     const verClimaBtn = document.getElementById("verClimaBtn");
 
-    // Inicializar actividades y mapa
     inicializarActividades();
 
-    // Botón Ver Clima
     verClimaBtn.addEventListener("click", () => {
         toggleClima(ciudadSelect.value);
     });
@@ -22,18 +20,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Mostrar botón al hacer scroll
-window.addEventListener('scroll', () => {
-    const btn = document.getElementById('btnArriba');
-    if (window.scrollY > 300) {
-      btn.style.display = 'block';
-    } else {
-      btn.style.display = 'none';
-    }
-  });
+    window.addEventListener('scroll', () => {
+        const btn = document.getElementById('btnArriba');
+        btn.style.display = (window.scrollY > 300) ? 'block' : 'none';
+    });
   
-  document.getElementById('btnArriba').addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-  
+    document.getElementById('btnArriba').addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 });
