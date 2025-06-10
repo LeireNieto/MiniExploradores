@@ -30,6 +30,7 @@ export function inicializarActividades() {
         mostrandoFavoritos = !mostrandoFavoritos;
         if (mostrandoFavoritos) {
             verFavoritosBtn.innerHTML = '<i class="fas fa-heart"></i> Mostrar todo';
+            cerrarClimaYMapa(); // <<--- CIERRA CLIMA Y MAPA AL ENTRAR EN FAVORITOS
             mostrarFavoritos();
         } else {
             verFavoritosBtn.innerHTML = '<i class="fas fa-heart"></i> Ver favoritos';
@@ -37,20 +38,38 @@ export function inicializarActividades() {
         }
     });
 
+    // Escucha cambios en el select de ciudad
+    document.getElementById("ciudad").addEventListener("change", (e) => {
+        mostrarActividades(e.target.value);
+    });
+
+    // Carga inicial de actividades
     fetch("actividades.json")
         .then(res => res.json())
         .then(data => {
             actividades = data;
             mostrarActividades(document.getElementById("ciudad").value);
         });
+}
 
-    const scrollContainer = document.getElementById("actividades");
-    document.getElementById("flechaIzquierda").addEventListener("click", () => {
-        scrollContainer.scrollBy({ left: -300, behavior: "smooth" });
-    });
-    document.getElementById("flechaDerecha").addEventListener("click", () => {
-        scrollContainer.scrollBy({ left: 300, behavior: "smooth" });
-    });
+// --- NUEVA FUNCIÓN PARA CERRAR CLIMA Y MAPA ---
+function cerrarClimaYMapa() {
+    // CIERRA EL CLIMA
+    const clima = document.getElementById("clima");
+    const clima5dias = document.getElementById("clima5dias");
+    if (clima) clima.style.display = "none";
+    if (clima5dias) clima5dias.style.display = "none";
+    const verClimaBtn = document.getElementById("verClimaBtn");
+    if (verClimaBtn) verClimaBtn.setAttribute("aria-expanded", "false");
+
+    // CIERRA EL MAPA
+    const contenedorMapa = document.getElementById("contenedorMapa");
+    if (contenedorMapa) contenedorMapa.style.display = "none";
+    const verMapaBtn = document.getElementById("verMapaBtn");
+    if (verMapaBtn) {
+        verMapaBtn.setAttribute("aria-expanded", "false");
+        verMapaBtn.innerHTML = '<i class="fas fa-map-marker-alt"></i> Ver ubicaciones';
+    }
 }
 
 export function mostrarActividades(ciudad) {
@@ -69,16 +88,12 @@ export function mostrarActividades(ciudad) {
         mapa.setView([filtradas[0].lat, filtradas[0].lng], 13);
     }
 
-    // Contenedor horizontal para las actividades
+    // Contenedor grid para las actividades
     const grupoActividades = document.createElement("div");
-    grupoActividades.classList.add("actividades-horizontal");
-    grupoActividades.style.display = "flex";
-    grupoActividades.style.overflowX = "auto";
-    grupoActividades.style.gap = "1rem";
-    grupoActividades.style.padding = "1rem 0";
-    grupoActividades.style.width = "100%";
+    grupoActividades.classList.add("actividades-grid");
 
-    filtradas.forEach(a => crearCard(a, grupoActividades));
+    // Solo mostramos las primeras 8 actividades
+    filtradas.slice(0, 8).forEach(a => crearCard(a, grupoActividades));
     contenedor.appendChild(grupoActividades);
 }
 
@@ -110,14 +125,9 @@ function mostrarFavoritos() {
         contenedor.appendChild(tituloCiudad);
 
         const grupoCiudad = document.createElement("div");
-        grupoCiudad.classList.add("actividades-horizontal");
-        grupoCiudad.style.display = "flex";
-        grupoCiudad.style.overflowX = "auto";
-        grupoCiudad.style.gap = "1rem";
-        grupoCiudad.style.padding = "1rem 0";
-        grupoCiudad.style.width = "100%";
+        grupoCiudad.classList.add("actividades-grid");
 
-        favoritasPorCiudad[ciudad].forEach(a => crearCard(a, grupoCiudad, true));
+        favoritasPorCiudad[ciudad].slice(0, 8).forEach(a => crearCard(a, grupoCiudad, true));
         contenedor.appendChild(grupoCiudad);
     }
 
@@ -128,7 +138,6 @@ function mostrarFavoritos() {
 function crearCard(a, contenedor, esFavoritoView = false) {
     const card = document.createElement("div");
     card.classList.add("card", "actividad-card");
-    card.style.minWidth = "250px"; // Ajusta según tu diseño
 
     const esFavoritoActividad = esFavorito(a.id);
 
