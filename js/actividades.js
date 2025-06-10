@@ -88,7 +88,6 @@ function mostrarFavoritos() {
     marcadores = [];
 
     const favoritos = obtenerFavoritos();
-
     const actividadesFavoritas = actividades.filter(a => favoritos.includes(a.id || a.nombre));
 
     if (actividadesFavoritas.length === 0) {
@@ -96,14 +95,40 @@ function mostrarFavoritos() {
         return;
     }
 
-    if (actividadesFavoritas[0].lat && actividadesFavoritas[0].lng) {
-        mapa.setView([actividadesFavoritas[0].lat, actividadesFavoritas[0].lng], 13);
+    // Agrupar por ciudad
+    const favoritasPorCiudad = {};
+    actividadesFavoritas.forEach(a => {
+        if (!favoritasPorCiudad[a.ciudad]) {
+            favoritasPorCiudad[a.ciudad] = [];
+        }
+        favoritasPorCiudad[a.ciudad].push(a);
+    });
+
+    // Mostrar por ciudad
+    for (const ciudad in favoritasPorCiudad) {
+        const tituloCiudad = document.createElement("h3");
+        tituloCiudad.textContent = ciudad;
+      
+        contenedor.appendChild(tituloCiudad);
+
+        const grupoCiudad = document.createElement("div");
+        grupoCiudad.classList.add("contenedor-actividades");
+        grupoCiudad.style.flexWrap = "wrap";
+
+        favoritasPorCiudad[ciudad].forEach(a => {
+            crearCard(a, grupoCiudad, true);
+        });
+
+        contenedor.appendChild(grupoCiudad);
     }
 
-    actividadesFavoritas.forEach(a => {
-        crearCard(a, contenedor, true);
-    });
+    // Centrar el mapa en la primera actividad
+    const primera = actividadesFavoritas[0];
+    if (primera.lat && primera.lng) {
+        mapa.setView([primera.lat, primera.lng], 13);
+    }
 }
+
 
 function crearCard(a, contenedor, esFavoritoView = false) {
     const card = document.createElement("div");

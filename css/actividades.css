@@ -8,7 +8,7 @@
   
 }
 
-#actividades.actividades-scroll {
+.actividades-scroll {
   display: flex;
   overflow-x: auto;
   scroll-behavior: smooth;
@@ -16,9 +16,21 @@
   padding: 49px 20px;
   flex-wrap: nowrap;
   max-width: 90vw;
-  margin-left: 20px; /* Margen izquierdo */
-  margin-right: 20px; /* Margen derecho */
+  margin-left: 20px; 
+  margin-right: 20px; 
 }
+
+.actividades-scroll-por-ciudad {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 55px;
+  padding: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 40px;
+}
+
 
 .flecha {
   background: #64bcae;
