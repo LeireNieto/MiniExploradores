@@ -104,6 +104,7 @@ h1 {
 @media (max-width: 1024px) {
   h1 {
     font-size: 35px;
+    align-items: center;
   }
 
   .logo {
@@ -112,7 +113,8 @@ h1 {
 
   .contact-links {
     font-size: 1.3rem;
-    right: 20px;
+    align-items: right;
+    right: -30px; /* Adjusted to move it slightly to the left */
   }
 }
 
@@ -142,8 +144,7 @@ h1 {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    gap: 10px;
-  }
+   }
 
   h1 {
     font-size: 28px;
@@ -152,11 +153,13 @@ h1 {
   }
 
   .contact-links {
-    position: static;
+    position: relative;
     transform: none;
     font-size: 1.2rem;
-    margin-top: 0;
+    margin left: 0;
+    display: flex;
     justify-content: flex-end;
+    gap: 7px;
   }
 }
 
