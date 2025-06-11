@@ -2,7 +2,6 @@
 .header {
   display: flex;
   justify-content: center;
-  /* Centra todo horizontalmente */
   align-items: center;
   position: fixed;
   top: 0;
@@ -14,7 +13,6 @@
   margin: 0;
   z-index: 1000;
   gap: 20px;
-  /* espacio entre centro y derecha */
 }
 
 .logo-titulo {
@@ -29,6 +27,12 @@
   height: auto;
 }
 
+/* Agrupa h1 y enlaces */
+.titulo-contacto {
+  display: block;
+  position: relative;
+}
+
 h1 {
   margin: 0;
   font-size: 45px;
@@ -41,34 +45,26 @@ h1 {
 .fondo-logo {
   position: relative;
   z-index: 1;
-  /* Asegura que el contenido esté por encima del fondo */
   padding-top: 50px;
 }
 
-/* Fondo semitransparente solo con el logo */
 .fondo-logo::before {
   content: "";
   position: absolute;
   top: 90px;
-  /* Baja el fondo para que el logo se vea mejor */
   left: 0;
   right: 0;
   height: 700px;
-  /* Ajusta la altura del fondo si quieres más/menos área visible */
   background-image: url('../imagenes/logo.png');
-  /* Adjust path if necessary */
   background-repeat: no-repeat;
   background-position: center top;
   background-size: 700px auto;
   opacity: 0.10;
   z-index: 0;
   pointer-events: none;
-  /* Evita interferencias con clics */
 }
 
-
-/* Asegura que el contenido esté encima del fondo */
-.fondo-logo>* {
+.fondo-logo > * {
   position: relative;
   z-index: 1;
 }
@@ -76,18 +72,15 @@ h1 {
 .contact-links {
   position: absolute;
   right: 30px;
-  /* Ajusta según el espacio deseado desde el borde derecho */
   top: 50%;
-  /* Centra verticalmente dentro del header */
   transform: translateY(-50%);
-  /* Ajusta el centrado vertical */
   font-size: 1.5rem;
-  /* tamaño iconos */
+  display: flex;
+  gap: 10px;
 }
 
 .contact-links a {
   color: #333;
-  /* color base para iconos */
   margin-left: 0.5rem;
   margin-right: 0.5rem;
   text-decoration: none;
@@ -95,15 +88,96 @@ h1 {
 
 .contact-links a.email-link i {
   color: #333;
-  /* o el color que prefieras para el email */
 }
 
 .contact-links a.instagram-link i {
-  /* color oficial Instagram (simplificado) */
   color: #E1306C;
 }
 
-/* Opcional: efecto hover */
 .contact-links a:hover i {
   opacity: 0.7;
+}
+
+/* --- RESPONSIVE STYLES --- */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 35px;
+  }
+
+  .logo {
+    width: 90px;
+  }
+
+  .contact-links {
+    font-size: 1.3rem;
+    right: 20px;
+  }
+}
+
+/* Móviles grandes */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 15px 20px;
+    gap: 10px;
+  }
+
+  .logo-titulo {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0;
+  }
+
+  .logo {
+    width: 80px;
+  }
+
+  .titulo-contacto {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 10px;
+  }
+
+  h1 {
+    font-size: 28px;
+    margin-top: 0;
+    text-align: left;
+  }
+
+  .contact-links {
+    position: static;
+    transform: none;
+    font-size: 1.2rem;
+    margin-top: 0;
+    justify-content: flex-end;
+  }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+  .logo {
+    width: 65px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  .contact-links a {
+    margin-left: 0.3rem;
+    margin-right: 0.3rem;
+  }
+
+  .fondo-logo::before {
+    background-size: 90vw auto;
+    top: 80px;
+    height: 500px;
+  }
 }
