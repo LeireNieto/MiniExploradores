@@ -134,11 +134,10 @@ h1 {
     top: 151px;
     left: 0;
     right: 0;
-   
-    background-image: url('../imagenes/logo.png');
+       background-image: url('../imagenes/logo.png');
     background-repeat: no-repeat;
     background-position: center top;
-    background-size: 500px auto; /* Adjust the size */
+    background-size: 400px auto; /* Adjust the size */
     opacity: 0.10;
     z-index: 0;
     pointer-events: none;
