@@ -100,23 +100,6 @@ h1 {
 
 /* --- RESPONSIVE STYLES --- */
 
-/* Tablets */
-@media (max-width: 1024px) {
-  h1 {
-    font-size: 35px;
-    align-items: center;
-  }
-
-  .logo {
-    width: 90px;
-  }
-
-  .contact-links {
-    font-size: 1.3rem;
-    align-items: right;
-    right: -30px; /* Adjusted to move it slightly to the left */
-  }
-}
 
 /* Móviles grandes */
 @media (max-width: 768px) {
@@ -137,6 +120,33 @@ h1 {
 
   .logo {
     width: 80px;
+  }
+
+  .fondo-logo {
+    position: relative;
+    z-index: 1;
+    padding-top: 50px;
+  }
+  
+  .fondo-logo::before {
+    content: "";
+    position: absolute;
+    top: 151px;
+    left: 0;
+    right: 0;
+   
+    background-image: url('../imagenes/logo.png');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 500px auto; /* Adjust the size */
+    opacity: 0.10;
+    z-index: 0;
+    pointer-events: none;
+  }
+  
+  .fondo-logo > * {
+    position: relative;
+    z-index: 1;
   }
 
   .titulo-contacto {
@@ -163,24 +173,3 @@ h1 {
   }
 }
 
-/* Móviles pequeños */
-@media (max-width: 480px) {
-  .logo {
-    width: 65px;
-  }
-
-  h1 {
-    font-size: 22px;
-  }
-
-  .contact-links a {
-    margin-left: 0.3rem;
-    margin-right: 0.3rem;
-  }
-
-  .fondo-logo::before {
-    background-size: 90vw auto;
-    top: 80px;
-    height: 500px;
-  }
-}

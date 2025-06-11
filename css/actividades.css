@@ -127,7 +127,7 @@ h3.favoritos-ciudad-titulo {
   bottom: 8px;
   width: 30px;
   height: 30px;
-  border: none;
+  border: none;s
   border-radius: 50%;
   font-weight: bold;
   cursor: pointer;
@@ -166,4 +166,21 @@ h3.favoritos-ciudad-titulo {
   padding: 6px 12px;
   border-radius: 5px;
   cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .actividades-grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 50px;
+  }
+
+  .card {
+    width: 100%;
+    height: auto;
+  }
+
+  .card-front img {
+    height: 80%;
+  }
+  
 }
