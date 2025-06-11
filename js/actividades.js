@@ -4,6 +4,7 @@ let actividades = [];
 let mapa;
 let marcadores = [];
 
+
 export function inicializarActividades() {
     const mapaElemento = document.getElementById("mapa");
     mapa = L.map(mapaElemento).setView([43.2630, -2.9350], 12);
