@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/clima.css">
     <link rel="stylesheet" href="/css/mapa.css">
+    <link rel="stylesheet" href="/css/formulario.css" />
+
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
@@ -26,9 +28,31 @@
             <h1>Mini Exploradores</h1>
 
             <div class="contact-links">
-                <a href="mailto:miniexploradoresweb@gmail.com" class="email-link" title="Enviar email">
-                    <i class="fas fa-envelope"></i>
-                </a> |
+                <!-- Botón para abrir el formulario -->
+                <button id="openFormBtn">
+                    <i class="fas fa-paper-plane"></i>
+                    <span class="texto-boton">Contactar</span>
+                </button>
+                <!-- Al final del body -->
+                <div id="formModal" class="modal">
+                    <div class="modal-content">
+                        <button class="close" id="closeFormBtn">&times;</button>
+                        <form action="https://formsubmit.co/tu-email@dominio.com" method="POST" autocomplete="off">
+                            <label for="name">Nombre:</label>
+                            <input type="text" id="name" name="name" required />
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required />
+                            <label for="message">Mensaje:</label>
+                            <textarea id="message" name="message" rows="4" required></textarea>
+                            <input type="hidden" name="_next" value="https://tu-sitio.com/gracias.html" />
+                            <input type="text" name="_honey" style="display: none" />
+                            <input type="hidden" name="_captcha" value="false" />
+                            <button type="submit">Enviar</button>
+                        </form>
+                    </div>
+                </div>
+
+
                 <a href="https://instagram.com/losminiexploradores" target="_blank" rel="noopener noreferrer"
                     class="instagram-link" title="Instagram">
                     <i class="fab fa-instagram"></i>
@@ -61,11 +85,11 @@
                     <i class="fas fa-map-marker-alt"></i>
                     <span class="texto-boton">Ver ubicaciones</span>
                 </button>
-                
-                <button id="verFavoritosBtn">
-                    <i class="fas fa-heart"></i> 
-                    <span class="texto-boton">Ver favoritos</span>
 
+                <button id="verFavoritosBtn">
+                    <i class="fas fa-heart"></i>
+                    <span class="texto-boton">Ver favoritos</span>
+                </button>
             </div>
         </div>
 
@@ -97,13 +121,17 @@
     <button id="btnArriba"><i class="fas fa-arrow-up"></i></button>
 
 
-    <script type="module" src="js/main.js"></script>
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    </div>
+
 
     <footer class="footer">
         <p>MiniExploradores @2025</p>
     </footer>
+
+
+    <script type="module" src="js/main.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="/js/formulario.js"></script>
+
 </body>
 
 </html>
