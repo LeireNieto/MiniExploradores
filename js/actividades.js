@@ -4,7 +4,6 @@ let actividades = [];
 let mapa;
 let marcadores = [];
 
-
 export function inicializarActividades() {
     const mapaElemento = document.getElementById("mapa");
     mapa = L.map(mapaElemento).setView([43.2630, -2.9350], 12);
@@ -14,34 +13,52 @@ export function inicializarActividades() {
     }).addTo(mapa);
 
     const contenedorMapa = document.getElementById("contenedorMapa");
+    const contenedorActividades = document.querySelector(".contenedor-actividades");
     const verMapaBtn = document.getElementById("verMapaBtn");
     const verFavoritosBtn = document.getElementById("verFavoritosBtn");
     let mostrandoFavoritos = false;
 
     verMapaBtn.addEventListener("click", () => {
         const visible = contenedorMapa.style.display === "block";
-        contenedorMapa.style.display = visible ? "none" : "block";
-        verMapaBtn.innerHTML = visible
-            ? '<i class="fas fa-map-marker-alt"></i> Ver ubicaciones'
-            : '<i class="fas fa-times-circle"></i> Ocultar mapa';
-        if (!visible) setTimeout(() => mapa.invalidateSize(), 200);
+
+        if (visible) {
+            // Ocultar mapa y mostrar actividades
+            contenedorMapa.style.display = "none";
+            contenedorActividades.style.display = "block";
+            verMapaBtn.innerHTML = '<i class="fas fa-map-marker-alt"></i> Ver ubicaciones';
+        } else {
+            // Mostrar mapa y ocultar actividades
+            contenedorMapa.style.display = "block";
+            contenedorActividades.style.display = "none";
+            verMapaBtn.innerHTML = '<i class="fas fa-times-circle"></i> Ocultar mapa';
+            setTimeout(() => mapa.invalidateSize(), 200); // Ajusta el mapa tras mostrarlo
+        }
     });
 
     verFavoritosBtn.addEventListener("click", () => {
         mostrandoFavoritos = !mostrandoFavoritos;
         if (mostrandoFavoritos) {
             verFavoritosBtn.innerHTML = '<i class="fas fa-heart"></i> Mostrar todo';
-            cerrarClimaYMapa(); // <<--- CIERRA CLIMA Y MAPA AL ENTRAR EN FAVORITOS
+            cerrarClimaYMapa(); // Cierra clima y mapa al entrar en favoritos
             mostrarFavoritos();
+            contenedorActividades.style.display = "block"; // Asegura que las cards estén visibles
+            contenedorMapa.style.display = "none"; // Asegura que el mapa esté oculto
+            verMapaBtn.innerHTML = '<i class="fas fa-map-marker-alt"></i> Ver ubicaciones'; // Reset botón mapa
         } else {
             verFavoritosBtn.innerHTML = '<i class="fas fa-heart"></i> Ver favoritos';
             mostrarActividades(document.getElementById("ciudad").value);
+            contenedorActividades.style.display = "block";
+            contenedorMapa.style.display = "none";
+            verMapaBtn.innerHTML = '<i class="fas fa-map-marker-alt"></i> Ver ubicaciones';
         }
     });
 
     // Escucha cambios en el select de ciudad
     document.getElementById("ciudad").addEventListener("change", (e) => {
         mostrarActividades(e.target.value);
+        contenedorActividades.style.display = "block";
+        contenedorMapa.style.display = "none";
+        verMapaBtn.innerHTML = '<i class="fas fa-map-marker-alt"></i> Ver ubicaciones';
     });
 
     // Carga inicial de actividades
@@ -71,6 +88,10 @@ function cerrarClimaYMapa() {
         verMapaBtn.setAttribute("aria-expanded", "false");
         verMapaBtn.innerHTML = '<i class="fas fa-map-marker-alt"></i> Ver ubicaciones';
     }
+
+    // Muestra las actividades
+    const contenedorActividades = document.querySelector(".contenedor-actividades");
+    if (contenedorActividades) contenedorActividades.style.display = "block";
 }
 
 export function mostrarActividades(ciudad) {
