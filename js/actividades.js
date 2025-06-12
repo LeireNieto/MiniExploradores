@@ -32,6 +32,16 @@ export function inicializarActividades() {
             contenedorActividades.style.display = "none";
             verMapaBtn.innerHTML = '<i class="fas fa-times-circle"></i> Ocultar mapa';
             setTimeout(() => mapa.invalidateSize(), 200); // Ajusta el mapa tras mostrarlo
+        
+               // Para cerrar el clima
+        const clima = document.getElementById("clima");
+        if (clima) clima.style.display = "none";
+        const verClimaBtn = document.getElementById("verClimaBtn");
+        if (verClimaBtn) {
+            verClimaBtn.innerHTML = '<i class="fas fa-cloud-sun"></i> Ver clima';
+        }
+        
+        
         }
     });
 

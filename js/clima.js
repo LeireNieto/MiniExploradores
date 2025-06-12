@@ -8,8 +8,32 @@ export function toggleClima(ciudad) {
     verClimaBtn.innerHTML = visible
         ? '<i class="fas fa-cloud-sun"></i> Ver clima'
         : '<i class="fas fa-times-circle"></i> Ocultar clima';
-    if (!visible && ciudad) obtenerClima(ciudad);
+
+    if (!visible) {
+        // Ocultar actividades
+        const contenedorActividades = document.querySelector(".contenedor-actividades");
+        if (contenedorActividades) contenedorActividades.style.display = "none";
+
+        // Ocultar mapa
+        const contenedorMapa = document.getElementById("contenedorMapa");
+        if (contenedorMapa) contenedorMapa.style.display = "none";
+
+        // Cambiar texto del botón de mapa
+        const verMapaBtn = document.getElementById("verMapaBtn");
+        if (verMapaBtn) {
+            verMapaBtn.innerHTML = '<i class="fas fa-map-marker-alt"></i> Ver ubicaciones';
+        }
+
+        // Mostrar clima
+        if (ciudad) obtenerClima(ciudad);
+    } else {
+        // Al cerrar clima, mostrar actividades
+        const contenedorActividades = document.querySelector(".contenedor-actividades");
+        if (contenedorActividades) contenedorActividades.style.display = "block";
+    }
 }
+
+
 
 export async function obtenerClima(ciudad) {
     try {
