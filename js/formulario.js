@@ -1,19 +1,24 @@
-// Lógica abrir/cerrar modal del formulario
-const openBtn = document.getElementById("openFormBtn");
-const modal = document.getElementById("formModal");
-const closeBtn = document.getElementById("closeFormBtn");
+document.addEventListener("DOMContentLoaded", () => {
+  const openBtn = document.getElementById("openFormBtn");
+  const modal = document.getElementById("formModal");
+  const closeBtn = document.getElementById("closeFormBtn");
 
-openBtn.addEventListener("click", () => {
-  modal.style.display = "block";
-});
-
-closeBtn.addEventListener("click", () => {
-  modal.style.display = "none";
-});
-
-// Cerrar modal si se hace click fuera del contenido
-window.addEventListener("click", (e) => {
-  if (e.target === modal) {
-    modal.style.display = "none";
+  if (!openBtn || !modal || !closeBtn) {
+    console.warn("⚠️ Modal: algún elemento no existe.");
+    return;
   }
+
+  openBtn.addEventListener("click", () => {
+    modal.style.display = "flex";
+  });
+
+  closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  });
 });

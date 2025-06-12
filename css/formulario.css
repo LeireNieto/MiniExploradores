@@ -1,76 +1,90 @@
+.modal {
 
-  
-.modal-content {
-    background-color: #fff;
-    margin-top: 750px;
-    margin-left: 5%;
-    max-width: 90%;
-    width: 500px;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro translúcido */
+  z-index: 9999;
+  display: none;
+  justify-content: center;
+  align-items: center;     
 }
-  
-  
-  .close {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 24px;
-    border: none;
-    background: none;
-    cursor: pointer;
-  }
 
-  #openFormBtn {
-    background: transparent;
-    border: none;
-    color: #1e5e17; 
-    font-size: 23px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  
-  #openFormBtn i {
-    color: inherit;
-  }
-  
-  #openFormBtn:hover {
-    text-decoration: underline;
-  }
-  
-  
-  form label,
-  form input,
-  form textarea,
-  form button {
-    display: block;
-    width: 100%;
-    margin-bottom: 15px;
-    font-size: 1rem;
-  }
-  
-  form input,
-  form textarea {
-    padding: 10px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-  }
-  
-  form button[type="submit"] {
-    background-color: #64bcae;
-    color: white;
-    border: none;
-    padding: 12px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  form button[type="submit"]:hover {
-    background-color: #3ea795;
-  }
-  
+.modal-content {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+
+
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+#openFormBtn {
+  background: transparent;
+  border: none;
+  color: #1e5e17;
+  font-size: 23px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+#openFormBtn i {
+  color: inherit;
+}
+
+#openFormBtn:hover {
+  text-decoration: underline;
+}
+
+
+form label,
+form input,
+form textarea,
+form button {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+form input,
+form textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+form button[type="submit"] {
+  background-color: #64bcae;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form button[type="submit"]:hover {
+  background-color: #3ea795;
+}
