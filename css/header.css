@@ -96,17 +96,18 @@ h1 {
   opacity: 0.7;
 }
 
+
 /* --- RESPONSIVE STYLES --- */
 
-
-/* Móviles grandes */
 @media (max-width: 768px) {
+  
   .header {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     height: auto;
-    padding: 15px 20px;
-    gap: 10px;
+    padding: 13px 17px;
+    gap: 20px;
   }
 
   .logo-titulo {
@@ -117,56 +118,40 @@ h1 {
   }
 
   .logo {
-    width: 80px;
-  }
-
-  .fondo-logo {
-    position: relative;
-    z-index: 1;
-    padding-top: 50px;
-  }
-  
-  .fondo-logo::before {
-    content: "";
-    position: absolute;
-    top: 151px;
-    left: 0;
-    right: 0;
-       background-image: url('../imagenes/logo.png');
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-size: 400px auto; /* Adjust the size */
-    opacity: 0.10;
-    z-index: 0;
-    pointer-events: none;
-  }
-  
-  .fondo-logo > * {
-    position: relative;
-    z-index: 1;
+    width: 67px;
+    margin-right: 10px;
   }
 
   .titulo-contacto {
+    flex-grow: 1;
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
-    width: 100%;
-   }
+  }
 
   h1 {
-    font-size: 28px;
-    margin-top: 0;
-    text-align: left;
+    font-size: 21px;
+    margin: 0;
+    text-align: center;
+  }
+
+  .texto-boton {
+    display: none;
   }
 
   .contact-links {
-    position: relative;
+    position: static;
     transform: none;
-    font-size: 1.2rem;
-    margin-left: 0;
     display: flex;
-    justify-content: flex-end;
-    gap: 7px;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: -4px;
+    margin-left: 35px;
+  }
+
+  .contact-links a.instagram-link i {
+    color: #E1306C;
+    font-size: 25px;
   }
 }
-

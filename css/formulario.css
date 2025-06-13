@@ -1,5 +1,4 @@
 .modal {
-
   position: fixed;
   top: 0;
   left: 0;
@@ -9,7 +8,7 @@
   z-index: 9999;
   display: none;
   justify-content: center;
-  align-items: center;     
+  align-items: center;
 }
 
 .modal-content {
@@ -20,19 +19,15 @@
   width: 90%;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
   position: relative;
-
   max-height: 90vh;
   overflow-y: auto;
 }
-
-
-
 
 .close {
   position: absolute;
   top: 10px;
   right: 15px;
-  font-size: 24px;
+  font-size: 1.5rem; /* Ajuste para responsividad */
   border: none;
   background: none;
   cursor: pointer;
@@ -42,11 +37,11 @@
   background: transparent;
   border: none;
   color: #1e5e17;
-  font-size: 23px;
+  font-size: 4vw; /* Ajuste para responsividad */
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 2vw; /* Ajuste para responsividad */
 }
 
 #openFormBtn i {
@@ -57,20 +52,19 @@
   text-decoration: underline;
 }
 
-
 form label,
 form input,
 form textarea,
 form button {
   display: block;
   width: 100%;
-  margin-bottom: 15px;
+  margin-bottom: 1rem; /* Ajuste para responsividad */
   font-size: 1rem;
 }
 
 form input,
 form textarea {
-  padding: 10px;
+  padding: 0.8rem; /* Ajuste para responsividad */
   border-radius: 6px;
   border: 1px solid #ccc;
 }
@@ -79,7 +73,7 @@ form button[type="submit"] {
   background-color: #64bcae;
   color: white;
   border: none;
-  padding: 12px;
+  padding: 0.8rem; /* Ajuste para responsividad */
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -87,4 +81,32 @@ form button[type="submit"] {
 
 form button[type="submit"]:hover {
   background-color: #3ea795;
+}
+
+/* Media queries para pantallas pequeñas */
+@media (max-width: 768px) {
+  .modal-content {
+    padding: 1.5rem; /* Reducir padding en pantallas pequeñas */
+    max-width: 90%; /* Ajustar ancho máximo */
+  }
+
+  #openFormBtn {
+    font-size: 20px; 
+  }
+
+  form label,
+  form input,
+  form textarea,
+  form button {
+    font-size: 0.9rem; /* Reducir tamaño de fuente */
+  }
+
+  form input,
+  form textarea {
+    padding: 0.6rem; /* Reducir padding */
+  }
+
+  form button[type="submit"] {
+    padding: 0.6rem; /* Reducir padding */
+  }
 }
