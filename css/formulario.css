@@ -27,7 +27,7 @@
   position: absolute;
   top: 10px;
   right: 15px;
-  font-size: 1.5rem; /* Ajuste para responsividad */
+  font-size: 23px
   border: none;
   background: none;
   cursor: pointer;
@@ -37,11 +37,11 @@
   background: transparent;
   border: none;
   color: #1e5e17;
-  font-size: 4vw; /* Ajuste para responsividad */
+  font-size: 25px;
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 2vw; /* Ajuste para responsividad */
+  gap: 15px;
 }
 
 #openFormBtn i {
@@ -58,13 +58,14 @@ form textarea,
 form button {
   display: block;
   width: 100%;
-  margin-bottom: 1rem; /* Ajuste para responsividad */
-  font-size: 1rem;
+  margin-bottom: 1rem; 
+  font-size: 19px;
+  margin-right: auto;
 }
 
 form input,
 form textarea {
-  padding: 0.8rem; /* Ajuste para responsividad */
+  padding: 0.8rem; 
   border-radius: 6px;
   border: 1px solid #ccc;
 }
@@ -86,8 +87,8 @@ form button[type="submit"]:hover {
 /* Media queries para pantallas pequeñas */
 @media (max-width: 768px) {
   .modal-content {
-    padding: 1.5rem; /* Reducir padding en pantallas pequeñas */
-    max-width: 90%; /* Ajustar ancho máximo */
+    padding: 15px; /* Reducir padding en pantallas pequeñas */
+    max-width: 75%; /* Ajustar ancho máximo */
   }
 
   #openFormBtn {
@@ -98,15 +99,15 @@ form button[type="submit"]:hover {
   form input,
   form textarea,
   form button {
-    font-size: 0.9rem; /* Reducir tamaño de fuente */
+    font-size: 15px;
   }
 
   form input,
   form textarea {
-    padding: 0.6rem; /* Reducir padding */
+    padding: 15px;
   }
 
   form button[type="submit"] {
-    padding: 0.6rem; /* Reducir padding */
+    padding: 15px
   }
 }
