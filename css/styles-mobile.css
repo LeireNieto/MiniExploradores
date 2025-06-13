@@ -1,0 +1,40 @@
+header {
+  justify-content: center;
+
+  h1 {
+    font-size: 21px;
+    margin: 0;
+    text-align: center;
+  }
+  .texto-boton {
+    display: none;
+  }
+}
+
+nav {
+  
+
+  & span {
+    display: none;
+  }
+
+  .barra-controles {
+    display: flex;
+    flex-direction: column;
+    padding: 3px 3px;
+    border-radius: 0 10px 10px 0;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    align-items: center;
+    top: -33px;
+    position: fixed;
+  }
+
+  .filtro {
+    padding: 7px 5px;
+    border-radius: 5px;
+    width: 197px;
+  }
+
+
+}

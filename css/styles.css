@@ -1,41 +1,281 @@
-/* ESTILO GENERAL */
+body {
+    height: 100dvh;
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #beebe3;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
 
-@keyframes colorFan {
-    0% {
+header {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 123px;
+    background-color: #64bcae;
+    padding: 10px 30px;
+    margin: 0;
+    z-index: 1000;
+    gap: 20px;
+
+    .logo-titulo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    .logo {
+        width: 115px;
+        height: auto;
+    }
+
+    /* Agrupa h1 y enlaces */
+    .titulo-contacto {
+        display: block;
+        position: relative;
+    }
+
+    h1 {
+        margin: 0;
+        font-size: 45px;
         color: #1e5e17;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        margin-top: 15px;
+        text-align: center;
     }
 
-    25% {
-        color: #236b2e;
+    .contact-links {
+        font-size: 1.5rem;
+        display: flex;
+        gap: 10px;
     }
 
-    50% {
-        color: #2b8a4a;
+    .contact-links a {
+        color: #333;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+        text-decoration: none;
     }
 
-    75% {
-        color: #3fae6a;
+
+    .contact-links a.instagram-link i {
+        color: #E1306C;
+        font-size: 39px;
     }
 
-    100% {
-        color: #1e5e17;
+    .contact-links a:hover i {
+        opacity: 0.7;
     }
 }
 
-/* Hace que body llene toda la altura de la pantalla */
-html, body {
-    html, body {
-        height: auto; /* Asegura que la altura se ajuste al contenido */
-        min-height: 100%; /* Permite que la página se estire por completo */
-        overflow: auto; /* Permite el desplazamiento si el contenido es más grande que la pantalla */
-        padding-top: 60px; /* Ajusta según el tamaño del encabezado fijo */
-        background-color:#beebe3;; /* Cambia el color de fondo según tus preferencias */
-    font-size: 16px;
-    }
-    
-  }
+nav {
+    display: flex;
 
-  /* El contenido ocupa todo el espacio disponible menos el footer */
-.pagina {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px 15px;
+
+    align-items: center;
+
+    button {
+        display: inline-block;
+        padding: 10px 25px;
+        height: 3rem;;
+        background-color: rgb(100, 188, 174);
+        color: #1e5e17;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 16px;
+        transition: background-color 0.3s;
+        cursor: pointer;
+        opacity: 1;
+    }
+
+    #verFavoritosBtn {
+        border: 2px solid red;
+        transition: background-color 0.3s, color 0.3s;
+        color: red;
+        font-size: 18px;
+    }
+
+    #ciudad {
+        border-radius: 9px;
+        margin-top: 15px;
+        margin-right: auto;
+        margin-left: auto;
+        display: block;
+        text-align: center;
+        font-size: 17px;
+        padding: 3px;
+    }
+
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+    }
+
+/* 
+
+    #verClimaBtn,
+    #verMapaBtn {
+        display: inline-block;
+        margin-left: 50px;
+        width: 200px;
+        padding: 10px;
+        background-color: #64bcae;
+        color: #1e5e17;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 16px;
+        transition: background-color 0.3s;
+        cursor: pointer;
+    }
+
+    .button-container {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    #verClimaBtn:hover {
+        background-color: #285b7c;
+    }
+
+    #verMapaBtn:hover {
+        background-color: #285b7c;
+    }
+
+    #verFavoritosBtn {
+        display: inline-block;
+        margin-left: 50px;
+        width: 200px;
+        padding: 10px;
+        background-color: #64bcae;
+        color: #1e5e17;
+        border: 2px solid red;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 16px;
+        transition: background-color 0.3s, color 0.3s;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    #verFavoritosBtn i {
+        color: red;
+        font-size: 18px;
+    }
+
+    #verFavoritosBtn:hover {
+        background-color: #ffe6e6;
+        color: #b30000;
+        border-color: #b30000;
+    }
+
+    #btnArriba {
+        position: fixed;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 20px 25px;
+        background-color: #64bcae;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        font-size: 24px;
+        cursor: pointer;
+        display: none;
+        z-index: 1000;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        transition: background-color 0.3s ease;
+    }
+
+    #btnArriba:hover {
+        background-color: #3fae6a;
+    }
+
+
+
+    .filtro {
+        padding: 5px 10px;
+        font-size: 1rem;
+        border-radius: 5px;
+        width: 160px;
+    }
+
+
+
+
+
+    label {
+        margin-top: 15px;
+    } */
+
+}
+
+main {
     flex: 1;
-  }
+    overflow-y: scroll;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url('../imagenes/logo.png');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+        opacity: 0.10;
+        z-index: 0;
+        pointer-events: none;
+    }
+
+}
+
+footer {
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #64bcae;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    z-index: 999;
+
+
+    & a {
+        color: white;
+        text-decoration: none;
+        margin: 0 10px;
+    }
+
+    & a:hover {
+        color: #3fae6a;
+    }
+
+    & i {
+        margin-right: 5px;
+    }
+
+}
