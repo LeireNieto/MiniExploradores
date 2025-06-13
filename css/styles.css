@@ -85,7 +85,8 @@ nav {
     button {
         display: inline-block;
         padding: 10px 25px;
-        height: 3rem;;
+        height: 3rem;
+        ;
         background-color: rgb(100, 188, 174);
         color: #1e5e17;
         text-align: center;
@@ -126,106 +127,6 @@ nav {
         border: 0;
     }
 
-/* 
-
-    #verClimaBtn,
-    #verMapaBtn {
-        display: inline-block;
-        margin-left: 50px;
-        width: 200px;
-        padding: 10px;
-        background-color: #64bcae;
-        color: #1e5e17;
-        text-align: center;
-        text-decoration: none;
-        border-radius: 5px;
-        font-size: 16px;
-        transition: background-color 0.3s;
-        cursor: pointer;
-    }
-
-    .button-container {
-        text-align: center;
-        margin-top: 20px;
-    }
-
-    #verClimaBtn:hover {
-        background-color: #285b7c;
-    }
-
-    #verMapaBtn:hover {
-        background-color: #285b7c;
-    }
-
-    #verFavoritosBtn {
-        display: inline-block;
-        margin-left: 50px;
-        width: 200px;
-        padding: 10px;
-        background-color: #64bcae;
-        color: #1e5e17;
-        border: 2px solid red;
-        text-align: center;
-        text-decoration: none;
-        border-radius: 5px;
-        font-size: 16px;
-        transition: background-color 0.3s, color 0.3s;
-        cursor: pointer;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-    }
-
-    #verFavoritosBtn i {
-        color: red;
-        font-size: 18px;
-    }
-
-    #verFavoritosBtn:hover {
-        background-color: #ffe6e6;
-        color: #b30000;
-        border-color: #b30000;
-    }
-
-    #btnArriba {
-        position: fixed;
-        bottom: 30px;
-        left: 50%;
-        transform: translateX(-50%);
-        padding: 20px 25px;
-        background-color: #64bcae;
-        color: white;
-        border: none;
-        border-radius: 50%;
-        font-size: 24px;
-        cursor: pointer;
-        display: none;
-        z-index: 1000;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-        transition: background-color 0.3s ease;
-    }
-
-    #btnArriba:hover {
-        background-color: #3fae6a;
-    }
-
-
-
-    .filtro {
-        padding: 5px 10px;
-        font-size: 1rem;
-        border-radius: 5px;
-        width: 160px;
-    }
-
-
-
-
-
-    label {
-        margin-top: 15px;
-    } */
 
 }
 
@@ -247,6 +148,79 @@ main {
         opacity: 0.10;
         z-index: 0;
         pointer-events: none;
+    }
+
+    /* MAPA */
+    #mapa {
+        width: 984px;
+        height: 400px;
+        margin: 51px auto;
+        border-radius: 10px;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+        display: block;
+
+    }
+
+    /* CLIMA*/
+
+    #clima {
+        display: none;
+        /* Initially hidden */
+        background-color: #E0F2F1;
+        padding: 15px;
+        margin: 45px auto;
+        border-radius: 10px;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+        flex: 1;
+        overflow-x: auto;
+        gap: 10px;
+        scroll-snap-type: x mandatory;
+        justify-content: center;
+        align-items: center;
+        width: fit-content;
+        position: relative;
+        /* No fijo, se adapta al flujo normal */
+        z-index: 10;
+        /* Asegúrate de que esté por encima de otros elementos si es necesario */
+        max-height: 80vh;
+        /* Limita la altura del clima para que no ocupe toda la pantalla */
+        overflow-y: auto;
+        /* Permite el scroll dentro del clima si es necesario */
+    }
+
+    #clima.active {
+        display: flex;
+        /* Show when active */
+    }
+
+    .dia-clima {
+        flex: 0 0 150px;
+        /* Ensure all days have the same width */
+        background-color: #64bcae;
+        border-radius: 10px;
+        padding: 10px;
+        width: 150px;
+        height: 200px;
+        /* Set a fixed height for uniformity */
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        scroll-snap-align: start;
+        margin: 0 10px;
+        display: inline-block;
+    }
+
+    h2 {
+        font-size: 20px;
+        color: #1e5e17;
+        margin-bottom: 10px;
+    }
+
+    h3,
+    strong,
+    p {
+        margin-bottom: 7px;
+        font-size: 15px;
+        color: #1e5e17;
     }
 
 }
