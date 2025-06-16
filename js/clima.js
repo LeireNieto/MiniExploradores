@@ -49,7 +49,7 @@ export function toggleClima(ciudad) {
                 <i class="fas fa-heart"></i>
                 <span class="texto-boton">Ver favoritos</span>
             `;
-            mostrandoFavoritos = false; // si usas esa variable para el estado
+          
         }
 
         if (ciudad) obtenerClima(ciudad);

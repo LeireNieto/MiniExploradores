@@ -18,25 +18,111 @@ export function inicializarActividades() {
     const verFavoritosBtn = document.getElementById("verFavoritosBtn");
     let mostrandoFavoritos = false;
 
+    function resetBotones() {
+        verMapaBtn.innerHTML = `
+            <i class="fas fa-map-marker-alt"></i>
+            <span class="texto-boton">Ver ubicaciones</span>
+        `;
+        verFavoritosBtn.innerHTML = `
+            <i class="fas fa-heart"></i>
+            <span class="texto-boton">Ver favoritos</span>
+        `;
+        mostrandoFavoritos = false;
+    }
+
+    function mostrarMapa() {
+        contenedorMapa.style.display = "block";
+        contenedorActividades.style.display = "none";
+        cerrarClimaYMapa();  // si tienes clima, lo cierras
+        setTimeout(() => mapa.invalidateSize(), 200);
+
+        verMapaBtn.innerHTML = `
+            <i class="fas fa-times"></i>
+            <span class="texto-boton">Ocultar mapa</span>
+        `;
+        verFavoritosBtn.innerHTML = `
+            <i class="fas fa-heart"></i>
+            <span class="texto-boton">Ver favoritos</span>
+        `;
+        mostrandoFavoritos = false;
+    }
+
+    function ocultarMapa() {
+        contenedorMapa.style.display = "none";
+        contenedorActividades.style.display = "block";
+
+        verMapaBtn.innerHTML = `
+            <i class="fas fa-map-marker-alt"></i>
+            <span class="texto-boton">Ver ubicaciones</span>
+        `;
+    }
+
+    function mostrarFavoritos() {
+        const contenedor = document.getElementById("actividades");
+        contenedor.innerHTML = "";
+        marcadores.forEach(m => mapa.removeLayer(m));
+        marcadores = [];
+
+        const favoritos = obtenerFavoritos();
+        const actividadesFavoritas = actividades.filter(a => favoritos.includes(a.id));
+
+        if (actividadesFavoritas.length === 0) {
+            contenedor.innerHTML = "<p>No tienes actividades favoritas.</p>";
+            return;
+        }
+
+        const favoritasPorCiudad = {};
+        actividadesFavoritas.forEach(a => {
+            if (!favoritasPorCiudad[a.ciudad]) favoritasPorCiudad[a.ciudad] = [];
+            favoritasPorCiudad[a.ciudad].push(a);
+        });
+
+        for (const ciudad in favoritasPorCiudad) {
+            const tituloCiudad = document.createElement("h3");
+            tituloCiudad.textContent = ciudad;
+            tituloCiudad.classList.add("favoritos-ciudad-titulo");
+            contenedor.appendChild(tituloCiudad);
+
+            const grupoCiudad = document.createElement("div");
+            grupoCiudad.classList.add("actividades-grid");
+
+            favoritasPorCiudad[ciudad].slice(0, 8).forEach(a => crearCard(a, grupoCiudad, true));
+            contenedor.appendChild(grupoCiudad);
+        }
+
+        const primera = actividadesFavoritas[0];
+        if (primera.lat && primera.lng) mapa.setView([primera.lat, primera.lng], 13);
+    }
+
     verMapaBtn.addEventListener("click", () => {
         const visible = contenedorMapa.style.display === "block";
     
         if (visible) {
             contenedorMapa.style.display = "none";
             contenedorActividades.style.display = "block";
-    
+        
             // Cambia el botón de mapa a estado cerrado (mostrar icono marcador)
             verMapaBtn.innerHTML = `
                 <i class="fas fa-map-marker-alt"></i>
                 <span class="texto-boton">Ver ubicaciones</span>
             `;
+        
+            // Resetea estado favoritos y su botón
+            mostrandoFavoritos = false;
+            verFavoritosBtn.innerHTML = `
+                <i class="fas fa-heart"></i>
+                <span class="texto-boton">Ver favoritos</span>
+            `;
+        
+            // Forzar a mostrar la lista normal de actividades (no favoritos)
+            mostrarActividades(document.getElementById("ciudad").value);
         } else {
+            // Cerramos clima y favoritos antes de mostrar mapa
+            cerrarClimaYMapa();
+    
             contenedorMapa.style.display = "block";
             contenedorActividades.style.display = "none";
             setTimeout(() => mapa.invalidateSize(), 200);
-    
-            // Cierra clima y favoritos si están abiertos
-            cerrarClimaYMapa();
     
             // Cambia el botón de mapa a estado abierto (mostrar X)
             verMapaBtn.innerHTML = `
@@ -58,36 +144,36 @@ export function inicializarActividades() {
         mostrandoFavoritos = !mostrandoFavoritos;
     
         if (mostrandoFavoritos) {
+            // Cierra clima y mapa y actualiza botones
+            cerrarClimaYMapa();
+    
             // Muestra favoritos y botón con X
             verFavoritosBtn.innerHTML = `
                 <i class="fas fa-times"></i>
                 <span class="texto-boton">Cerrar favoritos</span>
             `;
-            cerrarClimaYMapa();
-            mostrarFavoritos();
+    
             contenedorActividades.style.display = "block";
             contenedorMapa.style.display = "none";
     
-            // Resetea botón mapa
-            verMapaBtn.innerHTML = `
-                <i class="fas fa-map-marker-alt"></i>
-                <span class="texto-boton">Ver ubicaciones</span>
-            `;
+            mostrarFavoritos();
+    
+            // Asegurar que botón clima está cerrado (si necesitas)
+            const verClimaBtn = document.getElementById("verClimaBtn");
+            if (verClimaBtn) {
+                verClimaBtn.setAttribute("aria-expanded", "false");
+                verClimaBtn.innerHTML = '<i class="fas fa-cloud-sun"></i><span class="texto-boton">Ver clima</span>';
+            }
         } else {
             // Muestra todas las actividades y botón con corazón
             verFavoritosBtn.innerHTML = `
                 <i class="fas fa-heart"></i>
                 <span class="texto-boton">Ver favoritos</span>
             `;
+    
             mostrarActividades(document.getElementById("ciudad").value);
             contenedorActividades.style.display = "block";
             contenedorMapa.style.display = "none";
-    
-            // Resetea botón mapa
-            verMapaBtn.innerHTML = `
-                <i class="fas fa-map-marker-alt"></i>
-                <span class="texto-boton">Ver ubicaciones</span>
-            `;
         }
     });
     
@@ -97,11 +183,13 @@ export function inicializarActividades() {
         mostrarActividades(e.target.value);
         contenedorActividades.style.display = "block";
         contenedorMapa.style.display = "none";
-
-        verMapaBtn.innerHTML = `
-            <i class="fas fa-map-marker-alt"></i>
-            <span class="texto-boton">Ver ubicaciones</span>
-        `;
+    
+        // Si quieres asegurarte de que el mapa se refresque bien al mostrarlo después
+        setTimeout(() => {
+            mapa.invalidateSize();
+        }, 200);
+    
+        resetBotones();
     });
 
     fetch("actividades.json")
@@ -117,6 +205,7 @@ function cerrarClimaYMapa() {
     const clima5dias = document.getElementById("clima5dias");
     if (clima) clima.style.display = "none";
     if (clima5dias) clima5dias.style.display = "none";
+
     const verClimaBtn = document.getElementById("verClimaBtn");
     if (verClimaBtn) {
         verClimaBtn.setAttribute("aria-expanded", "false");
@@ -125,6 +214,7 @@ function cerrarClimaYMapa() {
 
     const contenedorMapa = document.getElementById("contenedorMapa");
     if (contenedorMapa) contenedorMapa.style.display = "none";
+
     const verMapaBtn = document.getElementById("verMapaBtn");
     if (verMapaBtn) {
         verMapaBtn.setAttribute("aria-expanded", "false");
@@ -137,7 +227,6 @@ function cerrarClimaYMapa() {
     const contenedorActividades = document.querySelector(".contenedor-actividades");
     if (contenedorActividades) contenedorActividades.style.display = "block";
 }
-
 
 export function mostrarActividades(ciudad) {
     const contenedor = document.getElementById("actividades");
@@ -162,43 +251,6 @@ export function mostrarActividades(ciudad) {
     contenedor.appendChild(grupoActividades);
 }
 
-function mostrarFavoritos() {
-    const contenedor = document.getElementById("actividades");
-    contenedor.innerHTML = "";
-    marcadores.forEach(m => mapa.removeLayer(m));
-    marcadores = [];
-
-    const favoritos = obtenerFavoritos();
-    const actividadesFavoritas = actividades.filter(a => favoritos.includes(a.id));
-
-    if (actividadesFavoritas.length === 0) {
-        contenedor.innerHTML = "<p>No tienes actividades favoritas.</p>";
-        return;
-    }
-
-    const favoritasPorCiudad = {};
-    actividadesFavoritas.forEach(a => {
-        if (!favoritasPorCiudad[a.ciudad]) favoritasPorCiudad[a.ciudad] = [];
-        favoritasPorCiudad[a.ciudad].push(a);
-    });
-
-    for (const ciudad in favoritasPorCiudad) {
-        const tituloCiudad = document.createElement("h3");
-        tituloCiudad.textContent = ciudad;
-        tituloCiudad.classList.add("favoritos-ciudad-titulo");
-        contenedor.appendChild(tituloCiudad);
-
-        const grupoCiudad = document.createElement("div");
-        grupoCiudad.classList.add("actividades-grid");
-
-        favoritasPorCiudad[ciudad].slice(0, 8).forEach(a => crearCard(a, grupoCiudad, true));
-        contenedor.appendChild(grupoCiudad);
-    }
-
-    const primera = actividadesFavoritas[0];
-    if (primera.lat && primera.lng) mapa.setView([primera.lat, primera.lng], 13);
-}
-
 function crearCard(a, contenedor, esFavoritoView = false) {
     const card = document.createElement("div");
     card.classList.add("card", "actividad-card");
@@ -210,16 +262,18 @@ function crearCard(a, contenedor, esFavoritoView = false) {
             <div class="card-front">
                 <img src="imagenes/${a.imagen}" alt="${a.nombre}">
                 <h3>${a.nombre}</h3>
-                <button class="flip-btn">+</button>
-                <button class="fav-btn"><i class="${esFavoritoActividad ? 'fas' : 'far'} fa-heart"></i></button>
+                <button class="flip-btn" aria-label="Ver más detalles">+</button>
+                <button class="fav-btn" aria-label="${esFavoritoActividad ? 'Quitar de favoritos' : 'Añadir a favoritos'}">
+                    <i class="${esFavoritoActividad ? 'fas' : 'far'} fa-heart"></i>
+                </button>
             </div>
             <div class="card-back">
                 <p>${a.descripcion}</p>
                 <p><strong>Edad recomendada:</strong> ${a.edad}</p>
                 <p><strong>Precio:</strong> ${a.precio}</p>
                 <p><strong>Ubicación:</strong> ${a.ubicacion}</p>
-                ${a.enlace ? `<a href="${a.enlace}" target="_blank">Más información</a>` : ""}
-                <button class="volver-btn">Volver</button>
+                ${a.enlace ? `<a href="${a.enlace}" target="_blank" rel="noopener noreferrer">Más información</a>` : ""}
+                <button class="volver-btn" aria-label="Volver a la tarjeta principal">Volver</button>
             </div>
         </div>
     `;
