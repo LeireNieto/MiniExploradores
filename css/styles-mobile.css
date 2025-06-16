@@ -57,6 +57,9 @@ nav {
     width: 197px;
   }
 
+  .texto-boton {
+    display: none;
+  }
 
 }
 

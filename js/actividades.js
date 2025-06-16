@@ -16,50 +16,47 @@ export function inicializarActividades() {
     const contenedorActividades = document.querySelector(".contenedor-actividades");
     const verMapaBtn = document.getElementById("verMapaBtn");
     const verFavoritosBtn = document.getElementById("verFavoritosBtn");
+    const textoBotonFavoritos = verFavoritosBtn.querySelector(".texto-boton");
+    const textoBotonMapa = verMapaBtn.querySelector(".texto-boton");
     let mostrandoFavoritos = false;
 
     verMapaBtn.addEventListener("click", () => {
         const visible = contenedorMapa.style.display === "block";
-
+    
         if (visible) {
-            // Ocultar mapa y mostrar actividades
             contenedorMapa.style.display = "none";
             contenedorActividades.style.display = "block";
-            verMapaBtn.innerHTML = '<i class="fas fa-map-marker-alt"></i> Ver ubicaciones';
+            textoBotonMapa.textContent = "Ver ubicaciones";
         } else {
-            // Mostrar mapa y ocultar actividades
             contenedorMapa.style.display = "block";
             contenedorActividades.style.display = "none";
-            verMapaBtn.innerHTML = '<i class="fas fa-times-circle"></i> Ocultar mapa';
-            setTimeout(() => mapa.invalidateSize(), 200); // Ajusta el mapa tras mostrarlo
-        
-               // Para cerrar el clima
-        const clima = document.getElementById("clima");
-        if (clima) clima.style.display = "none";
-        const verClimaBtn = document.getElementById("verClimaBtn");
-        if (verClimaBtn) {
-            verClimaBtn.innerHTML = '<i class="fas fa-cloud-sun"></i> Ver clima';
-        }
-        
-        
+            textoBotonMapa.textContent = "Ocultar mapa";
+            setTimeout(() => mapa.invalidateSize(), 200);
+    
+            const clima = document.getElementById("clima");
+            if (clima) clima.style.display = "none";
+            const verClimaBtn = document.getElementById("verClimaBtn");
+            if (verClimaBtn) {
+                verClimaBtn.innerHTML = '<i class="fas fa-cloud-sun"></i><span>Ver clima</span>';
+            }
         }
     });
-
+    
     verFavoritosBtn.addEventListener("click", () => {
         mostrandoFavoritos = !mostrandoFavoritos;
         if (mostrandoFavoritos) {
-            verFavoritosBtn.innerHTML = '<i class="fas fa-heart"></i> Mostrar todo';
-            cerrarClimaYMapa(); // Cierra clima y mapa al entrar en favoritos
+            textoBotonFavoritos.textContent = "Mostrar todo";
+            cerrarClimaYMapa();
             mostrarFavoritos();
-            contenedorActividades.style.display = "block"; // Asegura que las cards estén visibles
-            contenedorMapa.style.display = "none"; // Asegura que el mapa esté oculto
-            verMapaBtn.innerHTML = '<i class="fas fa-map-marker-alt"></i> Ver ubicaciones'; // Reset botón mapa
+            contenedorActividades.style.display = "block";
+            contenedorMapa.style.display = "none";
+            textoBotonMapa.textContent = "Ver ubicaciones";
         } else {
-            verFavoritosBtn.innerHTML = '<i class="fas fa-heart"></i> Ver favoritos';
+            textoBotonFavoritos.textContent = "Ver favoritos";
             mostrarActividades(document.getElementById("ciudad").value);
             contenedorActividades.style.display = "block";
             contenedorMapa.style.display = "none";
-            verMapaBtn.innerHTML = '<i class="fas fa-map-marker-alt"></i> Ver ubicaciones';
+            textoBotonMapa.textContent = "Ver ubicaciones";
         }
     });
 
@@ -68,7 +65,7 @@ export function inicializarActividades() {
         mostrarActividades(e.target.value);
         contenedorActividades.style.display = "block";
         contenedorMapa.style.display = "none";
-        verMapaBtn.innerHTML = '<i class="fas fa-map-marker-alt"></i> Ver ubicaciones';
+        verMapaBtn.innerHTML = '<i class="fas fa-map-marker-alt"></i>span> Ver ubicaciones</span>';
     });
 
     // Carga inicial de actividades
@@ -96,7 +93,7 @@ function cerrarClimaYMapa() {
     const verMapaBtn = document.getElementById("verMapaBtn");
     if (verMapaBtn) {
         verMapaBtn.setAttribute("aria-expanded", "false");
-        verMapaBtn.innerHTML = '<i class="fas fa-map-marker-alt"></i> Ver ubicaciones';
+        verMapaBtn.innerHTML = '<i class="fas fa-map-marker-alt"></i><span> Ver ubicaciones</span>';
     }
 
     // Muestra las actividades

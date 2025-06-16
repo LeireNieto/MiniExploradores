@@ -6,8 +6,8 @@ export function toggleClima(ciudad) {
     const visible = climaContainer.style.display === "block";
     climaContainer.style.display = visible ? "none" : "block";
     verClimaBtn.innerHTML = visible
-        ? '<i class="fas fa-cloud-sun"></i> Ver clima'
-        : '<i class="fas fa-times-circle"></i> Ocultar clima';
+        ? '<i class="fas fa-cloud-sun"></i><span>Ver clima</span>'
+        : '<i class="fas fa-times-circle"></i><span>Ocultar clima</span>';
 
     if (!visible) {
         // Ocultar actividades
@@ -21,7 +21,7 @@ export function toggleClima(ciudad) {
         // Cambiar texto del botón de mapa
         const verMapaBtn = document.getElementById("verMapaBtn");
         if (verMapaBtn) {
-            verMapaBtn.innerHTML = '<i class="fas fa-map-marker-alt"></i> Ver ubicaciones';
+            verMapaBtn.innerHTML = '<i class="fas fa-map-marker-alt"></i><span>Ver ubicaciones</span>';
         }
 
         // Mostrar clima
