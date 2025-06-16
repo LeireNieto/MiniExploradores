@@ -158,14 +158,13 @@ main {
         border-radius: 10px;
         box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
         display: block;
-
     }
 
     /* CLIMA*/
 
     #clima {
         display: none;
-        /* Initially hidden */
+       
         background-color: #E0F2F1;
         padding: 15px;
         margin: 45px auto;
@@ -179,18 +178,17 @@ main {
         align-items: center;
         width: fit-content;
         position: relative;
-        /* No fijo, se adapta al flujo normal */
+       
         z-index: 10;
-        /* Asegúrate de que esté por encima de otros elementos si es necesario */
+        
         max-height: 80vh;
-        /* Limita la altura del clima para que no ocupe toda la pantalla */
+      
         overflow-y: auto;
-        /* Permite el scroll dentro del clima si es necesario */
-    }
+            }
 
     #clima.active {
         display: flex;
-        /* Show when active */
+       
     }
 
     .dia-clima {
@@ -236,7 +234,6 @@ footer {
     text-align: center;
     padding: 10px;
     z-index: 999;
-
 
     & a {
         color: white;

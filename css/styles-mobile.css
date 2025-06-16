@@ -60,6 +60,36 @@ nav {
 
 }
 
+main {
+
+  #clima {
+    padding: 13px;
+    margin: 45px auto;
+  }
+
+  #clima.active {
+    display: flex;
+  }
+
+  .dia-clima {
+    width: 151px;
+    height: 183px;
+    margin: 7px 10px;
+  }
+
+  h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  h3,
+  strong,
+  p {
+    font-size: 17px;
+  }
+}
+
 footer {
   padding: 5px;
 }
