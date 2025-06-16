@@ -1,18 +1,39 @@
 header {
   justify-content: center;
+  height: 75px;
+
 
   h1 {
     font-size: 21px;
     margin: 0;
     text-align: center;
   }
+
   .texto-boton {
     display: none;
   }
+
+  .logo {
+    width: 93px;
+    height: auto;
+  }
+
+  .contact-links {
+    font-size: 1.5rem;
+    display: flex;
+    gap: 5px;
+  }
+
+  .contact-links a.instagram-link i {
+
+    font-size: 37px;
+  }
+
+
 }
 
 nav {
-  
+
 
   & span {
     display: none;
@@ -37,4 +58,8 @@ nav {
   }
 
 
+}
+
+footer {
+  padding: 5px;
 }
