@@ -16,8 +16,6 @@ export function inicializarActividades() {
     const contenedorActividades = document.querySelector(".contenedor-actividades");
     const verMapaBtn = document.getElementById("verMapaBtn");
     const verFavoritosBtn = document.getElementById("verFavoritosBtn");
-    const textoBotonFavoritos = verFavoritosBtn.querySelector(".texto-boton");
-    const textoBotonMapa = verMapaBtn.querySelector(".texto-boton");
     let mostrandoFavoritos = false;
 
     verMapaBtn.addEventListener("click", () => {
@@ -26,49 +24,86 @@ export function inicializarActividades() {
         if (visible) {
             contenedorMapa.style.display = "none";
             contenedorActividades.style.display = "block";
-            textoBotonMapa.textContent = "Ver ubicaciones";
+    
+            // Cambia el botón de mapa a estado cerrado (mostrar icono marcador)
+            verMapaBtn.innerHTML = `
+                <i class="fas fa-map-marker-alt"></i>
+                <span class="texto-boton">Ver ubicaciones</span>
+            `;
         } else {
             contenedorMapa.style.display = "block";
             contenedorActividades.style.display = "none";
-            textoBotonMapa.textContent = "Ocultar mapa";
             setTimeout(() => mapa.invalidateSize(), 200);
     
-            const clima = document.getElementById("clima");
-            if (clima) clima.style.display = "none";
-            const verClimaBtn = document.getElementById("verClimaBtn");
-            if (verClimaBtn) {
-                verClimaBtn.innerHTML = '<i class="fas fa-cloud-sun"></i><span>Ver clima</span>';
-            }
+            // Cierra clima y favoritos si están abiertos
+            cerrarClimaYMapa();
+    
+            // Cambia el botón de mapa a estado abierto (mostrar X)
+            verMapaBtn.innerHTML = `
+                <i class="fas fa-times"></i>
+                <span class="texto-boton">Ocultar mapa</span>
+            `;
         }
+    
+        // Al abrir o cerrar el mapa, resetea el botón favoritos a su estado cerrado (corazón)
+        verFavoritosBtn.innerHTML = `
+            <i class="fas fa-heart"></i>
+            <span class="texto-boton">Ver favoritos</span>
+        `;
+        mostrandoFavoritos = false;
     });
     
+
     verFavoritosBtn.addEventListener("click", () => {
         mostrandoFavoritos = !mostrandoFavoritos;
+    
         if (mostrandoFavoritos) {
-            textoBotonFavoritos.textContent = "Mostrar todo";
+            // Muestra favoritos y botón con X
+            verFavoritosBtn.innerHTML = `
+                <i class="fas fa-times"></i>
+                <span class="texto-boton">Cerrar favoritos</span>
+            `;
             cerrarClimaYMapa();
             mostrarFavoritos();
             contenedorActividades.style.display = "block";
             contenedorMapa.style.display = "none";
-            textoBotonMapa.textContent = "Ver ubicaciones";
+    
+            // Resetea botón mapa
+            verMapaBtn.innerHTML = `
+                <i class="fas fa-map-marker-alt"></i>
+                <span class="texto-boton">Ver ubicaciones</span>
+            `;
         } else {
-            textoBotonFavoritos.textContent = "Ver favoritos";
+            // Muestra todas las actividades y botón con corazón
+            verFavoritosBtn.innerHTML = `
+                <i class="fas fa-heart"></i>
+                <span class="texto-boton">Ver favoritos</span>
+            `;
             mostrarActividades(document.getElementById("ciudad").value);
             contenedorActividades.style.display = "block";
             contenedorMapa.style.display = "none";
-            textoBotonMapa.textContent = "Ver ubicaciones";
+    
+            // Resetea botón mapa
+            verMapaBtn.innerHTML = `
+                <i class="fas fa-map-marker-alt"></i>
+                <span class="texto-boton">Ver ubicaciones</span>
+            `;
         }
     });
+    
+    
 
-    // Escucha cambios en el select de ciudad
     document.getElementById("ciudad").addEventListener("change", (e) => {
         mostrarActividades(e.target.value);
         contenedorActividades.style.display = "block";
         contenedorMapa.style.display = "none";
-        verMapaBtn.innerHTML = '<i class="fas fa-map-marker-alt"></i>span> Ver ubicaciones</span>';
+
+        verMapaBtn.innerHTML = `
+            <i class="fas fa-map-marker-alt"></i>
+            <span class="texto-boton">Ver ubicaciones</span>
+        `;
     });
 
-    // Carga inicial de actividades
     fetch("actividades.json")
         .then(res => res.json())
         .then(data => {
@@ -77,29 +112,32 @@ export function inicializarActividades() {
         });
 }
 
-// --- NUEVA FUNCIÓN PARA CERRAR CLIMA Y MAPA ---
 function cerrarClimaYMapa() {
-    // CIERRA EL CLIMA
     const clima = document.getElementById("clima");
     const clima5dias = document.getElementById("clima5dias");
     if (clima) clima.style.display = "none";
     if (clima5dias) clima5dias.style.display = "none";
     const verClimaBtn = document.getElementById("verClimaBtn");
-    if (verClimaBtn) verClimaBtn.setAttribute("aria-expanded", "false");
+    if (verClimaBtn) {
+        verClimaBtn.setAttribute("aria-expanded", "false");
+        verClimaBtn.innerHTML = '<i class="fas fa-cloud-sun"></i><span class="texto-boton">Ver clima</span>';
+    }
 
-    // CIERRA EL MAPA
     const contenedorMapa = document.getElementById("contenedorMapa");
     if (contenedorMapa) contenedorMapa.style.display = "none";
     const verMapaBtn = document.getElementById("verMapaBtn");
     if (verMapaBtn) {
         verMapaBtn.setAttribute("aria-expanded", "false");
-        verMapaBtn.innerHTML = '<i class="fas fa-map-marker-alt"></i><span> Ver ubicaciones</span>';
+        verMapaBtn.innerHTML = `
+            <i class="fas fa-map-marker-alt"></i>
+            <span class="texto-boton">Ver ubicaciones</span>
+        `;
     }
 
-    // Muestra las actividades
     const contenedorActividades = document.querySelector(".contenedor-actividades");
     if (contenedorActividades) contenedorActividades.style.display = "block";
 }
+
 
 export function mostrarActividades(ciudad) {
     const contenedor = document.getElementById("actividades");
@@ -117,11 +155,9 @@ export function mostrarActividades(ciudad) {
         mapa.setView([filtradas[0].lat, filtradas[0].lng], 13);
     }
 
-    // Contenedor grid para las actividades
     const grupoActividades = document.createElement("div");
     grupoActividades.classList.add("actividades-grid");
 
-    // Solo mostramos las primeras 8 actividades
     filtradas.slice(0, 8).forEach(a => crearCard(a, grupoActividades));
     contenedor.appendChild(grupoActividades);
 }
@@ -140,14 +176,12 @@ function mostrarFavoritos() {
         return;
     }
 
-    // Agrupar por ciudad
     const favoritasPorCiudad = {};
     actividadesFavoritas.forEach(a => {
         if (!favoritasPorCiudad[a.ciudad]) favoritasPorCiudad[a.ciudad] = [];
         favoritasPorCiudad[a.ciudad].push(a);
     });
 
-    // Mostrar por ciudad
     for (const ciudad in favoritasPorCiudad) {
         const tituloCiudad = document.createElement("h3");
         tituloCiudad.textContent = ciudad;
@@ -194,12 +228,14 @@ function crearCard(a, contenedor, esFavoritoView = false) {
     flipBtn.addEventListener("click", (e) => {
         e.stopPropagation();
         card.classList.toggle("flip");
+        flipBtn.textContent = card.classList.contains("flip") ? "✖" : "+";
     });
 
     const volverBtn = card.querySelector(".volver-btn");
     volverBtn.addEventListener("click", (e) => {
         e.stopPropagation();
         card.classList.remove("flip");
+        flipBtn.textContent = "+";
     });
 
     const favBtn = card.querySelector(".fav-btn");
