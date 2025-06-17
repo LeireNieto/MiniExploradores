@@ -63,13 +63,16 @@ nav {
     margin-top: 10px; /* Ensure buttons are below the filter */
   }
 
+  
+  }
+
   main {
 
     /* CLIMA*/
 
     #clima {
-      padding: 13px;
-      margin: 45px auto;
+      padding: 19px;
+      margin: 15px auto;
     }
 
     #clima.active {
@@ -77,9 +80,9 @@ nav {
     }
 
     .dia-clima {
-      width: 151px;
-      height: 183px;
-      margin: 7px 10px;
+      width: 145px;
+      height: 173px;
+      margin: 3px 10px;
     }
 
     h2 {
@@ -115,8 +118,8 @@ nav {
       box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
       display: block;
     }
-  }
 
   footer {
     padding: 5px;
   }
+}

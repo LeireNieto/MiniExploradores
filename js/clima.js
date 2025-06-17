@@ -56,8 +56,6 @@ export function toggleClima(ciudad) {
     }
 }
 
-
-
 export async function obtenerClima(ciudad) {
     try {
         const url = `https://api.openweathermap.org/data/2.5/forecast?q=${encodeURIComponent(ciudad)}&appid=${apiKey}&units=metric&lang=es`;
