@@ -9,9 +9,9 @@ Criterios de aceptación:
     Debo poder seleccionar una ciudad y ver actividades disponibles en ese lugar.
 
     Cada actividad debe mostrar nombre, imagen, edad recomendada, precio, ubicación y un enlace si está disponible.
-
-    Al pasar el cursor sobre una tarjeta de actividad, debe girar para mostrar más información.
-
-    Debo poder dejar comentarios sobre las actividades para compartir mi experiencia.
-
+  
     Debo ver un mapa interactivo con la ubicación de las actividades disponibles.
+
+    Debo ver la previsión del clima de 5 días en la ciudad seleccionada.
+
+    Debo poder enviar un formulario al correo para poner dudas o comentarios.
