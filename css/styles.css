@@ -42,7 +42,7 @@ header {
 
     h1 {
         margin: 0;
-        font-size: 45px;
+        font-size: 55px;
         color: #1e5e17;
         font-family: Georgia, 'Times New Roman', Times, serif;
         margin-top: 15px;
@@ -86,7 +86,6 @@ nav {
         display: inline-block;
         padding: 10px 25px;
         height: 3rem;
-        ;
         background-color: rgb(100, 188, 174);
         color: #1e5e17;
         text-align: center;
@@ -96,6 +95,8 @@ nav {
         transition: background-color 0.3s;
         cursor: pointer;
         opacity: 1;
+        position: relative;
+        z-index: 1;
     }
 
     #verFavoritosBtn {
@@ -137,14 +138,14 @@ main {
     &::before {
         content: "";
         position: absolute;
-        top: 0;
+        top: 43px;
         left: 0;
         right: 0;
         bottom: 0;
         background-image: url('../imagenes/logo.png');
         background-repeat: no-repeat;
         background-position: center center;
-        background-size: contain;
+        background-size: 43%;
         opacity: 0.10;
         z-index: 0;
         pointer-events: none;
@@ -164,7 +165,7 @@ main {
 
     #clima {
         display: none;
-       
+
         background-color: #E0F2F1;
         padding: 15px;
         margin: 45px auto;
@@ -178,22 +179,17 @@ main {
         align-items: center;
         width: fit-content;
         position: relative;
-       
         z-index: 10;
-        
         max-height: 80vh;
-      
         overflow-y: auto;
-            }
+    }
 
     #clima.active {
         display: flex;
-       
     }
 
     .dia-clima {
         flex: 0 0 150px;
-        /* Ensure all days have the same width */
         background-color: #64bcae;
         border-radius: 10px;
         padding: 10px;
