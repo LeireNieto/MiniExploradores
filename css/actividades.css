@@ -179,7 +179,7 @@ h3.favoritos-ciudad-titulo {
   }
 
   .actividades-grid {
-    margin-top: 0px;
+    margin-top: -10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
