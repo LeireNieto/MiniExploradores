@@ -1,0 +1,15 @@
+# Allow all bots to access the entire site
+User-agent: *
+Disallow:
+
+# Block a specific bot from accessing a specific directory
+User-agent: BadBot
+Disallow: /private/
+
+# Block all bots from accessing a specific file
+User-agent: *
+Disallow: /no-access.html
+
+# Allow a specific bot to access everything
+User-agent: Googlebot
+Disallow:
