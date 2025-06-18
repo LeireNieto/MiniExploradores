@@ -5,6 +5,7 @@ import Footer from "./components/footer";
 import Actividades from "./components/actividades";
 import Clima from "./components/clima";
 import Mapa from "./components/mapa";
+import "./styles/app.css";
 import { AppProvider, useAppContext } from "./components/appcontext";
 
 function App() {
