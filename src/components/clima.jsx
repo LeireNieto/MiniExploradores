@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import '../styles/styles.css'
+import '../styles/clima.css';
 
 const API_KEY = import.meta.env.VITE_CLIMA_API_KEY;
 

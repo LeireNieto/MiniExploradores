@@ -1,0 +1,61 @@
+body {
+    height: 100dvh;
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #beebe3;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+
+
+nav {
+    display: flex;
+
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px 15px;
+
+    align-items: center;
+
+
+}
+
+main {
+    flex: 1;
+    overflow-y: scroll;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 43px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url('../imagenes/logo.png');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 43%;
+        opacity: 0.10;
+        z-index: 0;
+        pointer-events: none;
+    }
+}
+   
+
+
+@media screen and (width < 786px) {
+
+
+    nav {
+
+        display: flex;
+        flex-direction: column;
+
+        & span {
+            display: none;
+        }
+    }
+}

@@ -1,7 +1,7 @@
 
 
 import React from "react";
-
+import '../styles/button.css';
 
 function Button({ isActive, onToggle, textoActivo, textoInactivo, className = "" }) {
   return (

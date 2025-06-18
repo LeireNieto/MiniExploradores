@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import '../styles/styles.css'
+import '../styles/mapa.css'
 
 
 export default function Mapa({ actividades }) {

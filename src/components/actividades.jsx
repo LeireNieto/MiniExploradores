@@ -4,8 +4,8 @@ import FiltroCiudad from './filtrociudad';
 import Mapa from "./mapa";
 import Clima from "./clima";
 import Button from "./button";
-import '../styles/styles.css'
 import '../styles/actividades.css';
+
 
 function normalize(str) {
   return str

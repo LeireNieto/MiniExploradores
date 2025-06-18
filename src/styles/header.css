@@ -1,0 +1,101 @@
+
+header {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 123px;
+    background-color: #64bcae;
+    padding: 10px 30px;
+    margin: 0;
+    z-index: 1000;
+    gap: 20px;
+
+    .logo-titulo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    .logo {
+        width: 115px;
+        height: auto;
+    }
+
+    /* Agrupa h1 y enlaces */
+    .titulo-contacto {
+        display: block;
+        position: relative;
+    }
+
+    h1 {
+        margin: 0;
+        font-size: 55px;
+        color: #1e5e17;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        margin-top: 15px;
+        text-align: center;
+    }
+
+    .contact-links {
+        font-size: 1.5rem;
+        display: flex;
+        gap: 10px;
+    }
+
+    .contact-links a {
+        color: #333;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+        text-decoration: none;
+    }
+
+
+    .contact-links a.instagram-link i {
+        color: #E1306C;
+        font-size: 39px;
+    }
+
+    .contact-links a:hover i {
+        opacity: 0.7;
+    }
+}
+
+@media screen and (width < 786px) {
+
+
+    header {
+        justify-content: center;
+        height: 75px;
+
+
+        h1 {
+            font-size: 21px;
+            margin: 0;
+            text-align: center;
+        }
+
+        .texto-boton {
+            display: none;
+        }
+
+        .logo {
+            width: 93px;
+            height: auto;
+        }
+
+        .contact-links {
+            font-size: 1.5rem;
+            display: flex;
+            gap: 5px;
+        }
+
+        .contact-links a.instagram-link i {
+
+            font-size: 37px;
+        }
+    }
+
+    }

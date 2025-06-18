@@ -1,0 +1,39 @@
+footer {
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #64bcae;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    z-index: 999;
+
+    & a {
+        color: white;
+        text-decoration: none;
+        margin: 0 10px;
+    }
+
+    & a:hover {
+        color: #3fae6a;
+    }
+
+    & i {
+        margin-right: 5px;
+    }
+
+}
+
+
+
+
+@media screen and (width < 786px) {
+
+footer {
+        padding: 9px;
+    }
+
+
+}

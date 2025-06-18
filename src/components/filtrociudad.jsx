@@ -1,4 +1,4 @@
-import '../styles/styles.css'
+import '../styles/filtrociudad.css'
 
 const ciudades = [
   { value: "", label: "Selecciona una ciudad" },
