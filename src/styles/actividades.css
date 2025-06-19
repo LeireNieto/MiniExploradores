@@ -2,9 +2,10 @@
 .actividades-lista {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 65px; 
+  gap: 65px;
   margin: 20px;
   margin-bottom: 100px;
+  /* elimina overflow-y para que crezca */
 }
 
 .flip-btn {

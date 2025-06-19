@@ -1,68 +1,36 @@
-
 header {
-
+    position: relative;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     align-items: center;
     height: 123px;
     background-color: #64bcae;
     padding: 10px 30px;
+  }
+  
+  .logo-titulo {
+    z-index: 2;
+  }
+  
+h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     margin: 0;
-    z-index: 1000;
-    gap: 20px;
-
-    .logo-titulo {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-bottom: 10px;
-    }
-
-    .logo {
-        width: 115px;
-        height: auto;
-    }
-
-   
-    .titulo-contacto {
-        display: block;
-        position: relative;
-    }
-    h1 {
-        margin: 0 auto;
-        font-size: 55px;
-        color: #1e5e17;
-        font-family: Georgia, 'Times New Roman', Times, serif;
-        margin-top: 15px;
-        text-align: center;
-        display: block;
-    }
-
-    .contact-links {
-        font-size: 1.5rem;
-        display: flex;
-        gap: 10px;
-    }
-
-    .contact-links a {
-        color: #333;
-        margin-left: 0.5rem;
-        margin-right: 0.5rem;
-        text-decoration: none;
-    }
-
-
-    .contact-links a.instagram-link i {
-        color: #E1306C;
-        font-size: 39px;
-    }
-
-    .contact-links a:hover i {
-        opacity: 0.7;
-    }
+    font-size: 55px;
+    color: #1e5e17;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
-
+  
+  .contact-links {
+    margin-left: auto;
+    z-index: 2;
+    display: flex;
+    gap: 10px;
+    font-size: 1.5rem;
+    align-items: center;
+  }
+  
 @media screen and (width < 786px) {
 
 

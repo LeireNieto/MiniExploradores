@@ -15,12 +15,7 @@ button {
     margin-bottom: 45px;
 }
 
-#verFavoritosBtn {
-    border: 2px solid red;
-    transition: background-color 0.3s, color 0.3s;
-    color: red;
-    font-size: 18px;
-}
+
 
 
 @media screen and (width < 786px) {

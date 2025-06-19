@@ -2,12 +2,10 @@
 .card {
     width: 280px;
     height: 280px;
-    /* Elimina min-width y flex si usas grid */
-    box-sizing: border-box;
+     box-sizing: border-box;
     perspective: 1000px;
     position: relative;
     margin: 0;
-    /* Elimina el margen lateral, lo gestiona el grid */
   }
   
   .card-inner {
@@ -40,6 +38,13 @@
   .actividad-card.flip .card-inner {
     transform: rotateY(180deg);
   }
+
+  .card-front-bottom {
+    display: flex;
+    justify-content: space-between; /* separación máxima entre los dos botones */
+    align-items: center; /* centrar verticalmente */
+    padding: 0 10px; /* un poco de espacio horizontal */
+  }
   
   .card-front img {
     width: 100%;
@@ -54,6 +59,24 @@
     font-size: 19px;
     color: #1e5e17;
   }
+
+  .fav-btn {
+    background: none;
+    border: 2px solid red;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    color: gray;
+    transition: color 0.3s ease;
+    padding: 4px 8px;
+    margin-top: 4px; /* añade espacio arriba, bajando el botón */
+  }
+
+   .fav-btn.marcado {
+    color: red; /* color cuando está marcado como favorito */
+  }
+  
+  
   
   /* Parte trasera */
   .card-back {
@@ -90,8 +113,7 @@
     text-decoration: underline;
   }
   
-  .flip-btn,
-  .fav-btn {
+  .flip-btn {
     position: absolute;
     bottom: 8px;
     width: 30px;
@@ -107,27 +129,9 @@
     background-color: #29b6f6;
     color: white;
   }
+ 
   
-  .fav-btn {
-    background-color: white;
-    border: 2px solid red;
-    border-radius: 50%;
-    padding: 5px;
-    cursor: pointer;
-    color: red;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    left: 8px;
-    /* Move to the left */
-  }
-  
-  .fav-btn.activo {
-    background-color: white;
-    color: red;
-  }
-  
+ 
   
   .volver-btn {
     margin-top: 10px;

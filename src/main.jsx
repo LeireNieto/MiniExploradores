@@ -2,14 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 
-
 import './styles/app.css';
+import { AppProvider } from './components/appcontext';
+import { FavoritosProvider } from './components/favoritos';
 
-
-
-// Renderiza la app en el div#root del index.html
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <AppProvider>
+      <FavoritosProvider>
+        <App />
+      </FavoritosProvider>
+    </AppProvider>
   </React.StrictMode>
 );
