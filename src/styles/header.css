@@ -10,6 +10,11 @@ header {
   .logo-titulo {
     z-index: 2;
   }
+
+  .logo {
+    width: 121px;
+    height: auto;
+    }
   
 h1 {
     position: absolute;
