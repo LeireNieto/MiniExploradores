@@ -1,7 +1,13 @@
-import React from 'react';
-import '../styles/header.css'
+import React, { useState } from "react";
+import ModalForm from "./modalform";
+import "../styles/header.css";
 
 export default function Header() {
+  const [modalAbierto, setModalAbierto] = useState(false);
+
+  const abrirModal = () => setModalAbierto(true);
+  const cerrarModal = () => setModalAbierto(false);
+
   return (
     <header className="header">
       <div className="logo-titulo">
@@ -9,13 +15,14 @@ export default function Header() {
         <h1>Mini Exploradores</h1>
       </div>
       <div className="contact-links">
-        <a
-          href="mailto:miniexploradoresweb@gmail.com"
+        <button
           className="email-link"
-          title="Enviar email"
+          title="Abrir formulario de contacto"
+          onClick={abrirModal}
+          
         >
           <i className="fas fa-envelope"></i>
-        </a>
+        </button>
         {" | "}
         <a
           href="https://instagram.com/losminiexploradores"
@@ -27,6 +34,8 @@ export default function Header() {
           <i className="fab fa-instagram"></i>
         </a>
       </div>
+
+      {modalAbierto && <ModalForm cerrarModal={cerrarModal} />}
     </header>
   );
 }
