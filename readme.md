@@ -15,3 +15,9 @@ Criterios de aceptación:
     Debo ver la previsión del clima de 5 días en la ciudad seleccionada.
 
     Debo poder enviar un formulario al correo para poner dudas o comentarios.
+
+
+
+
+
+    
