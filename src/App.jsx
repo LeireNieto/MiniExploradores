@@ -31,10 +31,13 @@ function ClimaWrapper() {
 }
 
 function MapaWrapper() {
-  const { showMapa } = useAppContext();
-  return showMapa ? <Mapa /> : null;
+  const { showMapa, actividadesFiltradas } = useAppContext(); // o el nombre que uses en el contexto
+  return showMapa ? <Mapa actividades={actividadesFiltradas} /> : null;
 }
 
+
 export default App;
+
+
 
 

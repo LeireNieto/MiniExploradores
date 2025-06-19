@@ -1,0 +1,6 @@
+.leaflet-container {
+    background: #eee; /* un gris claro para ver dónde está */
+    border: 2px dashed red;
+    height: 100% !important; /* para asegurar que tome toda la altura */
+    width: 100% !important;
+  }

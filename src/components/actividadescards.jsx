@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import "../styles/actividadescards.css";
 
-import '../styles/actividadescards.css';
+
 
 export default function ActividadCard({ actividad }) {
   const [flip, setFlip] = useState(false);

@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
+import FiltroCiudad from "./filtrociudad";
 import ActividadCard from "./actividadescards";
-import FiltroCiudad from './filtrociudad';
+import Button from "./button";
 import Mapa from "./mapa";
 import Clima from "./clima";
-import Button from "./button";
-import '../styles/actividades.css';
-
+import "../styles/actividades.css";
 
 function normalize(str) {
   return str
@@ -24,7 +23,10 @@ export default function Actividades() {
   useEffect(() => {
     fetch("/actividades.json")
       .then(res => res.json())
-      .then(data => setActividades(data));
+      .then(data => {
+        setActividades(data.flat());
+      })
+      .catch(err => console.error("Error cargando actividades:", err));
   }, []);
 
   const actividadesFiltradas = ciudad
@@ -33,7 +35,6 @@ export default function Actividades() {
 
   return (
     <div className="actividades-pagina">
-  
       <div className="filtro-botones">
         <FiltroCiudad ciudad={ciudad} setCiudad={setCiudad} />
         <Button
@@ -55,7 +56,8 @@ export default function Actividades() {
         <p>No hay actividades para esta ciudad.</p>
       )}
 
-      {ciudad !== "" && actividadesFiltradas.length > 0 && (
+      {/* Solo mostrar actividades si no se ve mapa ni clima */}
+      {ciudad !== "" && actividadesFiltradas.length > 0 && !mostrarMapa && !mostrarClima && (
         <div className="actividades-lista">
           {actividadesFiltradas.map((actividad, idx) => (
             <ActividadCard key={idx} actividad={actividad} />
