@@ -148,20 +148,20 @@
     perspective: 1000px;
     position: relative;
     margin: 0;
-    margin-bottom: 10px; /* Reduce bottom margin */
+    margin-bottom: 10px;
   }
 
   .card-front {
-    width: 95%;
-    height: 95%;
+    width: 65%;
+    height: 91%;
   }
 
-  .actividades {
-    display: flex;
-    }
+ 
 
     .h3 {
       font-size: 15px;
     }
+
+  
 
 }

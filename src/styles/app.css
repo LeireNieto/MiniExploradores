@@ -1,5 +1,5 @@
 body {
-    height: 100dvh;
+    height: auto;
     margin: 0;
     font-family: Georgia, 'Times New Roman', Times, serif;
     background-color: #beebe3;
@@ -9,19 +9,9 @@ body {
     overflow: hidden;
 }
 
-
-
-nav {
-    display: flex;
-
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 15px 15px;
-
-    align-items: center;
-
-
-}
+.pagina {
+    flex: 1;
+  }
 
 main {
     flex: 1;

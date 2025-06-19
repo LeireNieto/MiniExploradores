@@ -1,26 +1,13 @@
-.contenedor-actividades {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
+
+.actividades-lista {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 65px; 
   margin: 20px;
   margin-bottom: 100px;
 }
 
-.actividades-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, auto);
-  gap: 65px;
-  width: 91%;
-  margin: 0 auto;
-  overflow: hidden;
-  justify-items: center;
-  align-items: center;
-  padding: 30px 30px;
-  /* Menos margen lateral */
-  margin-top: 0px;
-}
+
 
 h3.favoritos-ciudad-titulo {
   font-size: 21px;
@@ -34,38 +21,8 @@ h3.favoritos-ciudad-titulo {
 /* RESPONSIVE*/
 
 @media (max-width: 768px) {
-  .contenedor-actividades {
-    gap: 3px; /* Reduce gap between cards */
+  .actividades-lista {
+    gap: 3px; 
   }
-
-  .actividades-grid {
-    margin-top: -10px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: auto;
-  }
-
-  .card {
-    width: 100%;
-    box-sizing: border-box;
-    perspective: 1000px;
-    position: relative;
-    margin: 0;
-    margin-bottom: 10px; /* Reduce bottom margin */
-  }
-
-  .card-front {
-    width: 95%;
-    height: 95%;
-  }
-
-  .actividades {
-    display: flex;
-    }
-
-    .h3 {
-      font-size: 15px;
-    }
 
 }

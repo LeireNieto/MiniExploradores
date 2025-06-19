@@ -24,19 +24,19 @@ header {
         height: auto;
     }
 
-    /* Agrupa h1 y enlaces */
+   
     .titulo-contacto {
         display: block;
         position: relative;
     }
-
     h1 {
-        margin: 0;
+        margin: 0 auto;
         font-size: 55px;
         color: #1e5e17;
         font-family: Georgia, 'Times New Roman', Times, serif;
         margin-top: 15px;
         text-align: center;
+        display: block;
     }
 
     .contact-links {
