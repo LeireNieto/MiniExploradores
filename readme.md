@@ -17,6 +17,12 @@ Criterios de aceptación:
     Debo poder enviar un formulario al correo para poner dudas o comentarios.
 
 
+Prototipo: https://www.figma.com/design/MpqsId0huMDmSQSNOAQkYS/Untitled?node-id=0-1&p=f&t=rfXKXC9P2GSZ1oxs-0
+
+Historias de usuario: https://tree.taiga.io/project/leirenieto-mini-exploradores/timeline
+
+Enlace: 
+
 
 
 
