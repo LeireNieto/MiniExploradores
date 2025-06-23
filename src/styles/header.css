@@ -36,22 +36,22 @@ h1 {
     align-items: center;
 }
 
-.instagram-link {
+.instagram-link, .email-link {
     color: #E1306C;
     font-size: 39px;
-}
-
-.email-link {
-    color: #1e5e17;
     text-decoration: none;
     border: none;
+    display: flex;
+    align-items: center;
+}
+.email-link {
+    color: #1e5e17;
 }
 
 @media screen and (width < 786px) {
 
     header {
-   
-        height: 71px;
+           height: 71px;
     }
 
     h1 {

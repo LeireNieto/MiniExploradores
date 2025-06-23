@@ -52,32 +52,16 @@ p {
     color: #1e5e17;
 }
 
-@media screen and (width < 786px) {
-    #clima {
-        padding: 19px;
-        margin: 15px auto;
-    }
 
-    #clima.active {
-        display: flex;
+@media (max-width: 768px) {
+    #clima {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        justify-content: center;
     }
 
     .dia-clima {
-        width: 145px;
-        height: 173px;
-        margin: 3px 10px;
+        margin: 0 auto;
     }
-
-    h2 {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    h3,
-    strong,
-    p {
-        font-size: 17px;
-    }
-
 }

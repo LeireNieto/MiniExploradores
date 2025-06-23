@@ -8,28 +8,6 @@
   /* elimina overflow-y para que crezca */
 }
 
-.flip-btn {
-  background-color: #29b6f6;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  padding: 6px 10px;
-  cursor: pointer;
-  font-size: 1.2rem;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.card-front-bottom {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  margin-top: auto;
-  padding: 0 0.5rem;
-}
 
 
 h3.favoritos-ciudad-titulo {
@@ -44,8 +22,9 @@ h3.favoritos-ciudad-titulo {
 /* RESPONSIVE*/
 
 @media (max-width: 768px) {
-  .actividades-lista {
-    gap: 3px; 
-  }
-
+.actividades-lista {
+  grid-template-columns: 1fr;
+  gap: 10px;
+  justify-items: center;
+}
 }
