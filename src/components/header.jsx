@@ -11,7 +11,7 @@ export default function Header() {
   return (
     <header className="header">
       <div className="logo-titulo">
-      <img src="/imagenes/logo.png" alt="Logo" className="logo" />
+      <img src="./imagenes/logo.png" alt="Logo" className="logo" />
         <h1>Mini Exploradores</h1>
       </div>
       <div className="contact-links">

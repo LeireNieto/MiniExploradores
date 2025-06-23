@@ -12,7 +12,7 @@ export default function ActividadCard({ actividad }) {
     <div className={`card actividad-card${flip ? " flip" : ""}`}>
       <div className="card-inner">
         <div className="card-front">
-          <img src={`/imagenes/${actividad.imagen}`} alt={actividad.nombre} />
+          <img src={`./imagenes/${actividad.imagen}`} alt={actividad.nombre} />
           <h3>{actividad.nombre}</h3>
 
           <div className="card-front-bottom">

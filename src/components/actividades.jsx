@@ -26,7 +26,7 @@ export default function Actividades() {
   const [mostrarFavoritos, setMostrarFavoritos] = useState(false);
 
   useEffect(() => {
-    fetch("/actividades.json")
+    fetch("./actividades.json")
       .then((res) => res.json())
       .then((data) => {
         setActividades(data.flat());
