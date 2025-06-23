@@ -21,7 +21,7 @@ Prototipo: https://www.figma.com/design/MpqsId0huMDmSQSNOAQkYS/Untitled?node-id=
 
 Historias de usuario: https://tree.taiga.io/project/leirenieto-mini-exploradores/timeline
 
-Enlace: 
+Enlace: https://leirenieto.github.io/MiniExploradores/
 
 
 
