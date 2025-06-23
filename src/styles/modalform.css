@@ -5,7 +5,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 25%; /* Reducir el ancho */
+    width: 90%; /* Ajustar ancho para pantallas pequeñas */
+    max-width: 25%; /* Limitar el ancho máximo */
     height: auto;
     background-color: #64bcae;
     justify-content: center;
@@ -68,4 +69,29 @@
 #formModal form button[type="submit"]:hover {
     background-color: #4ca58e;
 }
-  
+
+
+@media (max-width: 768px) {
+    #formModal {
+        width: 90%; /* Ajustar ancho para pantallas pequeñas */
+        max-width: 90%; /* Limitar el ancho máximo */
+    }
+
+    #formModal .modal-content {
+        padding: 1rem; /* Reducir padding */
+    }
+
+    #closeFormBtn {
+        font-size: 1.4rem; /* Ajustar tamaño de la X */
+    }
+
+    #formModal form input {
+        font-size: 15px;
+    }
+
+    #formModal form button[type="submit"] {
+        font-size: 1rem; /* Reducir tamaño de fuente */
+        padding: 0.6rem 1rem; /* Ajustar padding */
+    }
+}
+
