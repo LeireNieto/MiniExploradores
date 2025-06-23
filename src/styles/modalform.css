@@ -5,7 +5,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 45%;
+    width: 25%; /* Reducir el ancho */
     height: auto;
     background-color: #64bcae;
     justify-content: center;
@@ -46,11 +46,12 @@
 #formModal form input {
     width: 100%;
     padding: 0.4rem 0.6rem;
-    font-size: 1rem;
+    font-size: 1.5rem;
     margin-top: 0.3rem;
     margin-bottom: 1rem;
     border: 1px solid #ccc;
     border-radius: 6px;
+    justify-content: center;
 }
 
 #formModal form button[type="submit"] {
