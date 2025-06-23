@@ -23,7 +23,7 @@ export default function Header() {
         >
           <i className="fas fa-envelope"></i>
         </button>
-        {" | "}
+       
         <a
           href="https://instagram.com/losminiexploradores"
           target="_blank"
