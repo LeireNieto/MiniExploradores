@@ -15,11 +15,11 @@ button {
 
 .filtro-botones {
     display: flex;
-    justify-content: left;
     align-items: center;
     gap: 45px;
     margin-bottom: 45px;
     margin-top: 15px;
+    margin-left: 19px;
 }
 
 .button.favoritos {
