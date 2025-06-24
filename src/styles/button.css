@@ -24,17 +24,16 @@ button {
 
 .button.favoritos {
     border: 2px solid red;
-  }
-  
-  .button.favoritos .icon svg {
-    color: red;
-  }
-  
+}
 
+.button.favoritos .icon svg {
+    color: red;
+}
 
 @media screen and (max-width: 786px) {
     .filtro-botones {
-        flex-direction: column; /* Apila el filtro y los botones */
+        flex-direction: column;
+        /* Apila el filtro y los botones */
         align-items: center;
         gap: 15px;
         margin-bottom: 30px;
@@ -42,10 +41,12 @@ button {
 
     .botones-container {
         display: flex;
-        flex-direction: row; /* Los botones estarán uno al lado del otro */
+        flex-direction: row;
+        /* Los botones estarán uno al lado del otro */
         justify-content: center;
         gap: 10px;
-        flex-wrap: nowrap; /* Evita que se bajen a otra línea */
+        flex-wrap: nowrap;
+        /* Evita que se bajen a otra línea */
         width: 100%;
     }
 
@@ -54,7 +55,9 @@ button {
         padding: 8px 16px;
         height: auto;
         border-radius: 9px;
-        white-space: nowrap; /* Evita que el texto se parta en dos líneas */
-        display: inline-block; /* Asegura que los botones estén en línea horizontal */
+        white-space: nowrap;
+        /* Evita que el texto se parta en dos líneas */
+        display: inline-block;
+        /* Asegura que los botones estén en línea horizontal */
     }
 }

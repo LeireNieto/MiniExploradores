@@ -36,7 +36,7 @@ h1 {
     align-items: center;
 }
 
-.instagram-link, .email-link {
+.instagram-link {
     color: #E1306C;
     font-size: 39px;
     text-decoration: none;
@@ -46,6 +46,9 @@ h1 {
 }
 .email-link {
     color: #1e5e17;
+    border: none;
+    font-size: 37px;
+       margin: -57px;
 }
 
 @media screen and (width < 786px) {
