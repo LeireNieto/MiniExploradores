@@ -62,14 +62,16 @@
     background-color: white;
     border: 2px solid red;
     border-radius: 50%;
-    padding: 5px;
+    width: 33px;
+    height: 33px;
     cursor: pointer;
     color: red;
     display: flex;
     align-items: center;
     justify-content: center;
     position: absolute;
-    left: 8px; /* Move to the left */
+    left: -25px;
+    bottom: 9px;;
   }
 
    .fav-btn.marcado {
@@ -77,14 +79,21 @@
     color: red;
   }
   
-  .volver-btn {
-    margin-top: 10px;
-    background-color: #0077cc;
-    color: white;
+  .flip-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 9px;
+    width: 33px;
+    height: 33px;
     border: none;
-    padding: 6px 12px;
-    border-radius: 5px;
+    border-radius: 50%;
+    font-weight: bold;
     cursor: pointer;
+    background-color: #29b6f6;
+    color: white;
+    right: 23px;
   }
   
   /* Parte trasera */
@@ -120,41 +129,12 @@
   
   .card-back a:hover {
     text-decoration: underline;
-  }
+  }  
   
-  .flip-btn {
-    position: absolute;
-    bottom: 8px;
-    width: 30px;
-    height: 30px;
-    border: none;
-    border-radius: 50%;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
-  .flip-btn {
-    right: 8px;
-    background-color: #29b6f6;
-    color: white;
-  }
- 
-  
-  .volver-btn {
-    margin-top: 10px;
-    background-color: #0077cc;
-    color: white;
-    border: none;
-    padding: 6px 12px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-
   @media (max-width: 768px) {
     
   .fav-btn {
       padding: 4px 8px;
-      margin-left: 0; /* Asegura que esté alineado a la izquierda */
-      align-self: flex-start; /* Coloca el botón a la izquierda dentro de su contenedor */
-  }
+      margin-left: 0; 
+      align-self: flex-start; 
 }
