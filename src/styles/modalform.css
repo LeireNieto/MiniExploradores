@@ -1,46 +1,44 @@
 
 #formModal {
-    display: flex; 
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%; 
-    max-width: 25%; 
-    height: auto;
-    background-color: #64bcae;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3); 
+    display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
 }
 
+
 /* Contenedor del contenido del modal */
-#formModal .modal-content {
-       padding: 1.5rem;
+ .modal-content {
+    background-color: #64bcae;
+    padding: 1.5rem;
     border-radius: 10px;
     min-width: 320px;
     max-width: 90vw;
+    width: 100%;
+    max-width: 400px;
     position: relative;
-    
+    box-shadow: 0 0 10px rgba(0,0,0,0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Botón cerrar (la X) */
 #closeFormBtn {
     position: absolute;
-    top: 0.5rem;
+    top: 0.0rem;
     left: 265px; 
     font-size: 2rem;
     background: none;
     border: none;
     cursor: pointer;
     color: #333;
-}
-
-#h2 {
-    text-align: center;
-    color: #1e5e17;
-    font-size: 20px;
-    margin-bottom: 15px; 
 }
 
 #formModal form label {
@@ -50,15 +48,29 @@
 }
 
 #formModal form input {
-    width: 100%;
-    padding: 0.4rem 0.6rem;
+        padding: 0.4rem 0.6rem;
     font-size: 1.5rem;
     margin-top: 0.3rem;
     margin-bottom: 0.5rem; /* Reducir margen inferior para menos espacio entre inputs */
     border: 1px solid #ccc;
     border-radius: 6px;
     justify-content: center;
+    width: 100%;
+    max-width: 369px;
+    padding: 0.6rem;
 }
+
+#formModal form textarea {
+    width: 100%;
+    max-width: 369px;
+    padding: 0.6rem;
+    font-size: 1.4rem;
+    margin-top: 0.3rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    resize: vertical; /* permite redimensionar verticalmente */
+  }
 
 #formModal form button[type="submit"] {
     background-color: #64bcae;
