@@ -10,20 +10,17 @@
   box-sizing: border-box;
   justify-content: center;
   grid-auto-flow: row;
-  /* Limitar máximo 5 columnas */
+
   grid-template-columns: repeat(5, minmax(250px, 1fr));
 }
-
-
-
-
 
 /* RESPONSIVE*/
 
 @media (max-width: 768px) {
 .actividades-lista {
   grid-template-columns: 1fr;
-  gap: 10px;
+  gap: 55px;
   justify-items: center;
 }
+
 }

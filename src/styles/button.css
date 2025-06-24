@@ -32,32 +32,25 @@ button {
 
 @media screen and (max-width: 786px) {
     .filtro-botones {
-        flex-direction: column;
-        /* Apila el filtro y los botones */
-        align-items: center;
-        gap: 15px;
-        margin-bottom: 30px;
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+  
+    .button {
+      width: 3rem;
+      height: 3rem;
+      padding: 0;
+      border-radius: 50%;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+  
+    .boton-texto {
+      display: none;
     }
 
-    .botones-container {
-        display: flex;
-        flex-direction: row;
-        /* Los botones estarán uno al lado del otro */
-        justify-content: center;
-        gap: 10px;
-        flex-wrap: nowrap;
-        /* Evita que se bajen a otra línea */
-        width: 100%;
-    }
-
-    button {
-        font-size: 9px;
-        padding: 8px 16px;
-        height: auto;
-        border-radius: 9px;
-        white-space: nowrap;
-        /* Evita que el texto se parta en dos líneas */
-        display: inline-block;
-        /* Asegura que los botones estén en línea horizontal */
-    }
-}
+   
+  }

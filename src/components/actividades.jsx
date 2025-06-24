@@ -55,9 +55,12 @@ export default function Actividades() {
   }, {});
 
   return (
+
+    
     <div className="actividades-pagina">
       <div className="filtro-botones">
         <FiltroCiudad ciudad={ciudad} setCiudad={setCiudad} />
+        <div classname="botones">
         <Button
           isActive={mostrarMapa}
           onToggle={() => {
@@ -92,6 +95,7 @@ export default function Actividades() {
           icon={<FaHeart />}
           className="favoritos"
         />
+        </div>
       </div>
 
       {ciudad === "" && !mostrarFavoritos && (

@@ -3,12 +3,13 @@ import '../styles/button.css';
 
 function Button({ isActive, onToggle, textoActivo, textoInactivo, icon, className = "" }) {
   return (
-    <button onClick={onToggle} className={`button ${className}`}>
-      {icon && <span className="icon" style={{ marginRight: "8px" }}>{icon}</span>}
-      {isActive ? textoActivo : textoInactivo}
+    <button className={`button ${className} ${isActive ? "activo" : ""}`} onClick={onToggle}>
+      {icon}
+      <span className="boton-texto">
+        {isActive ? textoActivo : textoInactivo}
+      </span>
     </button>
   );
 }
-
 
 export default Button;
