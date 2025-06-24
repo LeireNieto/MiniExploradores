@@ -64,14 +64,14 @@ console.log("Ciudad:", ciudad);
     <div id="clima" className="active">
       <h2>Clima en {ciudad}</h2>
       {error && <p>{error}</p>}
-      <div style={{ display: "flex", gap: 16 }}>
+      <div className="clima-caja">
         {dias.map((dia) => (
           <div className="dia-clima" key={dia.dia}>
             <h3>{dia.dia}</h3>
             <img
               src={`https://openweathermap.org/img/wn/${dia.icon}@2x.png`}
               alt={dia.descripcion}
-              style={{ width: 60 }}
+             
             />
             <p>
               <strong>{dia.descripcion}</strong>
