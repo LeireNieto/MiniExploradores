@@ -10,16 +10,13 @@ export default function ModalForm({ cerrarModal }) {
   };
 
   return (
-    <div
-      id="formModal"
-      onClick={handleClickFuera}
-       >
-      <div>
+    <div id="formModal" onClick={handleClickFuera}>
+      <div className="modal-content">
         <button
           id="closeFormBtn"
           onClick={cerrarModal}
           aria-label="Cerrar formulario"
-                  >
+        >
           &times;
         </button>
 
@@ -29,18 +26,20 @@ export default function ModalForm({ cerrarModal }) {
             Nombre:
             <input type="text" name="Nombre" />
           </label>
-          <br />
+
           <label>
             Email:
             <input type="email" name="Email" />
           </label>
-          <br />
+
           <label>
             Comentario:
             <input type="text" name="Comentario" />
           </label>
-          <br />
-          <button type="submit">Enviar</button>
+
+          <div className="submit-container">
+            <button type="submit">Enviar</button>
+          </div>
         </form>
       </div>
     </div>
