@@ -7,6 +7,7 @@ import Clima from "./clima";
 import { useAppContext } from "./appcontext";
 import { useFavoritos } from "./favoritos";
 import "../styles/actividades.css";
+import { FaMapMarkedAlt, FaCloudSun, FaHeart } from "react-icons/fa"; 
 
 function normalize(str) {
   return str
@@ -66,6 +67,7 @@ export default function Actividades() {
           }}
           textoActivo="Ocultar mapa"
           textoInactivo="Ver mapa"
+          icon={<FaMapMarkedAlt />}
         />
         <Button
           isActive={mostrarClima}
@@ -76,6 +78,7 @@ export default function Actividades() {
           }}
           textoActivo="Ocultar clima"
           textoInactivo="Ver clima"
+          icon={<FaCloudSun />}
         />
         <Button
           isActive={mostrarFavoritos}
@@ -86,6 +89,7 @@ export default function Actividades() {
           }}
           textoActivo={`Ocultar favoritos (${favoritos.length})`}
           textoInactivo={`Ver favoritos (${favoritos.length})`}
+          icon={<FaHeart />}
         />
       </div>
 

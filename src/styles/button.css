@@ -1,10 +1,16 @@
 button {
-    padding: 10px 25px;
-    height: 3rem;
-    background-color: rgb(100, 188, 174);
+    display: inline-block;
+    margin-left: 50px;
+    width: 200px;
+    padding: 10px;
+    background-color: #64bcae;
     color: #1e5e17;
-    border-radius: 9px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
     font-size: 16px;
+    transition: background-color 0.3s;
+    cursor: pointer;
 }
 
 .filtro-botones {
@@ -15,6 +21,31 @@ button {
     margin-bottom: 45px;
 }
 
+#verFavoritosBtn {
+    display: inline-block;
+    margin-left: 50px;
+    width: 200px;
+    padding: 10px;
+    background-color: #64bcae;
+    color: #1e5e17;
+       border: 2px solid red;
+     text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+#verFavoritosBtn i {
+    color: red;
+    /* corazón rojo */
+    font-size: 18px;
+}
 
 
 @media screen and (max-width: 786px) {

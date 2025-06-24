@@ -59,22 +59,33 @@
   }
 
   .fav-btn {
-    background: none;
+    background-color: white;
     border: 2px solid red;
     border-radius: 50%;
-    font-size: 24px;
+    padding: 5px;
     cursor: pointer;
-    color: gray;
-    transition: color 0.3s ease;
-    padding: 4px 8px;
-    margin-top: 4px; /* añade espacio arriba, bajando el botón */
+    color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 8px; /* Move to the left */
   }
 
    .fav-btn.marcado {
-    color: red; /* color cuando está marcado como favorito */
+    background-color: white;
+    color: red;
   }
   
-  
+  .volver-btn {
+    margin-top: 10px;
+    background-color: #0077cc;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
   
   /* Parte trasera */
   .card-back {
