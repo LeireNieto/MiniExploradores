@@ -31,7 +31,22 @@
     padding: 10px;
     background-color: white;
     opacity: 1;
+
+    h3 {
+      padding: 10px 5px;
+      font-size: 18px;
+      color: #1e5e17;
+    }
+
+    img {
+      width: 100%;
+      height: 65%;
+      object-fit: cover;
+      border-radius: 10px 10px 0 0;
+      aspect-ratio: 4/3;
+    }
   }
+
   
   .actividad-card.flip .card-inner {
     transform: rotateY(180deg);
@@ -45,19 +60,8 @@
    
   }
   
-  .card-front img {
-    width: 100%;
-    height: 65%;
-    object-fit: cover;
-    border-radius: 10px 10px 0 0;
-    aspect-ratio: 4/3;
-  }
-  
-  .card-front h3 {
-    padding: 10px 5px;
-    font-size: 18px;
-    color: #1e5e17;
-  }
+
+ 
 
   .fav-btn {
     background-color: white;
@@ -111,19 +115,19 @@
     transform: rotateY(180deg);
     padding: 15px;
     opacity: 1;
+
+    p {
+      font-size: 17px;
+      margin: 5px 0;
+    }
+
+    a {
+      color: #292925;
+      text-decoration: none;
+      font-weight: bold;
+    }
   }
-  
-  .card-back p {
-    font-size: 17px;
-    margin: 5px 0;
-  }
-  
-  .card-back a {
-    color: #ffeb3b;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
+    
   .card-back a:hover {
     text-decoration: underline;
   }  

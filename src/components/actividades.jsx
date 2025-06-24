@@ -60,7 +60,7 @@ export default function Actividades() {
     <div className="actividades-pagina">
       <div className="filtro-botones">
         <FiltroCiudad ciudad={ciudad} setCiudad={setCiudad} />
-        <div classname="botones">
+        <div className="botones">
         <Button
           isActive={mostrarMapa}
           onToggle={() => {
