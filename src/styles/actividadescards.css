@@ -54,7 +54,7 @@
   
   .card-front h3 {
     padding: 10px 5px;
-    font-size: 19px;
+    font-size: 18px;
     color: #1e5e17;
   }
 
@@ -70,8 +70,8 @@
     align-items: center;
     justify-content: center;
     position: absolute;
-    left: -25px;
-    bottom: 9px;;
+    left: -29px;
+    bottom: 7px;;
   }
 
    .fav-btn.marcado {
@@ -84,7 +84,7 @@
     align-items: center;
     justify-content: center;
     position: absolute;
-    bottom: 9px;
+    bottom: 7px;
     width: 33px;
     height: 33px;
     border: none;
