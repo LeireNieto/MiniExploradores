@@ -90,6 +90,7 @@ export default function Actividades() {
           textoActivo={`Ocultar favoritos (${favoritos.length})`}
           textoInactivo={`Ver favoritos (${favoritos.length})`}
           icon={<FaHeart />}
+          className="favoritos"
         />
       </div>
 

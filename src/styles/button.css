@@ -19,33 +19,17 @@ button {
     align-items: center;
     gap: 45px;
     margin-bottom: 45px;
+    margin-top: 15px;
 }
 
-#verFavoritosBtn {
-    display: inline-block;
-    margin-left: 50px;
-    width: 200px;
-    padding: 10px;
-    background-color: #64bcae;
-    color: #1e5e17;
-       border: 2px solid red;
-     text-align: center;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 16px;
-    transition: background-color 0.3s, color 0.3s;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-}
-
-#verFavoritosBtn i {
+.button.favoritos {
+    border: 2px solid red;
+  }
+  
+  .button.favoritos .icon svg {
     color: red;
-    /* corazón rojo */
-    font-size: 18px;
-}
+  }
+  
 
 
 @media screen and (max-width: 786px) {
