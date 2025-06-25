@@ -12,7 +12,7 @@ function App() {
       <FavoritosProvider>
         <div className="app-container">
           <Header />
-          <main>
+          <main >
             <Actividades />
                     </main>
           <Footer />
