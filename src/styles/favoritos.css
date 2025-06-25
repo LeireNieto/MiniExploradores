@@ -9,18 +9,19 @@
     padding-bottom: 20px;
     border-bottom: 2px solid #ccc;
   }
+
   
   .favoritos-por-ciudad h2 {
     font-size: 1.5rem;
     margin-bottom: 12px;
-    color: #005ea2; /* azul más intenso, ajusta si quieres */
-    text-transform: capitalize; /* para que la ciudad tenga la primera letra mayúscula */
-  }
-  
+    color: #005ea2; 
+    text-transform: capitalize;
+    margin-left: 25px; 
+
   .favoritos-por-ciudad .actividades-lista {
     display: flex;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 55px;
     justify-content: flex-start;
   }
   

@@ -1,8 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 import "../styles/favoritos.css";
 
-
-
 const FavoritosContext = createContext();
 
 export function FavoritosProvider({ children }) {
@@ -16,12 +14,16 @@ export function FavoritosProvider({ children }) {
   }, [favoritos]);
 
   function esFavorito(id) {
-    return favoritos.includes(id);
+    const idStr = String(id);
+    return favoritos.some(favId => String(favId) === idStr);
   }
 
   function toggleFavorito(id) {
-    setFavoritos(prev => 
-      prev.includes(id) ? prev.filter(favId => favId !== id) : [...prev, id]
+    const idStr = String(id);
+    setFavoritos(prev =>
+      prev.some(favId => String(favId) === idStr)
+        ? prev.filter(favId => String(favId) !== idStr)
+        : [...prev, idStr]
     );
   }
 

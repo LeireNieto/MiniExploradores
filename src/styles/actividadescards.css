@@ -70,7 +70,7 @@
     width: 33px;
     height: 33px;
     cursor: pointer;
-    color: red;
+    color: gray;   
     display: flex;
     align-items: center;
     justify-content: center;

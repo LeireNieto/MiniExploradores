@@ -4,7 +4,10 @@ import "../styles/actividadescards.css";
 
 export default function ActividadCard({ actividad }) {
   const [flip, setFlip] = useState(false);
-  const { esFavorito, toggleFavorito } = useFavoritos();
+  const { esFavorito, toggleFavorito, favoritos } = useFavoritos();
+
+  // Debug para ver IDs y favoritos
+  // console.log("Actividad ID:", actividad.id, "Favoritos:", favoritos);
 
   const marcado = esFavorito(actividad.id);
 
