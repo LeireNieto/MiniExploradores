@@ -1,7 +1,8 @@
 #clima {
     background-color: #E0F2F1;
     padding: 15px;
-    margin: 75px auto; /* Increased margin to move it further down */
+    margin: 75px auto;
+    /* Increased margin to move it further down */
     border-radius: 10px;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
     flex: 1;
@@ -31,7 +32,8 @@
     text-align: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     scroll-snap-align: start;
-    margin: 25px 35px; /* Increased margin for more space */
+    margin: 25px 35px;
+    /* Increased margin for more space */
     display: inline-block;
 }
 
@@ -52,11 +54,12 @@ p {
 @media screen and (max-width: 768px) {
     #clima.active {
         display: flex;
-      flex-wrap: wrap;
-      width: 100%;
+        flex-wrap: wrap;
+        width: 100%;
+        gap: 15px;
     }
 
     .dia-clima {
-        margin-bottom: 15px;
+        margin: 9px 5px;
     }
-  }
+}
