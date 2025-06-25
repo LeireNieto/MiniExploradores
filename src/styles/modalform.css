@@ -1,11 +1,10 @@
-
 #formModal {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.3); 
+    background-color: rgba(0, 0, 0, 0.3);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,7 +13,7 @@
 
 
 /* Contenedor del contenido del modal */
- .modal-content {
+.modal-content {
     background-color: #64bcae;
     padding: 1.5rem;
     border-radius: 10px;
@@ -23,7 +22,7 @@
     width: 100%;
     max-width: 400px;
     position: relative;
-    box-shadow: 0 0 10px rgba(0,0,0,0.25);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -33,7 +32,7 @@
 #closeFormBtn {
     position: absolute;
     top: 0.0rem;
-    left: 265px; 
+    left: 265px;
     font-size: 2rem;
     background: none;
     border: none;
@@ -48,10 +47,11 @@
 }
 
 #formModal form input {
-        padding: 0.4rem 0.6rem;
+    padding: 0.4rem 0.6rem;
     font-size: 1.5rem;
     margin-top: 0.3rem;
-    margin-bottom: 0.5rem; /* Reducir margen inferior para menos espacio entre inputs */
+    margin-bottom: 0.5rem;
+    /* Reducir margen inferior para menos espacio entre inputs */
     border: 1px solid #ccc;
     border-radius: 6px;
     justify-content: center;
@@ -69,18 +69,19 @@
     margin-bottom: 1rem;
     border: 1px solid #ccc;
     border-radius: 6px;
-    resize: vertical; /* permite redimensionar verticalmente */
-  }
+    resize: vertical;
+    /* permite redimensionar verticalmente */
+}
 
 #formModal form button[type="submit"] {
     background-color: #64bcae;
     color: #1e5e17;
-    border: 2px solid #1e5e17; 
+    border: 2px solid #1e5e17;
     border-radius: 8px;
-    padding: 0.4rem 0.6rem; 
-    font-size: 16px; 
-    display: block; 
-    margin: 0 auto 1rem; 
+    padding: 0.4rem 0.6rem;
+    font-size: 16px;
+    display: block;
+    margin: 0 auto 1rem;
 }
 
 #formModal form button[type="submit"]:hover {
@@ -90,25 +91,31 @@
 
 @media (max-width: 768px) {
     #formModal {
-        width: 90%;
-        max-width: 90%;
+        width: 100%;
+        max-width: 100%;
     }
 
     #formModal .modal-content {
-        padding: 1rem; 
+        padding: 2rem;
+        width: 75vw;
+        max-width: 75vw;
     }
 
     #closeFormBtn {
-        font-size: 1.4rem; 
+        font-size: 1.4rem;
     }
 
     #formModal form input {
         font-size: 15px;
-    }
-
-    #formModal form button[type="submit"] {
-        font-size: 1rem; /* Reducir tamaño de fuente */
-        padding: 0.6rem 1rem; /* Ajustar padding */
-    }
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+         }
 }
 
+#formModal form button[type="submit"] {
+    display: block;
+    margin: 0 auto;
+    padding: 0.6rem 1rem;
+}
+}
