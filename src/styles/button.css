@@ -64,4 +64,20 @@ button {
     justify-content: space-around;
  }
    
+ .button.activo .boton-texto {
+  display: none; /* Oculta el texto */
+}
+
+
+.button.activo > svg {
+  display: none;  /* ocultar icono */
+}
+
+.button.activo::after {
+  content: "❌";
+  color: red;
+  font-size: 1.5rem;
+  position: relative;
+  margin-left: 8px;
+}
   }
