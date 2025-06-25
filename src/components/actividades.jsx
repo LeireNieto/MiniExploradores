@@ -103,7 +103,7 @@ export default function Actividades() {
       )}
 
       {mostrarListaActividades && actividadesFiltradas.length === 0 && (
-        <p>No hay actividades para esta ciudad.</p>
+        <p className="mensaje-ciudad">No hay actividades para esta ciudad.</p>
       )}
 
       {mostrarListaActividades && actividadesFiltradas.length > 0 && (
@@ -128,7 +128,7 @@ export default function Actividades() {
         {mostrarFavoritos && (
           <div className="favoritos-lista">
             {favoritos.length === 0 ? (
-              <p>No tienes favoritos seleccionados.</p>
+              <p className="mensaje-ciudad">No tienes favoritos seleccionados.</p>
             ) : (
               Object.entries(favoritosPorCiudad).map(([ciudadNombre, actividades]) => (
                 <div key={ciudadNombre} className="favoritos-por-ciudad">
