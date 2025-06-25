@@ -7,7 +7,7 @@ import Clima from "./clima";
 import { useAppContext } from "./appcontext";
 import { useFavoritos } from "./favoritos";
 import "../styles/actividades.css";
-import { FaMapMarkedAlt, FaCloudSun, FaHeart } from "react-icons/fa"; 
+import { FaMapMarkedAlt, FaCloudSun, FaHeart } from "react-icons/fa";
 
 function normalize(str) {
   return str
@@ -56,50 +56,50 @@ export default function Actividades() {
 
   return (
 
-    
+
     <div className="actividades-pagina">
       <div className="filtro-botones">
         <FiltroCiudad ciudad={ciudad} setCiudad={setCiudad} />
         <div className="botones">
-        <Button
-          isActive={mostrarMapa}
-          onToggle={() => {
-            setMostrarMapa((m) => !m);
-            setMostrarClima(false);
-            setMostrarFavoritos(false);
-          }}
-          textoActivo="Ocultar mapa"
-          textoInactivo="Ver mapa"
-          icon={<FaMapMarkedAlt />}
-        />
-        <Button
-          isActive={mostrarClima}
-          onToggle={() => {
-            setMostrarClima((c) => !c);
-            setMostrarMapa(false);
-            setMostrarFavoritos(false);
-          }}
-          textoActivo="Ocultar clima"
-          textoInactivo="Ver clima"
-          icon={<FaCloudSun />}
-        />
-        <Button
-          isActive={mostrarFavoritos}
-          onToggle={() => {
-            setMostrarFavoritos((f) => !f);
-            setMostrarMapa(false);
-            setMostrarClima(false);
-          }}
-          textoActivo={`Ocultar favoritos (${favoritos.length})`}
-          textoInactivo={`Ver favoritos (${favoritos.length})`}
-          icon={<FaHeart />}
-          className="favoritos"
-        />
+          <Button
+            isActive={mostrarMapa}
+            onToggle={() => {
+              setMostrarMapa((m) => !m);
+              setMostrarClima(false);
+              setMostrarFavoritos(false);
+            }}
+            textoActivo="Ocultar mapa"
+            textoInactivo="Ver mapa"
+            icon={<FaMapMarkedAlt />}
+          />
+          <Button
+            isActive={mostrarClima}
+            onToggle={() => {
+              setMostrarClima((c) => !c);
+              setMostrarMapa(false);
+              setMostrarFavoritos(false);
+            }}
+            textoActivo="Ocultar clima"
+            textoInactivo="Ver clima"
+            icon={<FaCloudSun />}
+          />
+          <Button
+            isActive={mostrarFavoritos}
+            onToggle={() => {
+              setMostrarFavoritos((f) => !f);
+              setMostrarMapa(false);
+              setMostrarClima(false);
+            }}
+            textoActivo={`Ocultar favoritos (${favoritos.length})`}
+            textoInactivo={`Ver favoritos (${favoritos.length})`}
+            icon={<FaHeart />}
+            className="favoritos"
+          />
         </div>
       </div>
 
       {ciudad === "" && !mostrarFavoritos && (
-        <p>Selecciona una ciudad para ver las actividades.</p>
+        <p className="mensaje-ciudad">Selecciona una ciudad para ver las actividades.</p>
       )}
 
       {mostrarListaActividades && actividadesFiltradas.length === 0 && (

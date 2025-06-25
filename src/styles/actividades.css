@@ -13,6 +13,15 @@
   grid-template-columns: repeat(5, minmax(250px, 1fr));
 }
 
+.mensaje-ciudad {
+  font-size: 27px;
+  text-align: center;
+  margin: 9rem auto;
+  color: #1e5e17; 
+  max-width: 600px; 
+}
+
+
 /* RESPONSIVE*/
 
 @media (max-width: 768px) {

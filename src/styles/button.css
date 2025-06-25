@@ -30,6 +30,12 @@ button {
     color: red;
 }
 
+.boton-texto {
+   
+    margin-left: 10px;
+   
+}
+
 @media screen and (max-width: 786px) {
     .filtro-botones {
       display: flex;
